@@ -1,0 +1,22 @@
+// hl_c14.txt -- First Xen map wow
+
+/**
+    AntiRush source file.
+    Map: hl_c14
+    Visit antirush_documentation.txt in case you have troubles while reading this file.
+**/
+
+create|func_wall_toggle$_antirush_dynamic_full_wall_toggle_creator$model,*64,origin,-387 -147 -18,rendermode,1,renderamt,0,rendercolor,0 0 0,targetname,_antirush_portal_entrance_wall@1
+
+beam|-371,-350,-127,-467,-298,-127,255,0,0,0,255,0$_antirush_portal_entrance_beam
+beam|-467,-298,-127,-430,-313,-89,255,0,0,0,255,0$_antirush_portal_entrance_beam
+beam|-430,-313,-89,-401,-329,-89,255,0,0,0,255,0$_antirush_portal_entrance_beam
+beam|-401,-329,-89,-365,-346,-81,255,0,0,0,255,0$_antirush_portal_entrance_beam
+beam|-365,-346,-81,-371,-350,-127,255,0,0,0,255,0$_antirush_portal_entrance_beam
+beam|-371,-350,-127,-371,-350,-127,255,0,0,0,255,0$_antirush_portal_entrance_beam
+
+monstermaker|-448,-608,-112,32$_antirush_portal_entrance_mmkr1
+monstermaker|16,-512,-112,32$_antirush_portal_entrance_mmkr2
+monstermaker|-216,904,-112,32$_antirush_portal_entrance_mmkr3
+monstermaker|-1056,48,-112,32$_antirush_portal_entrance_mmkr4
+skull|-407,-400,-105,0,158,0,255,0,0,0,255,0$_antirush_portal_entrance_skull$_antirush_portal_entrance_beam,_antirush_portal_entrance_wall@_antirush_portal_entrance_mmkr1

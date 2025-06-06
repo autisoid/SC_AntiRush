@@ -1,0 +1,113 @@
+// hl_c08_a2.txt -- trash compactor map
+
+/**
+    AntiRush source file.
+    Map: hl_c08_a2
+    Visit antirush_documentation.txt in case you have troubles while reading this file.
+**/
+
+//==============================
+//	   START BLOCKING TIMER
+//==============================
+
+beam|3664,693,1873,3664,693,2007,255,255,0,0,255,0$_ar_start_beam
+beam|3664,693,2007,3664,819,2007,255,255,0,0,255,0$_ar_start_beam
+beam|3664,819,2007,3664,819,1873,255,255,0,0,255,0$_ar_start_beam
+beam|3664,819,1873,3664,693,1873,255,255,0,0,255,0$_ar_start_beam
+wall|3664,692,1872,3967,819,2007$_ar_start_wall
+
+timer|3664,772,1939.5,0,180,0,255,255,0,20,1,4$_ar_start_timer$_ar_start_beam,_ar_start_wall
+
+
+
+//==============================
+//       BULLSQUID ROOM
+//==============================
+
+beam|999,1511,2061,999,1511,2171,255,0,0,0,255,0$_ar_bullsquid_beam
+beam|999,1511,2171,853,1511,2171,255,0,0,0,255,0$_ar_bullsquid_beam
+beam|853,1511,2171,853,1511,2061,255,0,0,0,255,0$_ar_bullsquid_beam
+beam|853,1511,2061,999,1511,2061,255,0,0,0,255,0$_ar_bullsquid_beam
+wall|852,1056,2060,999,1512,2339$_ar_bullsquid_wall
+
+number|932,1511,2116,0,90,0,255,0,0,0,255,0,1,66%$_ar_bullsquid_number
+speaker|932,1511,2116$buttons/bell1.wav$_ar_bullsquid_speaker
+
+counter|836,1472,2060,1471,1651,2231,0.66$_ar_bullsquid_beam,_ar_bullsquid_wall,_ar_bullsquid_number,_ar_bullsquid_speaker
+
+
+
+//==============================
+//	 5.26 BUTTON TROLLING FIX
+//==============================
+
+fakemdl|*14$_ar_526_button_fix_fakemdl
+
+
+
+//==============================
+//	 ELEVATOR PRE-BARNEY YAP
+//==============================
+
+fakemdl|*134$_ar_elevator_fakemdl
+fakemdl|*135$_ar_elevator_fakemdl
+
+beam|-1307,-1807,1713,-1307,-1807,1735,255,0,0,0,255,0$_ar_elevator_beam
+beam|-1307,-1807,1735,-1307,-1793,1735,255,0,0,0,255,0$_ar_elevator_beam
+beam|-1307,-1793,1735,-1307,-1793,1713,255,0,0,0,255,0$_ar_elevator_beam
+beam|-1307,-1793,1713,-1307,-1807,1713,255,0,0,0,255,0$_ar_elevator_beam
+
+wall|-1307,-1887,1900,-1148,-1600,2287$_ar_elevator_wall
+
+number|-1307,-1808,1743,0,0,0,255,0,0,0,255,0,1,66%$_ar_elevator_number
+speaker|-1307,-1808,1743$buttons/bell1.wav$_ar_elevator_speaker
+
+counter|-1307,-1887,1668,-876,-960,1958,0.66$_ar_elevator_fakemdl,_ar_elevator_beam,_ar_elevator_wall,_ar_elevator_number,_ar_elevator_speaker
+
+
+
+//==============================
+//	   SURFACE ACCESS LEVER
+//==============================
+
+killcounter|-1820,-1392,2292,16,monster_human_assassin$_ar_surface_access_assassin_1
+killcounter|-1836,-752,2292,16,monster_human_assassin$_ar_surface_access_assassin_2
+killcounter|-3125,-264,2288,16,monster_human_assassin$_ar_surface_access_assassin_3
+killcounter|-2313,-1062,2476,16,monster_human_assassin$_ar_surface_access_assassin_4
+killcounter|-2636,-1224,2528,16,monster_human_assassin$_ar_surface_access_assassin_5
+
+delete|-2654,-1730,2499,32,momentary_rot_button
+
+create|multi_manager$_antirush_dynamic_multi_manager_creator$targetname,_antirush_assasins_once_killed_mm,_antirush_surface_access_fake_rot_btn,0#2,_antirush_dynamic_momentary_rot_button_creator,0@1
+
+create|func_wall$_antirush_dynamic_func_wall_creator$origin,-2654 -1730 2499,model,*111,renderamt,255,rendercolor,255 255 255,angles,0 0 0,targetname,_antirush_surface_access_fake_rot_btn@1
+
+create|momentary_rot_button$_antirush_dynamic_momentary_rot_button_creator$origin,-2654 -1730 2499,model,*111,use_type,2,target,assassinexit,startdirection,Forward,renderamt,255,rendercolor,255 255 255,angles,0 0 0,distance,180,sounds,21,speed,25,spawnflags,128,targetname,_antirush_surface_access_rot_btn
+
+skull|-2654,-1737,2556,0,90,0,255,0,0,0,255,0$_ar_surface_access_skull$_antirush_assasins_once_killed_mm@_ar_surface_access_assassin_1,_ar_surface_access_assassin_2,_ar_surface_access_assassin_3,_ar_surface_access_assassin_4,_ar_surface_access_assassin_5
+
+
+
+//==============================
+//	   	   CHANGELEVEL
+//==============================
+
+beam|-2268,656,-1655,-2268,679,-1644,-1,-1,-1,0,255,0$_ar_changelevel_beam
+beam|-2268,679,-1644,-2268,695,-1616,-1,-1,-1,0,255,0$_ar_changelevel_beam
+beam|-2268,695,-1616,-2268,695,-1584,-1,-1,-1,0,255,0$_ar_changelevel_beam
+beam|-2268,695,-1584,-2268,679,-1556,-1,-1,-1,0,255,0$_ar_changelevel_beam
+beam|-2268,679,-1556,-2268,656,-1545,-1,-1,-1,0,255,0$_ar_changelevel_beam
+beam|-2268,656,-1545,-2268,623,-1545,-1,-1,-1,0,255,0$_ar_changelevel_beam
+beam|-2268,623,-1545,-2268,601,-1556,-1,-1,-1,0,255,0$_ar_changelevel_beam
+beam|-2268,601,-1556,-2268,585,-1584,-1,-1,-1,0,255,0$_ar_changelevel_beam
+beam|-2268,585,-1584,-2268,585,-1616,-1,-1,-1,0,255,0$_ar_changelevel_beam
+beam|-2268,585,-1616,-2268,601,-1644,-1,-1,-1,0,255,0$_ar_changelevel_beam
+beam|-2268,601,-1644,-2268,623,-1655,-1,-1,-1,0,255,0$_ar_changelevel_beam
+beam|-2268,623,-1655,-2268,656,-1655,-1,-1,-1,0,255,0$_ar_changelevel_beam
+
+number|-2268,648,-1604,0,180,0,255,0,0,0,255,0,1,66%$_ar_changelevel_number
+speaker|-2268,648,-1604$buttons/bell1.wav$_ar_changelevel_speaker
+
+movout|*145$_ar_changelevel_movout
+
+counter|-3143,584,-1655,-1620,695,-1340,0.66$_ar_changelevel_beam,_ar_changelevel_number,_ar_changelevel_speaker,_ar_changelevel_movout#1.5

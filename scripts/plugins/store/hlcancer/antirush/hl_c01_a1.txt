@@ -1,0 +1,43 @@
+// hl_c01_a1.txt -- first map
+
+/**
+    AntiRush source file.
+    Map: hl_c01_a1
+    Visit antirush_documentation.txt in case you have troubles while reading this file.
+**/
+
+//==============================
+//	   ELEVATOR ANTI-RUSH
+//==============================
+
+beam|-1608,-819,-286,-1608,-819,-153,255,0,0,0,255,0$_ar_elev_dr_beam
+beam|-1608,-819,-153,-1608,-685,-153,255,0,0,0,255,0$_ar_elev_dr_beam
+beam|-1608,-685,-153,-1608,-685,-286,255,0,0,0,255,0$_ar_elev_dr_beam
+beam|-1608,-685,-286,-1608,-819,-286,255,0,0,0,255,0$_ar_elev_dr_beam
+wall|-1623,-819,-286,-1608,-684,-151$_ar_elev_dr_wall
+
+fakemdl|*161$_ar_elev_dr_button
+
+number|-1608,-760,-219.5,0,0,0,255,0,0,0,255,0,1,66%$_ar_elev_dr_number
+speaker|-1608,-752,-219.5$buttons/bell1.wav$_ar_elev_dr_speaker
+
+counter|-1808,-1151,-287,-1336,-543,0,0.66$_ar_elev_dr_beam,_ar_elev_dr_wall,_ar_elev_dr_button,_ar_elev_dr_number,_ar_elev_dr_speaker
+
+
+
+//==============================
+//	   	   CHANGELEVEL
+//==============================
+
+beam|-524,-3180,-1375,-524,-3180,-1233,-1,-1,-1,0,255,0$_ar_spctrmtr_beam
+beam|-524,-3180,-1233,-334,-3180,-1233,-1,-1,-1,0,255,0$_ar_spctrmtr_beam
+beam|-334,-3180,-1233,-334,-3180,-1375,-1,-1,-1,0,255,0$_ar_spctrmtr_beam
+beam|-334,-3180,-1375,-524,-3180,-1375,-1,-1,-1,0,255,0$_ar_spctrmtr_beam
+wall|-524,-3180,-1375,-333,-3144,-1232$_ar_spctrmtr_wall
+
+number|-437,-3179,-1304,0,270,0,255,0,0,0,255,0,1,66%$_ar_spctrmtr_number
+speaker|-429,-3179,-1304$buttons/bell1.wav$_ar_spctrmtr_speaker
+
+movout|*149$_ar_spctrmtr_movout
+
+counter|-620,-3415,-1375,-237,-3180,-1200,0.66$_ar_spctrmtr_beam,_ar_spctrmtr_number,_ar_spctrmtr_speaker,_ar_spctrmtr_movout#1.5

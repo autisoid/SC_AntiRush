@@ -1,0 +1,91 @@
+// hl_c11_a1.txt -- congratz, we've escaped from these ugly labs! but now we have to climb mountains, a.k.a. Surface Tension chapter.
+
+/**
+    AntiRush source file.
+    Map: hl_c11_a1
+    Visit antirush_documentation.txt in case you have troubles while reading this file.
+**/
+
+
+//================================
+//          START TIMER
+//================================
+
+//Turn the door button and the doors themselves into fake furniture.
+fakemdl|*214$_antirush_start_dr_btn
+fakemdl|*110$_antirush_start_dr1
+fakemdl|*111$_antirush_start_dr2
+
+beam|-2334,543,33,-2161,543,33,255,255,0,0,255,0$_antirush_start_beam
+beam|-2161,543,33,-2161,543,207,255,255,0,0,255,0$_antirush_start_beam
+beam|-2161,543,207,-2334,543,207,255,255,0,0,255,0$_antirush_start_beam
+beam|-2334,543,207,-2334,543,33,255,255,0,0,255,0$_antirush_start_beam
+wall|-2334,337,33,-2160,544,207$_antirush_start_wall
+timer|-2231.5,544,120,0,90,0,255,255,0,30,1,4$_antirush_start_timer$_antirush_start_beam,_antirush_start_wall,_antirush_start_dr_btn,_antirush_start_dr1,_antirush_start_dr2
+
+//Unlock the button which makes the water flow only after the players shoot down the heli and kill the fishy.
+killcounter|-3776,-2976,400,128,monster_apache$_antirush_flow_btn_apache
+killcounter|-4432,480,-1120,128,monster_ichthyosaur$_antirush_flow_btn_fishy
+fakemdl|*90$_antirush_flow_btn
+delete|-5149,996,48,16,point_checkpoint
+checkpoint|-5256,876,61,sprites/sprite_c_1.spr,ambience/particle_suck2.wav,debris/beamstart7.wav,-32,-32,-32,32,32,32$_antirush_flow_checkpoint$_antirush_null$_antirush_null@1
+skull|-5257,973,20,0,-90,0,255,0,0,0,255,0$_antirush_flow_skull$_antirush_flow_btn@_antirush_flow_btn_apache,_antirush_flow_btn_fishy
+
+//==============================================================================
+// The pipes after the player have swum via the water flow, there's another 66%
+//==============================================================================
+beam|-3180,-3453,-1095,-3140,-3453,-1095,255,0,0,0,255,0$_antirush_pipe_beam
+beam|-3140,-3453,-1095,-3121,-3453,-1075,255,0,0,0,255,0$_antirush_pipe_beam
+beam|-3121,-3453,-1075,-3121,-3453,-1036,255,0,0,0,255,0$_antirush_pipe_beam
+beam|-3121,-3453,-1036,-3141,-3453,-1017,255,0,0,0,255,0$_antirush_pipe_beam
+beam|-3141,-3453,-1017,-3180,-3453,-1017,255,0,0,0,255,0$_antirush_pipe_beam
+beam|-3180,-3453,-1017,-3199,-3453,-1036,255,0,0,0,255,0$_antirush_pipe_beam
+beam|-3199,-3453,-1036,-3199,-3453,-1075,255,0,0,0,255,0$_antirush_pipe_beam
+beam|-3199,-3453,-1075,-3180,-3453,-1095,255,0,0,0,255,0$_antirush_pipe_beam
+
+beam|-3019,-3453,-1095,-2980,-3453,-1095,255,0,0,0,255,0$_antirush_pipe_beam
+beam|-2980,-3453,-1095,-2961,-3453,-1075,255,0,0,0,255,0$_antirush_pipe_beam
+beam|-2961,-3453,-1075,-2961,-3453,-1036,255,0,0,0,255,0$_antirush_pipe_beam
+beam|-2961,-3453,-1036,-2980,-3453,-1017,255,0,0,0,255,0$_antirush_pipe_beam
+beam|-2980,-3453,-1017,-3019,-3453,-1017,255,0,0,0,255,0$_antirush_pipe_beam
+beam|-3019,-3453,-1017,-3038,-3453,-1036,255,0,0,0,255,0$_antirush_pipe_beam
+beam|-3038,-3453,-1036,-3038,-3453,-1075,255,0,0,0,255,0$_antirush_pipe_beam
+beam|-3038,-3453,-1075,-3019,-3453,-1095,255,0,0,0,255,0$_antirush_pipe_beam
+
+wall|-3327,-3653,-1119,-2913,-3453,-967$_antirush_pipe_wall
+number|-3152,-3454,-1056,0,90,0,255,0,0,0,255,0,1,66%$_antirush_pipe_number
+number|-2991.5,-3454,-1056,0,90,0,255,0,0,0,255,0,1,66%$_antirush_pipe_number
+speaker|-3081,-3423,-982$buttons/bell1.wav$_antirush_pipe_spk
+counter|-4265,-3623,-1372,-2700,-2433,-239,0.66$_antirush_pipe_wall,_antirush_pipe_number,_antirush_pipe_spk,_antirush_pipe_beam@_antirush_flow_skull
+
+//===================================
+//         Almost map end!
+//     Now kill the four grunts
+//      which are guarding the
+//        trapdoor button
+//      and finish the map!!!
+//===================================
+killcounter|4488,-2696,-454,32,monster_human_grunt$_antirush_trapdoor_btn_kc1
+killcounter|4320,-3632,-478,32,monster_human_grunt$_antirush_trapdoor_btn_kc2
+killcounter|4656,-3656,-478,32,monster_human_grunt$_antirush_trapdoor_btn_kc3
+killcounter|5024,-3392,-454,32,monster_human_grunt$_antirush_trapdoor_btn_kc4
+fakemdl|*21$_antirush_trapdoor_fake_btn
+skull|4976,-3305,-460,0,-90,0,255,0,0,0,255,0$_antirush_trapdoor_skull$_antirush_trapdoor_fake_btn@_antirush_trapdoor_btn_kc1,_antirush_trapdoor_btn_kc2,_antirush_trapdoor_btn_kc3,_antirush_trapdoor_btn_kc4
+
+//==============================
+//        LEVEL CHANGE!
+//==============================
+beam|5183,-1658,-887,5183,-1633,-863,-1,-1,-1,0,255,0$_antirush_lvl_chng_beam
+beam|5183,-1633,-863,5183,-1633,-832,-1,-1,-1,0,255,0$_antirush_lvl_chng_beam
+beam|5183,-1633,-832,5183,-1656,-809,-1,-1,-1,0,255,0$_antirush_lvl_chng_beam
+beam|5183,-1656,-809,5183,-1736,-809,-1,-1,-1,0,255,0$_antirush_lvl_chng_beam
+beam|5183,-1736,-809,5183,-1759,-832,-1,-1,-1,0,255,0$_antirush_lvl_chng_beam
+beam|5183,-1759,-832,5183,-1759,-863,-1,-1,-1,0,255,0$_antirush_lvl_chng_beam
+beam|5183,-1759,-863,5183,-1734,-887,-1,-1,-1,0,255,0$_antirush_lvl_chng_beam
+beam|5183,-1734,-887,5183,-1658,-887,-1,-1,-1,0,255,0$_antirush_lvl_chng_beam
+wall|5183,-2207,-1033,5446,-1481,-721$_antirush_lvl_chng_wall
+mov|5248,-1696,-848,32,env_sprite,5183,-1696,-848
+movout|*36$_antirush_lvl_chng_trigger
+number|5183,-1688,-828.5,0,180,0,255,0,0,0,255,0,1,66%$_antirush_lvl_chng_number
+speaker|5183,-1688,-828.5$buttons/bell1.wav$_antirush_lvl_chng_spk
+counter|4725,-1923,-1008,5358,-1375,-578,0.66$_antirush_lvl_chng_number,_antirush_lvl_chng_trigger#1.5,_antirush_lvl_chng_beam,_antirush_lvl_chng_spk

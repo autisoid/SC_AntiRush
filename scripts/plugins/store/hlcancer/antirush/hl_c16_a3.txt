@@ -1,0 +1,105 @@
+// hl_c16_a3.txt -- Damn third Interloper map wow
+
+/**
+    AntiRush source file.
+    Map: hl_c16_a3
+    Visit antirush_documentation.txt in case you have troubles while reading this file.
+**/
+
+//
+//  Start timer
+//
+beam|-1599,-1281,-959,-1473,-1281,-959,255,255,0,0,255,0$_antirush_start_beam
+beam|-1473,-1281,-959,-1473,-1281,-705,255,255,0,0,255,0$_antirush_start_beam
+beam|-1473,-1281,-705,-1599,-1281,-705,255,255,0,0,255,0$_antirush_start_beam
+beam|-1599,-1281,-705,-1599,-1281,-959,255,255,0,0,255,0$_antirush_start_beam
+wall|-1675,-1558,-980,-1473,-1279,-641$_antirush_start_wall
+timer|-1524,-1281,-832,0,90,0,255,255,0,30,1,3$_antirush_start_timer$_antirush_start_beam,_antirush_start_wall
+
+//
+//  Aliens fight 1
+//
+
+beam|911,-2859,-447,833,-2722,-447,255,0,0,0,255,0$_antirush_aliens_fight1_beam
+beam|833,-2722,-447,833,-2722,-289,255,0,0,0,255,0$_antirush_aliens_fight1_beam
+beam|833,-2722,-289,911,-2859,-289,255,0,0,0,255,0$_antirush_aliens_fight1_beam
+beam|911,-2859,-289,911,-2859,-447,255,0,0,0,255,0$_antirush_aliens_fight1_beam
+number|883,-2824,-400,0,180,0,255,0,0,0,255,0,1,66%$_antirush_aliens_fight1_number
+speaker|883,-2824,-400$buttons/bell1.wav$_antirush_aliens_fight1_spk
+
+beam|507,-1939,-447,547,-1905,-447,255,0,0,0,255,0$_antirush_aliens_fight1_beam
+beam|547,-1905,-447,547,-1905,-337,255,0,0,0,255,0$_antirush_aliens_fight1_beam
+beam|547,-1905,-337,507,-1939,-337,255,0,0,0,255,0$_antirush_aliens_fight1_beam
+beam|507,-1939,-337,507,-1939,-447,255,0,0,0,255,0$_antirush_aliens_fight1_beam
+
+//If I apply "EF_NODRAW" to these func_wall_toggle's, the player will be clipping thru on the client-side on them, so no.
+create|func_wall_toggle$_antirush_dynamic_func_wall_toggle_creator$origin,29 18 0,model,*6,targetname,_antirush_aliens_fight1_wall@1
+create|func_wall_toggle$_antirush_dynamic_func_wall_toggle_creator$origin,29 18 96,model,*6,targetname,_antirush_aliens_fight1_wall@1
+create|func_wall_toggle$_antirush_dynamic_func_wall_toggle_creator$origin,-357 462 0,model,*135,rendermode,4,targetname,_antirush_aliens_fight1_wall@1
+
+killcounter|1136,-1808,-1232,32,monster_alien_controller$_antirush_aliens_fight1_kc1
+killcounter|1416,-2328,-768,32,monster_alien_slave$_antirush_aliens_fight1_kc2
+killcounter|896,-2560,-1024,32,monster_alien_slave$_antirush_aliens_fight1_kc3
+killcounter|560,-2144,-672,32,monster_alien_slave$_antirush_aliens_fight1_kc4
+killcounter|836,-1980,-696,32,monster_alien_slave$_antirush_aliens_fight1_kc5
+killcounter|944,-1784,-768,32,monster_alien_slave$_antirush_aliens_fight1_kc6
+killcounter|992,-1472,-768,32,monster_alien_slave$_antirush_aliens_fight1_kc7
+monstermaker|464,-2640,-768,16$_antirush_aliens_fight1_mmkr1
+monstermaker|416,-2648,-784,16$_antirush_aliens_fight1_mmkr2
+monstermaker|224,-2048,-672,16$_antirush_aliens_fight1_mmkr3
+monstermaker|648,-2088,-688,16$_antirush_aliens_fight1_mmkr4
+monstermaker|1160,-1600,-568,16$_antirush_aliens_fight1_mmkr5
+monstermaker|1080,-1992,-568,16$_antirush_aliens_fight1_mmkr6
+monstermaker|592,-2616,-432,16$_antirush_aliens_fight1_mmkr7
+//Monstermakers aren't specified as masters in this skull because if I do so, it doesn't activate and I don't want to fuck with this.
+skull|883,-2832,-430,0,180,0,255,0,0,0,255,0$_antirush_aliens_fight1_skull$_antirush_null@_antirush_aliens_fight1_kc1,_antirush_aliens_fight1_kc2,_antirush_aliens_fight1_kc3,_antirush_aliens_fight1_kc4,_antirush_aliens_fight1_kc5,_antirush_aliens_fight1_kc6,_antirush_aliens_fight1_kc7
+
+counter|132,-3104,-448,880,-1774,64,0.66$_antirush_aliens_fight1_beam,_antirush_aliens_fight1_number,_antirush_aliens_fight1_spk,_antirush_aliens_fight1_wall@_antirush_aliens_fight1_skull
+
+//
+//  Aliens fight 2
+//
+create|func_wall_toggle$_antirush_dynamic_func_wall_toggle_creator$origin,-785 -3200 17,model,*9,targetname,_antirush_aliens_fight2_wall@1
+
+beam|831,-1280,-447,785,-1280,-447,255,0,0,0,255,0$_antirush_aliens_fight2_beam
+beam|785,-1280,-447,785,-1280,-405,255,0,0,0,255,0$_antirush_aliens_fight2_beam
+beam|785,-1280,-405,831,-1280,-405,255,0,0,0,255,0$_antirush_aliens_fight2_beam
+beam|831,-1280,-405,831,-1280,-447,255,0,0,0,255,0$_antirush_aliens_fight2_beam
+
+beam|767,-1280,-447,721,-1280,-447,255,0,0,0,255,0$_antirush_aliens_fight2_beam
+beam|721,-1280,-447,721,-1280,-405,255,0,0,0,255,0$_antirush_aliens_fight2_beam
+beam|721,-1280,-405,767,-1280,-405,255,0,0,0,255,0$_antirush_aliens_fight2_beam
+beam|767,-1280,-405,767,-1280,-447,255,0,0,0,255,0$_antirush_aliens_fight2_beam
+
+beam|703,-1280,-447,657,-1280,-447,255,0,0,0,255,0$_antirush_aliens_fight2_beam
+beam|657,-1280,-447,657,-1280,-405,255,0,0,0,255,0$_antirush_aliens_fight2_beam
+beam|657,-1280,-405,703,-1280,-405,255,0,0,0,255,0$_antirush_aliens_fight2_beam
+beam|703,-1280,-405,703,-1280,-447,255,0,0,0,255,0$_antirush_aliens_fight2_beam
+
+number|736,-1281,-389,0,270,0,255,0,0,0,255,0,1,66%$_antirush_aliens_fight2_number
+speaker|736,-1281,-389$buttons/bell1.wav$_antirush_aliens_fight2_spk
+
+counter|459,-1707,-448,1009,-1296,64,0.66$_antirush_aliens_fight2_number,_antirush_aliens_fight2_spk,_antirush_aliens_fight2_beam,_antirush_aliens_fight2_wall@_antirush_aliens_fight2_skull
+
+killcounter|1328,-1904,-128,32,monster_alien_controller$_antirush_aliens_fight2_kc1
+killcounter|1696,-1664,-240,32,monster_alien_controller$_antirush_aliens_fight2_kc2
+killcounter|1040,-2048,-48,32,monster_alien_controller$_antirush_aliens_fight2_kc3
+killcounter|704,-1472,-447,32,monster_alien_slave$_antirush_aliens_fight2_kc4
+killcounter|672,-1392,-64,32,monster_alien_controller$_antirush_aliens_fight2_kc5
+killcounter|576,-1648,-64,32,monster_alien_controller$_antirush_aliens_fight2_kc6
+monstermaker|1312,-2432,-432,32$_antirush_aliens_fight2_mmkr1
+monstermaker|1016,-2360,-432,32$_antirush_aliens_fight2_mmkr2
+monstermaker|1264,-2000,-432,32$_antirush_aliens_fight2_mmkr3
+monstermaker|1392,-1960,-432,32$_antirush_aliens_fight2_mmkr4
+monstermaker|1544,-1968,-432,32$_antirush_aliens_fight2_mmkr5
+monstermaker|1552,-1576,-432,32$_antirush_aliens_fight2_mmkr6
+monstermaker|968,-1520,-432,32$_antirush_aliens_fight2_mmkr7
+
+skull|744,-1281,-365,0,270,0,255,0,0,0,255,0$_antirush_aliens_fight2_skull$_antirush_null@_antirush_aliens_fight2_kc1,_antirush_aliens_fight2_kc2,_antirush_aliens_fight2_kc3,_antirush_aliens_fight2_kc4,_antirush_aliens_fight2_kc5,_antirush_aliens_fight2_kc6,_antirush_aliens_fight2_mmkr1,_antirush_aliens_fight2_mmkr2,_antirush_aliens_fight2_mmkr3,_antirush_aliens_fight2_mmkr4,_antirush_aliens_fight2_mmkr5,_antirush_aliens_fight2_mmkr6,_antirush_aliens_fight2_mmkr7
+
+//
+//  Finale. The third fight
+//
+
+delete|1468,1591,-976,32,point_checkpoint
+checkpoint|1904,1384,-872,sprites/sprite_c_1.spr,ambience/particle_suck2.wav,debris/beamstart7.wav,-160,-160,-16,160,160,16$_antirush_finale_checkpoint$_antirush_null$_antirush_null@1

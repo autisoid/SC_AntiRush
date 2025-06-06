@@ -1,0 +1,346 @@
+// hl_c07_a1.txt -- first on a rail map
+
+/**
+    AntiRush source file.
+    Map: hl_c07_a1
+    Visit antirush_documentation.txt in case you have troubles while reading this file.
+**/
+
+//================================
+//          START TIMER
+//================================
+
+//================================
+//        Fake brush model
+// Purpose: Block the lever at the
+//          level start
+//================================
+
+fakemdl|*3$_antirush_start_btn
+
+beam|-1731,-3169,-1351,-1675,-3169,-1351,255,255,0,0,255,0$_antirush_start_beam
+beam|-1675,-3169,-1351,-1675,-3169,-1367,255,255,0,0,255,0$_antirush_start_beam
+beam|-1675,-3169,-1367,-1661,-3169,-1367,255,255,0,0,255,0$_antirush_start_beam
+beam|-1661,-3169,-1367,-1661,-3169,-1351,255,255,0,0,255,0$_antirush_start_beam
+beam|-1661,-3169,-1351,-1627,-3169,-1351,255,255,0,0,255,0$_antirush_start_beam
+beam|-1627,-3169,-1351,-1627,-3169,-1367,255,255,0,0,255,0$_antirush_start_beam
+beam|-1627,-3169,-1367,-1613,-3169,-1367,255,255,0,0,255,0$_antirush_start_beam
+beam|-1613,-3169,-1367,-1613,-3169,-1351,255,255,0,0,255,0$_antirush_start_beam
+beam|-1613,-3169,-1351,-1557,-3169,-1351,255,255,0,0,255,0$_antirush_start_beam
+beam|-1557,-3169,-1351,-1557,-3169,-1193,255,255,0,0,255,0$_antirush_start_beam
+beam|-1557,-3169,-1193,-1731,-3169,-1193,255,255,0,0,255,0$_antirush_start_beam
+beam|-1731,-3169,-1193,-1731,-3169,-1351,255,255,0,0,255,0$_antirush_start_beam
+wall|-1800,-3402,-1500,-1400,-3168,-1200$_antirush_start_wall
+
+timer|-1632,-3168,-1272,0,90,0,255,255,0,30,1,3$_antirush_start_number$_antirush_start_btn,_antirush_start_beam,_antirush_start_wall
+
+//
+// ARROWS
+//
+
+//
+// Blue arrows
+//
+
+arrow|2203,-406,-1735.5,0,90,90,0,0,255$_antirush_bullsquirt_key_arrow@1
+arrow|2435,-933,-1731,0,-90,90,0,0,255$_antirush_bullsquirt_key_arrow@1
+arrow|2518,-1365,-1614,-180,180,90,0,0,255$_antirush_bullsquirt_key_arrow@1
+arrow|2749,-1643,-1659,0,-90,0,0,0,255$_antirush_bullsquirt_key_arrow@1
+arrow|2764,-3046,-1659,-180,180,0,0,0,255$_antirush_bullsquirt_key_arrow@1
+arrow|3206,-2961,-1591,0,90,0,0,0,255$_antirush_bullsquirt_key_arrow@1
+
+//
+// Yellow arrows
+//
+
+arrow|2203,-406,-1705.5,0,90,90,255,255,0$_antirush_bullsquirt3_key_arrow@1
+arrow|2468,-782,-1787,-180,180,0,255,255,0$_antirush_bullsquirt3_key_arrow@1
+
+//
+// Green arrows
+//
+
+arrow|120,149,-1628,0,90,90,0,255,0$_antirush_bullsquirt2_key_arrow@1
+arrow|484,1367,-1625,0,0,90,0,255,0$_antirush_bullsquirt2_key_arrow@1
+arrow|2691,1367,-1625,0,180,90,0,255,0$_antirush_bullsquirt2_key_arrow@1
+arrow|3163,517,-1625,0,90,90,0,255,0$_antirush_bullsquirt2_key_arrow@1
+
+//
+// Red arrows
+//
+
+arrow|-918,-556,-1532,90,90,0,255,0,0$_antirush_lever_key_arrow@1
+
+//
+// KEYS (The blue one is the bottom most, the red one is the top most)
+//
+
+
+
+//================================================================
+//                      fourth key (BLUE)
+//      Dunno how to describe where this crap is located
+//================================================================
+
+killcounter|3288,-2724,-1588,16,monster_bullchicken$_antirush_bullsquirt_kc
+skull|3208,-2632,-1520,0,-90,0,255,0,0,0,255,0$_antirush_bullsquirt_skull$_antirush_bullsquirt_key@_antirush_bullsquirt_kc
+
+key|3208,-2632,-1540,0,180,0,0,0,255$_antirush_bullsquirt_key$_antirush_bullsquirt_key_1st_node
+padlock|-1063,-939,-1666,0,0,0,0,0,255$_antirush_bullsquirt_key_padlock
+
+//================================
+//          MultiManager
+// Purpose: Activate key and
+//          padlock with a delay (half of a second)
+//================================
+
+multi|_antirush_bullsquirt_key_multi$_antirush_bullsquirt_key_padlock#0.5,_antirush_bullsquirt_key#0.5,_antirush_bullsquirt_key_arrow
+
+//================================
+//    TRAIN NODES FOR 4TH KEY
+//================================
+
+tramnode|3208,-2632,-1540,64$_antirush_bullsquirt_key_1st_node$_antirush_bullsquirt_key_2nd_node
+tramnode|3194,-2736,-1540,128$_antirush_bullsquirt_key_2nd_node$_antirush_bullsquirt_key_3rd_node
+tramnode|3068,-2740,-1515,128$_antirush_bullsquirt_key_3rd_node$_antirush_bullsquirt_key_4th_node
+tramnode|2766,-2724,-1606,128$_antirush_bullsquirt_key_4th_node$_antirush_bullsquirt_key_5th_node
+tramnode|2766,-1441,-1606,128$_antirush_bullsquirt_key_5th_node$_antirush_bullsquirt_key_6th_node
+tramnode|2369,-1441,-1640,128$_antirush_bullsquirt_key_6th_node$_antirush_bullsquirt_key_7th_node
+tramnode|2369,-304,-1752,128$_antirush_bullsquirt_key_7th_node$_antirush_bullsquirt_key_8th_node
+tramnode|2132,-304,-1752,128$_antirush_bullsquirt_key_8th_node$_antirush_bullsquirt_key_9th_node
+tramnode|2132,-533,-1752,128$_antirush_bullsquirt_key_9th_node$_antirush_bullsquirt_key_10th_node
+tramnode|1914,-492,-1717,128$_antirush_bullsquirt_key_10th_node$_antirush_bullsquirt_key_11th_node
+tramnode|1914,14,-1727,128$_antirush_bullsquirt_key_11th_node$_antirush_bullsquirt_key_12th_node
+tramnode|914,0,-1654,128$_antirush_bullsquirt_key_12th_node$_antirush_bullsquirt_key_13th_node
+tramnode|-445,0,-1654,128$_antirush_bullsquirt_key_13th_node$_antirush_bullsquirt_key_14th_node
+tramnode|-621,-273,-1654,128$_antirush_bullsquirt_key_14th_node$_antirush_bullsquirt_key_15th_node
+tramnode|-607,-916,-1635,128$_antirush_bullsquirt_key_15th_node$_antirush_bullsquirt_key_16th_node
+
+// The actual last node points to "null" node, so the key goes nowhere after travelling to the padlock.
+tramnode|-1063,-939,-1666,128$_antirush_bullsquirt_key_16th_node$_antirush_bullsquirt_key_end_node@_antirush_bullsquirt_key_multi
+tramnode|-1063,-939,-1666,0$_antirush_bullsquirt_key_end_node$_antirush_bullsquirt_key_null_node
+
+//================================
+//        fourth key END
+//================================
+
+
+
+//================================================================
+//                      third key (GREEN)
+//    Located at the bullsquirt which is nearby barnacles area
+//================================================================
+
+squad|2140,1440,-1664,32$_antirush_bullsquirt2_sqd
+skull|2262,1463,-1647,0,90,0,255,0,0,0,255,0$_antirush_bullsquirt2_skull$_antirush_bullsquirt2_key@_antirush_bullsquirt2_sqd
+
+key|2262,1463,-1607,0,0,0,0,255,0$_antirush_bullsquirt2_key$_antirush_bullsquirt2_key_1st_node
+padlock|-1063,-939,-1636,0,0,0,0,255,0$_antirush_bullsquirt2_key_padlock
+
+//================================
+//          MultiManager
+// Purpose: Activate key and
+//          padlock with a delay (half of a second)
+//================================
+
+multi|_antirush_bullsquirt2_key_multi$_antirush_bullsquirt2_key_padlock#0.5,_antirush_bullsquirt2_key#0.5,_antirush_bullsquirt2_key_arrow
+
+//================================
+//    TRAIN NODES FOR 3RD KEY
+// These were taken from CubeMath
+//================================
+
+tramnode|2262,1463,-1607,64$_antirush_bullsquirt2_key_1st_node$_antirush_bullsquirt2_key_2nd_node
+tramnode|1978,1264,-1601,128$_antirush_bullsquirt2_key_2nd_node$_antirush_bullsquirt2_key_3rd_node
+tramnode|1544,1264,-1530,256$_antirush_bullsquirt2_key_3rd_node$_antirush_bullsquirt2_key_4th_node
+tramnode|435,1264,-1610,256$_antirush_bullsquirt2_key_4th_node$_antirush_bullsquirt2_key_5th_node
+tramnode|226,1075,-1610,256$_antirush_bullsquirt2_key_5th_node$_antirush_bullsquirt2_key_6th_node
+tramnode|225,7,-1610,256$_antirush_bullsquirt2_key_6th_node$_antirush_bullsquirt2_key_7th_node
+tramnode|-416,3,-1610,256$_antirush_bullsquirt2_key_7th_node$_antirush_bullsquirt2_key_8th_node
+tramnode|-597,-189,-1610,256$_antirush_bullsquirt2_key_8th_node$_antirush_bullsquirt2_key_9th_node
+tramnode|-598,-555,-1610,256$_antirush_bullsquirt2_key_9th_node$_antirush_bullsquirt2_key_10th_node
+tramnode|-963,-939,-1636,64$_antirush_bullsquirt2_key_10th_node$_antirush_bullsquirt2_key_11th_node
+tramnode|-1063,-939,-1636,64$_antirush_bullsquirt2_key_11th_node$_antirush_bullsquirt2_key_end_node@_antirush_bullsquirt2_key_multi
+tramnode|-1063,-939,-1636,0$_antirush_bullsquirt2_key_end_node$_antirush_bullsquirt2_key_null_node
+
+//================================
+//        third key END
+//================================
+
+
+
+//================================================================================================
+//                                  second key (YELLOW)
+//      Located nearby the rocket (headcrab spawners and a Human Grunt nearby there)
+//================================================================================================
+
+killcounter|2820,-1028,-1780,24,monster_bullchicken$_antirush_bullsquirt3_kc
+skull|2857,-1075,-1705,0,90,0,255,0,0,0,255,0$_antirush_bullsquirt3_skull$_antirush_bullsquirt3_key@_antirush_bullsquirt3_kc
+
+key|2857,-1075,-1725,0,0,0,255,255,0$_antirush_bullsquirt3_key$_antirush_bullsquirt3_key_1st_node
+padlock|-1063,-939,-1606,0,0,0,255,255,0$_antirush_bullsquirt3_key_padlock
+
+//================================
+//          MultiManager
+// Purpose: Activate key and
+//          padlock with a delay (half of a second)
+//================================
+
+multi|_antirush_bullsquirt3_key_multi$_antirush_bullsquirt3_key_padlock#0.5,_antirush_bullsquirt3_key#0.5,_antirush_bullsquirt3_key_arrow
+
+//================================
+//    TRAIN NODES FOR 2ND KEY
+//================================
+
+tramnode|2857,-1075,-1725,64$_antirush_bullsquirt3_key_1st_node$_antirush_bullsquirt3_key_2nd_node
+tramnode|2857,-792,-1752,128$_antirush_bullsquirt3_key_2nd_node$_antirush_bullsquirt3_key_3rd_node
+tramnode|2369,-792,-1752,128$_antirush_bullsquirt3_key_3rd_node$_antirush_bullsquirt3_key_4th_node
+tramnode|2369,-304,-1752,128$_antirush_bullsquirt3_key_4th_node$_antirush_bullsquirt3_key_5th_node
+tramnode|2132,-304,-1752,128$_antirush_bullsquirt3_key_5th_node$_antirush_bullsquirt3_key_6th_node
+tramnode|2132,-533,-1752,128$_antirush_bullsquirt3_key_6th_node$_antirush_bullsquirt3_key_7th_node
+tramnode|1914,-492,-1717,128$_antirush_bullsquirt3_key_7th_node$_antirush_bullsquirt3_key_8th_node
+tramnode|1914,14,-1727,128$_antirush_bullsquirt3_key_8th_node$_antirush_bullsquirt3_key_9th_node
+tramnode|914,0,-1654,128$_antirush_bullsquirt3_key_9th_node$_antirush_bullsquirt3_key_10th_node
+tramnode|-445,0,-1654,128$_antirush_bullsquirt3_key_10th_node$_antirush_bullsquirt3_key_11th_node
+tramnode|-621,-273,-1654,128$_antirush_bullsquirt3_key_11th_node$_antirush_bullsquirt3_key_12th_node
+tramnode|-607,-916,-1635,128$_antirush_bullsquirt3_key_12th_node$_antirush_bullsquirt3_key_13th_node
+tramnode|-1063,-939,-1606,128$_antirush_bullsquirt3_key_13th_node$_antirush_bullsquirt3_key_end_node@_antirush_bullsquirt3_key_multi
+tramnode|-1063,-939,-1606,0$_antirush_bullsquirt3_key_end_node$_antirush_bullsquirt3_key_null_node
+
+//================================
+//       second key END
+//================================
+
+
+
+//================================================================
+//                       first key (RED)
+//   Located at the Sentry Turret, there are breakables nearby.
+//================================================================
+
+//================================
+//          MultiManager
+// Purpose: Unlock multisource
+//          so the counter can
+//          activate cranemm.
+//================================
+
+master|_antirush_lever_ms
+
+multi|_antirush_lever_mm$_antirush_lever_ms,_antirush_lever_key
+
+//================================
+//      Dynamic KV dispatcher
+// Purpose: Change target of
+//          lever to our MM.
+//================================
+
+dispatchkvbymdl|*148,target,_antirush_lever_mm$_antirush_lever_dispatcher@1
+
+//================================
+//        Fake brush model
+// Purpose: Block the lever at the
+//          Sentry location.
+//================================
+
+fakemdl|*148$_antirush_lever_btn
+
+killcounter|-876,-488,-1536,24,monster_sentry$_antirush_lever_kc
+skull|-975,-493,-1467.5,0,0,0,255,0,0,0,255,0$_antirush_lever_skull$_antirush_lever_btn@_antirush_lever_kc
+
+key|-975,-493,-1487.5,0,90,0,255,0,0$_antirush_lever_key$_antirush_lever_key_1st_node
+padlock|-1063,-939,-1576,0,0,0,255,0,0$_antirush_lever_key_padlock
+
+//================================
+//          MultiManager
+// Purpose: Activate key and
+//          padlock with a delay (half of a second)
+//================================
+
+multi|_antirush_lever_key_multi$_antirush_lever_key_padlock#0.5,_antirush_lever_key#0.5,_antirush_lever_key_arrow
+
+//================================
+//    TRAIN NODES FOR 1ST KEY
+// These were taken from CubeMath
+//================================
+
+tramnode|-975,-493,-1487.5,64$_antirush_lever_key_1st_node$_antirush_lever_key_2nd_node
+tramnode|-948,-532,-1480,128$_antirush_lever_key_2nd_node$_antirush_lever_key_3rd_node
+tramnode|-963,-939,-1576,128$_antirush_lever_key_3rd_node$_antirush_lever_key_4th_node
+tramnode|-1063,-939,-1576,128$_antirush_lever_key_4th_node$_antirush_lever_key_end_node@_antirush_lever_key_multi
+tramnode|-1063,-939,-1576,0$_antirush_lever_key_end_node$_antirush_lever_key_null_node
+
+//================================
+//        first key END
+//================================
+
+
+
+//==================================
+//           LEVER AREA
+//    Counter will activate only
+//   if the four keys are collected
+//      and 66% is triggered
+//==================================
+
+delete|-2070,-2000,-1392,32,point_checkpoint
+
+checkpoint|-1800,-1030,-1632,sprites/sprite_c_1.spr,ambience/particle_suck2.wav,debris/beamstart7.wav,-320,-62,-184,84,522,128$_antirush_crane_checkpoint$_antirush_null$_antirush_crane_timer@0
+
+beam|-1826,-1313,-1679,-1738,-1313,-1679,255,255,0,0,255,0$_antirush_crane_timer_beam
+beam|-1738,-1313,-1679,-1738,-1313,-1554,255,255,0,0,255,0$_antirush_crane_timer_beam
+beam|-1738,-1313,-1554,-1826,-1313,-1554,255,255,0,0,255,0$_antirush_crane_timer_beam
+beam|-1826,-1313,-1554,-1826,-1313,-1679,255,255,0,0,255,0$_antirush_crane_timer_beam
+wall|-1860,-1637,-1718,-1736,-1312,-1527$_antirush_crane_timer_wall
+
+timer|-1768,-1313,-1616.5,0,90,0,255,255,0,20,0,3$_antirush_crane_timer$_antirush_crane_timer_beam,_antirush_crane_timer_wall
+
+//This counter makes sure that EVERYTHING has been activated, taken, killed, fucked up, blown up, you get it.
+counter|-1126,-1105,-1809,-475,-389,-1240,0.66$cranemm,_antirush_crane_checkpoint,_antirush_crane_wall,_antirush_crane_beam,_antirush_crane_number,_antirush_crane_spk@_antirush_lever_ms,_antirush_lever_skull,_antirush_bullsquirt3_skull,_antirush_bullsquirt2_skull,_antirush_bullsquirt_skull,_antirush_lever_key,_antirush_bullsquirt3_key,_antirush_bullsquirt2_key,_antirush_bullsquirt_key
+
+number|-1063,-1022,-1561,0,0,0,255,0,0,0,255,0,1,66%$_antirush_crane_number
+speaker|-1063,-1022,-1561$buttons/bell1.wav$_antirush_crane_spk
+
+wall|-1630,-1110,-1679,-1064,-716,-1510$_antirush_crane_wall
+
+//=================================
+//      BEAMS FOR LEVER AREA
+//=================================
+
+beam|-1064,-717,-1679,-1064,-741,-1679,255,0,0,0,255,0$_antirush_crane_beam
+beam|-1064,-741,-1679,-1064,-757,-1711,255,0,0,0,255,0$_antirush_crane_beam
+beam|-1064,-757,-1711,-1064,-803,-1711,255,0,0,0,255,0$_antirush_crane_beam
+beam|-1064,-803,-1711,-1064,-803,-1695,255,0,0,0,255,0$_antirush_crane_beam
+beam|-1064,-803,-1695,-1064,-837,-1695,255,0,0,0,255,0$_antirush_crane_beam
+beam|-1064,-837,-1695,-1064,-837,-1711,255,0,0,0,255,0$_antirush_crane_beam
+beam|-1064,-837,-1711,-1064,-883,-1711,255,0,0,0,255,0$_antirush_crane_beam
+beam|-1064,-883,-1711,-1064,-899,-1679,255,0,0,0,255,0$_antirush_crane_beam
+beam|-1064,-899,-1679,-1064,-923,-1679,255,0,0,0,255,0$_antirush_crane_beam
+beam|-1064,-923,-1679,-1064,-923,-1549,255,0,0,0,255,0$_antirush_crane_beam
+beam|-1064,-923,-1549,-1064,-717,-1549,255,0,0,0,255,0$_antirush_crane_beam
+beam|-1064,-717,-1549,-1064,-717,-1679,255,0,0,0,255,0$_antirush_crane_beam
+
+
+
+
+//==========================
+//      LEVEL CHANGE
+//==========================
+
+beam|-102,-1183,-759,-263,-1183,-759,-1,-1,-1,0,255,0$_antirush_level_change_beam
+beam|-263,-1183,-759,-263,-1183,-629,-1,-1,-1,0,255,0$_antirush_level_change_beam
+beam|-263,-1183,-629,-102,-1183,-629,-1,-1,-1,0,255,0$_antirush_level_change_beam
+beam|-102,-1183,-629,-102,-1183,-759,-1,-1,-1,0,255,0$_antirush_level_change_beam
+wall|-262,-1184,-769,-100,-1100,-620$_antirush_level_change_wall
+
+number|-189,-1184,-673.5,0,-90,0,255,0,0,0,255,0,1,66%$_antirush_level_change_number
+speaker|-181,-1184,-695$buttons/bell1.wav$_antirush_level_change_spk
+
+killcounter|-244,-1824,-688,16,monster_human_grunt$_antirush_level_change_human_grunt1_kc
+killcounter|-120,-1812,-688,16,monster_human_grunt$_antirush_level_change_human_grunt2_kc
+killcounter|-16,-1848,-688,16,monster_human_grunt$_antirush_level_change_human_grunt3_kc
+skull|-181,-1184,-716.5,0,-90,0,255,0,0,0,255,0$_antirush_level_change_skull$_antirush_null@_antirush_level_change_human_grunt1_kc,_antirush_level_change_human_grunt2_kc,_antirush_level_change_human_grunt3_kc
+
+movout|*219$_antirush_level_change_trigger
+
+counter|-876,-2066,-877,270,-868,12,0.66$_antirush_level_change_trigger#1.5,_antirush_level_change_beam,_antirush_level_change_spk,_antirush_level_change_number@_antirush_level_change_skull

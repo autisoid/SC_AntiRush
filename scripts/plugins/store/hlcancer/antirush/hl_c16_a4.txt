@@ -1,0 +1,12 @@
+// hl_c16_a4.txt -- Last interpoper map damn
+
+/**
+    AntiRush source file.
+    Map: hl_c16_a4
+    Visit antirush_documentation.txt in case you have troubles while reading this file.
+**/
+
+movoutback|*1$_antirush_level_change_trigger
+number|1810,-1479,583,0,135,0,255,0,0,0,255,0,1,66%$_antirush_level_change_number
+speaker|1810,-1479,583$buttons/bell1.wav$_antirush_level_change_spk
+counter|1200,-2016,208,2176,-928,1007,0.66$_antirush_level_change_trigger,_antirush_level_change_number,_antirush_level_change_spk

@@ -1,0 +1,89 @@
+// hl_c16_a2.txt -- second interloper map. Here we have to fight against a Gargantua and here we _can_ kill it, but we couldn't at hl_c06. Why?
+
+/**
+    AntiRush source file.
+    Map: hl_c16_a2
+    Visit antirush_documentation.txt in case you have troubles while reading this file.
+**/
+
+//===========================
+//     MAP START TIMER
+//===========================
+beam|1597,-2562,65,1391,-2562,159,255,255,0,0,255,0$_antirush_start_beam
+beam|1391,-2562,159,1216,-2562,159,255,255,0,0,255,0$_antirush_start_beam
+beam|1216,-2562,159,1058,-2562,65,255,255,0,0,255,0$_antirush_start_beam
+beam|1058,-2562,65,1597,-2562,65,255,255,0,0,255,0$_antirush_start_beam
+wall|1018,-2693,24,1665,-2562,320$_antirush_start_wall
+timer|1335.5,-2562,104,0,90,0,255,255,0,30,1,3$_antirush_start_timer$_antirush_start_wall,_antirush_start_beam,_antirush_dynamic_func_wall_toggle_creator
+
+//===================================
+//  Aliens guarding... something?
+//===================================
+delmdl|*24
+
+//fake rock
+create|func_wall_toggle$_antirush_dynamic_func_wall_toggle_creator$model,*24,targetname,_antirush_gimp_fake_rock
+
+beam|216,-1599,65,216,-1599,96,255,0,0,0,255,0$_antirush_gimp_beam
+beam|216,-1599,96,216,-1665,197,255,0,0,0,255,0$_antirush_gimp_beam
+beam|216,-1665,197,216,-1747,197,255,0,0,0,255,0$_antirush_gimp_beam
+beam|216,-1747,197,216,-1695,248,255,0,0,0,255,0$_antirush_gimp_beam
+beam|216,-1695,248,216,-1695,288,255,0,0,0,255,0$_antirush_gimp_beam
+beam|216,-1695,288,216,-1647,415,255,0,0,0,255,0$_antirush_gimp_beam
+beam|216,-1647,415,216,-1616,415,255,0,0,0,255,0$_antirush_gimp_beam
+beam|216,-1616,415,216,-1505,351,255,0,0,0,255,0$_antirush_gimp_beam
+beam|216,-1505,351,216,-1473,288,255,0,0,0,255,0$_antirush_gimp_beam
+beam|216,-1473,288,216,-1449,192,255,0,0,0,255,0$_antirush_gimp_beam
+beam|216,-1449,192,216,-1473,65,255,0,0,0,255,0$_antirush_gimp_beam
+beam|216,-1473,65,216,-1599,65,255,0,0,0,255,0$_antirush_gimp_beam
+wall|-74,-1857,47,216,-1383,449$_antirush_gimp_wall
+
+beam|400,-2663,193,400,-2663,256,255,0,0,0,255,0$_antirush_gimp_beam
+beam|400,-2663,256,400,-2623,303,255,0,0,0,255,0$_antirush_gimp_beam
+beam|400,-2623,303,400,-2569,303,255,0,0,0,255,0$_antirush_gimp_beam
+beam|400,-2569,303,400,-2569,193,255,0,0,0,255,0$_antirush_gimp_beam
+beam|400,-2569,193,400,-2663,193,255,0,0,0,255,0$_antirush_gimp_beam
+wall|331,-2705,168,400,-2542,339$_antirush_gimp_wall
+
+killcounter|672,-1664,128,32,monster_alien_slave$_antirush_gimp_kc1
+killcounter|768,-1632,128,32,monster_alien_slave$_antirush_gimp_kc2
+killcounter|1300,-1712,304,32,monster_alien_grunt$_antirush_gimp_kc3
+killcounter|2160,-1184,304,32,monster_alien_grunt$_antirush_gimp_kc4
+killcounter|1904,-832,96,32,monster_alien_slave$_antirush_gimp_kc5
+killcounter|2344,-696,96,32,monster_alien_slave$_antirush_gimp_kc6
+killcounter|2352,-976,96,32,monster_alien_slave$_antirush_gimp_kc7
+skull|400,-2616,248,0,0,0,255,0,0,0,255,0$_antirush_gimp_skull$_antirush_null@_antirush_gimp_kc1,_antirush_gimp_kc2,_antirush_gimp_kc3,_antirush_gimp_kc4,_antirush_gimp_kc5,_antirush_gimp_kc6,_antirush_gimp_kc7
+skull|216,-1536,123,0,0,0,255,0,0,0,255,0$_antirush_gimp_skull$_antirush_gimp_beam,_antirush_gimp_wall@_antirush_gimp_kc1,_antirush_gimp_kc2,_antirush_gimp_kc3,_antirush_gimp_kc4,_antirush_gimp_kc5,_antirush_gimp_kc6,_antirush_gimp_kc7
+
+//====================================
+//         GARGANTUA FIGHT
+//====================================
+beam|-861,82,105,-861,55,90,255,0,0,0,255,0$_antirush_gargantua_fight_beam
+beam|-861,55,90,-861,55,113,255,0,0,0,255,0$_antirush_gargantua_fight_beam
+beam|-861,55,113,-861,-82,199,255,0,0,0,255,0$_antirush_gargantua_fight_beam
+beam|-861,-82,199,-861,-63,255,255,0,0,0,255,0$_antirush_gargantua_fight_beam
+beam|-861,-63,255,-861,-15,255,255,0,0,0,255,0$_antirush_gargantua_fight_beam
+beam|-861,-15,255,-861,48,335,255,0,0,0,255,0$_antirush_gargantua_fight_beam
+beam|-861,48,335,-861,127,288,255,0,0,0,255,0$_antirush_gargantua_fight_beam
+beam|-861,127,288,-861,119,208,255,0,0,0,255,0$_antirush_gargantua_fight_beam
+beam|-861,119,208,-861,159,160,255,0,0,0,255,0$_antirush_gargantua_fight_beam
+beam|-861,159,160,-861,144,96,255,0,0,0,255,0$_antirush_gargantua_fight_beam
+beam|-861,144,96,-861,135,105,255,0,0,0,255,0$_antirush_gargantua_fight_beam
+beam|-861,135,105,-861,82,105,255,0,0,0,255,0$_antirush_gargantua_fight_beam
+wall|-1070,-133,16,-861,265,374$_antirush_gargantua_fight_wall
+number|-860,40,249,0,0,0,255,0,0,0,255,0,1,66%$_antirush_gargantua_fight_number
+speaker|-860,40,249 $buttons/bell1.wav$_antirush_gargantua_fight_spk
+killcounter|-312,-112,64,512,monster_gargantua$_antirush_gargantua_fight_kc1
+skull|-860,48,215,0,0,0,255,0,0,0,255,0$_antirush_gargantua_fight_skull$_antirush_null@_antirush_gargantua_fight_kc1
+counter|-846,-448,32,440,510,416,0.66$_antirush_gargantua_fight_beam,_antirush_gargantua_fight_wall,_antirush_gargantua_fight_spk,_antirush_gargantua_fight_number@_antirush_gargantua_fight_skull
+
+//
+//      LEVEL CHANGE!!!!!!!!!!!
+//
+movoutback|*80$_antirush_level_change_trigger
+number|-820,1631,244,0,270,0,255,0,0,0,255,0,1,66%$_antirush_level_change_number
+speaker|-860,40,249 $buttons/bell1.wav$_antirush_level_change_spk
+killcounter|-592,944,97,32,monster_alien_grunt$_antirush_level_change_kc1
+killcounter|-879,1101,96,32,monster_alien_grunt$_antirush_level_change_kc2
+skull|-812,1631,215,0,270,0,255,0,0,0,255,0$_antirush_level_change_skull$_antirush_null@_antirush_level_change_kc1,_antirush_level_change_kc2
+counter|-1056,560,96,-416,1616,1150,0.66$_antirush_level_change_spk,_antirush_level_change_number,_antirush_level_change_trigger@_antirush_level_change_skull

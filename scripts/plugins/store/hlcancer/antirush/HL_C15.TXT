@@ -1,0 +1,14 @@
+// hl_c15.txt -- Gonarch (Big Momma) fight
+
+/**
+    AntiRush source file.
+    Map: hl_c15
+    Visit antirush_documentation.txt in case you have troubles while reading this file.
+**/
+
+//First Gonarch wall
+wall|-1149,-421,-143,-111,152,230$web1
+//Second Gonarch wall
+wall|-4012,1980,-226,-3512,2549,143$web4
+//Third Gonarch wall (death sequence)
+wall|-4067,-3047,-1880,3720,4280,-1340$death

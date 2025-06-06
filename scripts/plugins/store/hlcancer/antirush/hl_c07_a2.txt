@@ -1,0 +1,732 @@
+// hl_c07_a2.txt -- second on a rail map
+
+/**
+    AntiRush source file.
+    Map: hl_c07_a2
+    Visit antirush_documentation.txt in case you have troubles while reading this file.
+**/
+
+//================================
+//          PATH TRACKS
+//================================
+
+delete|832,-800,280,32,path_track
+create|path_track$_antirush_dynamic_path_track_creator$origin,832 -800 280,maxspeed,-1,newspeed,-1,angles,0 0 0,target,train18,targetname,train17@1
+delete|2928,80,-440,32,path_track
+create|path_track$_antirush_dynamic_path_track_creator$origin,2928 80 -440,maxspeed,-1,newspeed,-1,angles,0 0 0,targetname,a2a3-2@1
+delete|-2008,-4684,480,32,path_track
+create|path_track$_antirush_dynamic_path_track_creator$origin,-2008 -4684 480,maxspeed,-1,newspeed,-1,angles,0 0 0,target,timetrain11,targetname,timetrain10,altpath,z3track3m,spawnflags,4@1
+delete|-2072,-4812,480,32,path_track
+create|path_track$_antirush_dynamic_path_track_creator$origin,-2072 -4812 480,maxspeed,-1,newspeed,-1,angles,0 0 0,target,timetrain10,targetname,timetrain9@1
+delete|-2200,-4876,480,32,path_track
+create|path_track$_antirush_dynamic_path_track_creator$origin,-2200 -4876 480,maxspeed,-1,newspeed,-1,angles,0 0 0,target,timetrain9,targetname,timetrain8,spawnflags,1@1
+delete|-2008,-4376,480,32,path_track
+create|path_track$_antirush_dynamic_path_track_creator$origin,-2008 -4376 480,maxspeed,-1,newspeed,-1,angles,0 0 0,target,timetrain12,targetname,timetrain11@1
+delete|-2008,-3104,864,32,path_track
+create|path_track$_antirush_dynamic_path_track_creator$origin,-2008 -3104 864,maxspeed,-1,newspeed,-1,angles,0 0 0,target,timetrain13,targetname,timetrain12@1
+delete|-3676,-2784,864,32,path_track
+create|path_track$_antirush_dynamic_path_track_creator$origin,-3676 -2784 864,maxspeed,-1,newspeed,-1,angles,0 0 0,target,timetrain20,targetname,timetrain19@1
+delete|-2200,-2592,864,32,path_track
+create|path_track$_antirush_dynamic_path_track_creator$origin,-2200 -2592 864,maxspeed,-1,newspeed,-1,angles,0 0 0,target,timetrain17,targetname,timetrain16,altpath,z2track2a@1
+delete|-2072,-2656,864,32,path_track
+create|path_track$_antirush_dynamic_path_track_creator$origin,-2072 -2656 864,maxspeed,-1,newspeed,-1,angles,0 0 0,target,timetrain16,targetname,timetrain15@1
+delete|-2008,-2784,864,32,path_track
+create|path_track$_antirush_dynamic_path_track_creator$origin,-2008 -2784 864,maxspeed,-1,newspeed,-1,angles,0 0 0,target,timetrain15,targetname,timetrain13@1
+delete|-3612,-2656,864,32,path_track
+create|path_track$_antirush_dynamic_path_track_creator$origin,-3612 -2656 864,maxspeed,-1,newspeed,-1,angles,0 0 0,target,timetrain19,targetname,timetrain18@1
+delete|-3484,-2592,864,32,path_track
+create|path_track$_antirush_dynamic_path_track_creator$origin,-3484 -2592 864,maxspeed,-1,newspeed,-1,angles,0 0 0,target,timetrain18,targetname,timetrain17@1
+delete|-1508,-4684,864,32,path_track
+create|path_track$_antirush_dynamic_path_track_creator$origin,-1508 -4684 864,maxspeed,-1,newspeed,-1,angles,0 0 0,target,timetrain26,targetname,timetrain25@1
+delete|-1572,-4812,864,32,path_track
+create|path_track$_antirush_dynamic_path_track_creator$origin,-1572 -4812 864,maxspeed,-1,newspeed,-1,angles,0 0 0,target,timetrain25,targetname,timetrain24@1
+delete|-1700,-4876,864,32,path_track
+create|path_track$_antirush_dynamic_path_track_creator$origin,-1700 -4876 864,maxspeed,-1,newspeed,-1,angles,0 0 0,target,timetrain24,targetname,timetrain23,message,electricmm@1
+delete|-3484,-4876,864,32,path_track
+create|path_track$_antirush_dynamic_path_track_creator$origin,-3484 -4876 864,maxspeed,-1,newspeed,-1,angles,0 0 0,target,timetrain23,targetname,timetrain22@1
+delete|-3612,-4812,864,32,path_track
+create|path_track$_antirush_dynamic_path_track_creator$origin,-3612 -4812 864,maxspeed,-1,newspeed,-1,angles,0 0 0,target,timetrain22,targetname,timetrain21@1
+delete|-3676,-4684,864,32,path_track
+create|path_track$_antirush_dynamic_path_track_creator$origin,-3676 -4684 864,maxspeed,-1,newspeed,-1,angles,0 0 0,target,timetrain21,targetname,timetrain20@1
+delete|-1508,-2784,864,32,path_track
+create|path_track$_antirush_dynamic_path_track_creator$origin,-1508 -2784 864,maxspeed,-1,newspeed,-1,angles,0 0 0,target,timetrain27,targetname,timetrain26,altpath,timetrainb1@1
+delete|-1572,-2656,864,32,path_track
+create|path_track$_antirush_dynamic_path_track_creator$origin,-1572 -2656 864,maxspeed,-1,newspeed,-1,angles,0 0 0,target,timetrain28,targetname,timetrain27@1
+delete|-1700,-2592,864,32,path_track
+create|path_track$_antirush_dynamic_path_track_creator$origin,-1700 -2592 864,maxspeed,-1,newspeed,-1,angles,0 0 0,target,timetrain17,targetname,timetrain28@1
+delete|-1508,-2304,864,32,path_track
+create|path_track$_antirush_dynamic_path_track_creator$origin,-1508 -2304 864,maxspeed,-1,newspeed,-1,angles,0 0 0,target,timetrainb2,targetname,timetrainb1@1
+delete|-1444,-2176,864,32,path_track
+create|path_track$_antirush_dynamic_path_track_creator$origin,-1444 -2176 864,maxspeed,-1,newspeed,-1,angles,0 0 0,target,timetrainb3,targetname,timetrainb2@1
+delete|-1316,-2112,864,32,path_track
+create|path_track$_antirush_dynamic_path_track_creator$origin,-1316 -2112 864,maxspeed,-1,newspeed,-1,angles,0 0 0,target,timetrainb3a,targetname,timetrainb3@1
+delete|-3676,-4684,480,32,path_track
+create|path_track$_antirush_dynamic_path_track_creator$origin,-3676 -4684 480,maxspeed,-1,newspeed,-1,angles,0 0 0,target,timetrain6,targetname,timetrain5@1
+delete|-3612,-4812,480,32,path_track
+create|path_track$_antirush_dynamic_path_track_creator$origin,-3612 -4812 480,maxspeed,-1,newspeed,-1,angles,0 0 0,target,timetrain7,targetname,timetrain6@1
+delete|-3484,-4876,480,32,path_track
+create|path_track$_antirush_dynamic_path_track_creator$origin,-3484 -4876 480,maxspeed,-1,newspeed,-1,angles,0 0 0,target,timetrain8a,targetname,timetrain7@1
+delete|-1580,-3304,944,32,path_track
+create|path_track$_antirush_dynamic_path_track_creator$origin,-1580 -3304 944,maxspeed,-1,newspeed,-1,angles,0 0 0,targetname,flood1atr1,target,flood1atr2@1
+delete|-1396,-4244,976,32,path_track
+create|path_track$_antirush_dynamic_path_track_creator$origin,-1396 -4244 976,maxspeed,-1,newspeed,-1,angles,0 0 0,targetname,flood2b@1
+delete|-1398,-3190,922,32,path_track
+create|path_track$_antirush_dynamic_path_track_creator$origin,-1398 -3190 922,maxspeed,-1,newspeed,-1,angles,0 0 0,targetname,flood1b@1
+delete|-1576,-3940,924,32,path_track
+create|path_track$_antirush_dynamic_path_track_creator$origin,-1576 -3940 924,maxspeed,-1,newspeed,-1,angles,0 0 0,targetname,flood2atr1,target,flood2atr2@1
+delete|-1576,-4176,968,32,path_track
+create|path_track$_antirush_dynamic_path_track_creator$origin,-1576 -4176 968,maxspeed,-1,newspeed,-1,angles,0 0 0,targetname,flood2atr2,target,flood2atr1@1
+delete|-1580,-3592,944,32,path_track
+create|path_track$_antirush_dynamic_path_track_creator$origin,-1580 -3592 944,maxspeed,-1,newspeed,-1,angles,0 0 0,targetname,flood1atr2,target,flood1atr1@1
+delete|-408,-2112,864,32,path_track
+create|path_track$_antirush_dynamic_path_track_creator$origin,-408 -2112 864,maxspeed,-1,newspeed,-1,angles,0 0 0,target,kapow_path_1,targetname,timetrainb4,speed,250,spawnflags,8@1
+delete|-3108,-4876,480,32,path_track
+create|path_track$_antirush_dynamic_path_track_creator$origin,-3108 -4876 480,maxspeed,-1,newspeed,-1,angles,0 0 0,target,timetrain8b,targetname,timetrain8a@1
+delete|-2572,-4876,480,32,path_track
+create|path_track$_antirush_dynamic_path_track_creator$origin,-2572 -4876 480,maxspeed,-1,newspeed,-1,angles,0 0 0,target,timetrain8,targetname,timetrain8b@1
+delete|-3728,-464,-644,32,path_track
+create|path_track$_antirush_dynamic_path_track_creator$origin,-3728 -464 -644,maxspeed,-1,newspeed,-1,angles,0 0 0,target,blocktrack,targetname,c2a2eII7@1
+delete|-3664,-336,-644,32,path_track
+create|path_track$_antirush_dynamic_path_track_creator$origin,-3664 -336 -644,maxspeed,-1,newspeed,-1,angles,0 0 0,target,c2a2eII7,targetname,c2a2eII6@1
+delete|-3536,-272,-644,32,path_track
+create|path_track$_antirush_dynamic_path_track_creator$origin,-3536 -272 -644,maxspeed,-1,newspeed,-1,angles,0 0 0,target,c2a2eII6,targetname,c2a2eII5@1
+delete|-2080,-272,-644,32,path_track
+create|path_track$_antirush_dynamic_path_track_creator$origin,-2080 -272 -644,maxspeed,-1,newspeed,-1,angles,0 0 0,target,c2a2eII5,targetname,c2a2eII4@1
+delete|-1952,-336,-644,32,path_track
+create|path_track$_antirush_dynamic_path_track_creator$origin,-1952 -336 -644,maxspeed,-1,newspeed,-1,angles,0 0 0,target,c2a2eII4,targetname,c2a2eII3@1
+delete|-1888,-464,-644,32,path_track
+create|path_track$_antirush_dynamic_path_track_creator$origin,-1888 -464 -644,maxspeed,-1,newspeed,-1,angles,0 0 0,target,c2a2eII3,targetname,c2a2e22,spawnflags,1@1
+delete|-1888,-3092,-644,32,path_track
+create|path_track$_antirush_dynamic_path_track_creator$origin,-1888 -3092 -644,maxspeed,-1,newspeed,-1,angles,0 0 0,target,c2a2eII2a,targetname,c2a2eII1@1
+delete|-1424,-272,-644,32,path_track
+create|path_track$_antirush_dynamic_path_track_creator$origin,-1424 -272 -644,maxspeed,-1,newspeed,-1,angles,0 0 0,target,c2a2e18,targetname,c2a2e17@1
+delete|-1552,-336,-644,32,path_track
+create|path_track$_antirush_dynamic_path_track_creator$origin,-1552 -336 -644,maxspeed,-1,newspeed,-1,angles,0 0 0,target,c2a2e17,targetname,c2a2e16@1
+delete|-1616,-464,-644,32,path_track
+create|path_track$_antirush_dynamic_path_track_creator$origin,-1616 -464 -644,maxspeed,-1,newspeed,-1,angles,0 0 0,target,c2a2e16,targetname,c2a2e15@1
+delete|-608,-272,-644,32,path_track
+create|path_track$_antirush_dynamic_path_track_creator$origin,-608 -272 -644,maxspeed,-1,newspeed,-1,angles,0 0 0,targetname,c2a2e18@1
+delete|224,-464,-644,32,path_track
+create|path_track$_antirush_dynamic_path_track_creator$origin,224 -464 -644,maxspeed,-1,newspeed,-1,angles,0 0 0,target,c2a2e9a,targetname,c2a2e8@1
+delete|224,-3216,-644,32,path_track
+create|path_track$_antirush_dynamic_path_track_creator$origin,224 -3216 -644,maxspeed,-1,newspeed,-1,angles,0 0 0,target,c2a2e10,targetname,c2a2e9,spawnflags,1@1
+delete|160,-3344,-644,32,path_track
+create|path_track$_antirush_dynamic_path_track_creator$origin,160 -3344 -644,maxspeed,-1,newspeed,-1,angles,0 0 0,target,c2a2e11,targetname,c2a2e10@1
+delete|32,-3408,-644,32,path_track
+create|path_track$_antirush_dynamic_path_track_creator$origin,32 -3408 -644,maxspeed,-1,newspeed,-1,angles,0 0 0,target,c2a2e12,targetname,c2a2e11@1
+delete|-1424,-3408,-644,32,path_track
+create|path_track$_antirush_dynamic_path_track_creator$origin,-1424 -3408 -644,maxspeed,-1,newspeed,-1,angles,0 0 0,target,c2a2e13,targetname,c2a2e12@1
+delete|-1552,-3344,-644,32,path_track
+create|path_track$_antirush_dynamic_path_track_creator$origin,-1552 -3344 -644,maxspeed,-1,newspeed,-1,angles,0 0 0,target,c2a2e14,targetname,c2a2e13@1
+delete|-1616,-3216,-644,32,path_track
+create|path_track$_antirush_dynamic_path_track_creator$origin,-1616 -3216 -644,maxspeed,-1,newspeed,-1,angles,0 0 0,target,c2a2e15,targetname,c2a2e14,message,z3train3mm@1
+delete|32,404,-644,32,path_track
+create|path_track$_antirush_dynamic_path_track_creator$origin,32 404 -644,maxspeed,-1,newspeed,-1,angles,0 0 0,target,c2a2e6,targetname,c2a2e5@1
+delete|160,340,-644,32,path_track
+create|path_track$_antirush_dynamic_path_track_creator$origin,160 340 -644,maxspeed,-1,newspeed,-1,angles,0 0 0,target,c2a2e7,targetname,c2a2e6@1
+delete|224,212,-644,32,path_track
+create|path_track$_antirush_dynamic_path_track_creator$origin,224 212 -644,maxspeed,-1,newspeed,-1,angles,0 0 0,target,c2a2e8,targetname,c2a2e7@1
+delete|-1616,-1316,-644,32,path_track
+create|path_track$_antirush_dynamic_path_track_creator$origin,-1616 -1316 -644,maxspeed,-1,newspeed,-1,angles,0 0 0,target,z2track3a,targetname,z2track3l2@1
+delete|-3728,-3036,-644,32,path_track
+create|path_track$_antirush_dynamic_path_track_creator$origin,-3728 -3036 -644,maxspeed,-1,newspeed,-1,angles,0 0 0,target,c2a2eII9,targetname,c2a2eII8,spawnflags,1,message,_antirush_train_elev_part_path_track_ms@1
+delete|-3792,-3164,-644,32,path_track
+create|path_track$_antirush_dynamic_path_track_creator$origin,-3792 -3164 -644,maxspeed,-1,newspeed,-1,angles,0 0 0,target,c2a2eII10,targetname,c2a2eII9@1
+delete|-3920,-3228,-644,32,path_track
+create|path_track$_antirush_dynamic_path_track_creator$origin,-3920 -3228 -644,maxspeed,-1,newspeed,-1,angles,0 0 0,target,c2a2eII10a,targetname,c2a2eII10,altpath,z3trackend2@1
+delete|-5184,-3228,-644,32,path_track
+create|path_track$_antirush_dynamic_path_track_creator$origin,-5184 -3228 -644,maxspeed,-1,newspeed,-1,angles,0 0 0,targetname,_antirush_trainlift1-2,netname,trainlift2mm@1
+delete|-5036,-3228,-644,32,path_track
+create|path_track$_antirush_dynamic_path_track_creator$origin,-5036 -3228 -644,maxspeed,-1,newspeed,-1,angles,0 0 0,target,_antirush_trainlift1-2,targetname,c2a2eII11@1
+delete|-4760,-2788,-564,32,path_track
+create|path_track$_antirush_dynamic_path_track_creator$origin,-4760 -2788 -564,maxspeed,-1,newspeed,-1,angles,0 0 0,targetname,floathumanlift1,target,floathumanlift2,spawnflags,1@1
+delete|-4760,-2788,16,32,path_track
+create|path_track$_antirush_dynamic_path_track_creator$origin,-4760 -2788 16,maxspeed,-1,newspeed,-1,angles,0 0 0,targetname,floathumanlift2,target,floathumanlift1,spawnflags,1@1
+delete|-5184,-3228,484,32,path_track
+create|path_track$_antirush_dynamic_path_track_creator$origin,-5184 -3228 484,maxspeed,-1,newspeed,-1,angles,0 0 0,targetname,_antirush_trainlift2-2,target,timetrain1a@1
+delete|-4820,-3228,484,32,path_track
+create|path_track$_antirush_dynamic_path_track_creator$origin,-4820 -3228 484,maxspeed,-1,newspeed,-1,angles,0 0 0,target,timetrain2,targetname,timetrain1,message,gruntlift@1
+delete|-3676,-3420,480,32,path_track
+create|path_track$_antirush_dynamic_path_track_creator$origin,-3676 -3420 480,maxspeed,-1,newspeed,-1,angles,0 0 0,target,timetrain5,targetname,timetrain4,altpath,z3track3m,spawnflags,4@1
+delete|-3740,-3292,480,32,path_track
+create|path_track$_antirush_dynamic_path_track_creator$origin,-3740 -3292 480,maxspeed,-1,newspeed,-1,angles,0 0 0,target,timetrain4,targetname,timetrain3@1
+delete|-3868,-3228,480,32,path_track
+create|path_track$_antirush_dynamic_path_track_creator$origin,-3868 -3228 480,maxspeed,-1,newspeed,-1,angles,0 0 0,target,timetrain3,targetname,timetrain2,altpath,z3trackend2@1
+delete|-3728,-2036,-644,32,path_track
+create|path_track$_antirush_dynamic_path_track_creator$origin,-3728 -2036 -644,maxspeed,-1,newspeed,-1,angles,0 0 0,target,c2a2eII8,targetname,blocktrack@1
+delete|-1888,-2068,-644,32,path_track
+create|path_track$_antirush_dynamic_path_track_creator$origin,-1888 -2068 -644,maxspeed,-1,newspeed,-1,angles,0 0 0,target,c2a2e22,targetname,c2a2eII2a@1
+delete|224,-2704,-644,32,path_track
+create|path_track$_antirush_dynamic_path_track_creator$origin,224 -2704 -644,maxspeed,-1,newspeed,-1,angles,0 0 0,target,c2a2e9,targetname,c2a2e9a@1
+delete|-3016,404,-644,32,path_track
+create|path_track$_antirush_dynamic_path_track_creator$origin,-3016 404 -644,maxspeed,-1,newspeed,-1,angles,0 0 0,target,c2a2e5,targetname,c2a2dbottom9@1
+delete|-3144,468,-644,32,path_track
+create|path_track$_antirush_dynamic_path_track_creator$origin,-3144 468 -644,maxspeed,-1,newspeed,-1,angles,0 0 0,target,c2a2dbottom9,targetname,c2a2dbottom8@1
+delete|-3208,596,-644,32,path_track
+create|path_track$_antirush_dynamic_path_track_creator$origin,-3208 596 -644,maxspeed,-1,newspeed,-1,angles,0 0 0,target,c2a2dbottom8,targetname,c2a2dbottom7@1
+delete|-3208,2316,-644,32,path_track
+create|path_track$_antirush_dynamic_path_track_creator$origin,-3208 2316 -644,maxspeed,-1,newspeed,-1,angles,0 0 0,target,c2a2dbottom6a,targetname,c2a2dbottom6,message,_antirush_train_part_blocker2_ms@1
+delete|-3144,2444,-644,32,path_track
+create|path_track$_antirush_dynamic_path_track_creator$origin,-3144 2444 -644,maxspeed,-1,newspeed,-1,angles,0 0 0,target,c2a2dbottom6,targetname,c2a2dbottom5@1
+delete|-3016,2508,-644,32,path_track
+create|path_track$_antirush_dynamic_path_track_creator$origin,-3016 2508 -644,maxspeed,-1,newspeed,-1,angles,0 0 0,target,c2a2dbottom5,targetname,c2a2dbottom4@1
+delete|-1860,2508,-644,32,path_track
+create|path_track$_antirush_dynamic_path_track_creator$origin,-1860 2508 -644,maxspeed,-1,newspeed,-1,angles,0 0 0,target,c2a2dbottom4,targetname,c2a2dbottom3@1
+delete|-1008,2508,-644,32,path_track
+create|path_track$_antirush_dynamic_path_track_creator$origin,-1008 2508 -644,maxspeed,-1,newspeed,-1,angles,0 0 0,targetname,c2a2dbottom2,message,loadbooster,target,c2a2dbottom3,spawnflags,1@1
+delete|352,2508,-644,32,path_track
+create|path_track$_antirush_dynamic_path_track_creator$origin,352 2508 -644,maxspeed,-1,newspeed,-1,angles,0 0 0,targetname,c2a2dbottom1,message,loadtorocket,target,c2a2dbottom1b@1
+delete|2684,2508,-320,32,path_track
+create|path_track$_antirush_dynamic_path_track_creator$origin,2684 2508 -320,maxspeed,-1,newspeed,-1,angles,0 0 0,targetname,train23,target,train24@1
+delete|2596,2508,-320,32,path_track
+create|path_track$_antirush_dynamic_path_track_creator$origin,2596 2508 -320,maxspeed,-1,newspeed,-1,angles,0 0 0,targetname,train24,spawnflags,8@1
+delete|2704,80,-440,32,path_track
+create|path_track$_antirush_dynamic_path_track_creator$origin,2704 80 -440,maxspeed,-1,newspeed,-1,angles,0 0 0,targetname,a2a3-1,target,a2a3-2@1
+
+//
+//CUSTOM ONES
+//
+
+create|path_track$_antirush_dynamic_path_track_creator$origin,-73 2508 -644,angles,0 0 0,targetname,c2a2dbottom1b,target,c2a2dbottom2@1
+
+//HVR guy
+create|path_track$_antirush_dynamic_path_track_creator$origin,-3208 1114 -644,angles,0 0 0,targetname,c2a2dbottom6a,target,c2a2dbottom6b@1
+create|path_track$_antirush_dynamic_path_track_creator$origin,-3208 1112 -644,angles,0 0 0,targetname,c2a2dbottom6b,target,c2a2dbottom7,spawnflags,1@1
+
+//Train elevator part
+create|path_track$_antirush_dynamic_path_track_creator$origin,-4526 -3228 -644,angles,0 0 0,targetname,c2a2eII10a,target,c2a2eII10b@1
+create|path_track$_antirush_dynamic_path_track_creator$origin,-4528 -3228 -644,angles,0 0 0,targetname,c2a2eII10b,target,c2a2eII11,spawnflags,1@1
+create|path_track$_antirush_dynamic_path_track_creator$origin,-5046 -3228 484,angles,0 0 0,targetname,timetrain1a,target,timetrain1b@1
+create|path_track$_antirush_dynamic_path_track_creator$origin,-4908 -3228 484,angles,0 0 0,targetname,timetrain1b,target,timetrain1c@1
+create|path_track$_antirush_dynamic_path_track_creator$origin,-4906 -3228 484,angles,0 0 0,targetname,timetrain1c,target,timetrain1,spawnflags,1@1
+
+//The pit
+create|path_track$_antirush_dynamic_path_track_creator$origin,-738 -2112 864,angles,0 0 0,targetname,timetrainb3a,target,timetrainb3b@1
+create|path_track$_antirush_dynamic_path_track_creator$origin,-738 -2112 864,angles,0 0 0,targetname,timetrainb3b,target,timetrainb4,spawnflags,1@1
+
+//Re-create the trains so they link successfully to the path_tracks
+delete|4512,-1984,1080,32,func_tracktrain
+create|func_tracktrain$_antirush_dynamic_func_tracktrain_creator$origin,4512 -1984 1080,model,*78,sounds,1,angles,0 0 0,disablereceiveshadows,0,disableshadows,0,volume,10,target,a2a3-1,rendercolor,255 255 255,dmg,1000,speed,500,height,16,wheels,100@1
+delete|343,-5046,140,32,func_tracktrain
+create|func_tracktrain$_antirush_dynamic_func_tracktrain_creator$origin,343 -5046 140,model,*174,sounds,1,angles,0 0 0,volume,10,height,30,wheels,50,dmg,1000,rendercolor,255 255 255,speed,250,target,c2a2eII1,targetname,z3train3@1
+delete|3495,-2946,140,32,func_tracktrain
+create|func_tracktrain$_antirush_dynamic_func_tracktrain_creator$origin,3495 -2946 140,model,*248,sounds,1,angles,0 0 0,volume,10,startspeed,200,height,30,wheels,50,dmg,1000,rendercolor,255 255 255,speed,250,target,train23,targetname,train,spawnflags,2@1
+delete|3495,-3666,140,32,func_tracktrain
+create|func_tracktrain$_antirush_dynamic_func_tracktrain_creator$origin,3495 -3666 140,model,*249,sounds,1,angles,0 0 0,volume,10,height,30,wheels,50,dmg,1000,rendercolor,255 255 255,speed,250,target,c2a2dbottom1,targetname,z3train1@1
+
+//Also re-create the func_trackchange so it can link again with the train.
+delete|-5184,-3228,-150,16384,func_trackchange
+create|func_trackchange$_antirush_dynamic_func_trackchange_creator$origin,-5184 -3228 -150,model,*180,dmg,100000,volume,0.85,angles,90 0 0,stopsnd,4,movesnd,8,bottomtrack,_antirush_trainlift1-2,toptrack,_antirush_trainlift2-2,train,z3train3,targetname,trainlift2,rotation,900,height,1124,rendercolor,255 255 255,sounds,1,speed,50,spawnflags,10@1
+
+//================================
+//        PATH TRACKS END
+//================================
+
+
+
+//================================
+//          START TIMER
+//================================
+
+//================================
+//   Delete trigger from the map
+// Purpose: Delete the trigger at
+//          the level start.
+//================================
+
+delmdl|*244
+
+counter|2729,2886,-304,2879,2968,-172,0.01$smtele_spawnermm@_antirush_smtele_spawnermm_ms
+
+master|_antirush_smtele_spawnermm_ms
+
+beam|2879,2968.5,-303,2717,2968.5,-303,255,255,0,0,255,0$_antirush_start_beam
+beam|2717,2968.5,-303,2717,2968.5,-173,255,255,0,0,255,0$_antirush_start_beam
+beam|2717,2968.5,-173,2879,2968.5,-173,255,255,0,0,255,0$_antirush_start_beam
+beam|2879,2968.5,-173,2879,2968.5,-303,255,255,0,0,255,0$_antirush_start_beam
+wall|2584,2968,-350,3076,3148,-80$_antirush_start_wall
+
+//disable the finale rocket launch wall so we can activate it again when we press the button
+timer|2784,2968,-246,0,-90,0,255,255,0,30,1,3$_antirush_start_timer$_antirush_start_beam,_antirush_start_wall,_antirush_smtele_spawnermm_ms,_antirush_finale_rocket_launch_wall
+
+
+
+//==================================================================
+// Upper bay doors block (until players kill the turret and others)
+//==================================================================
+
+movout|*202$_antirush_upperbay_doors_trigger
+
+multi|_antirush_upperbay_multi$_antirush_upperbay_doors_trigger,_antirush_upperbay_beam,_antirush_upperbay_wall
+
+//
+// Skull
+//
+
+killcounter|1832,2324,-302,16,monster_human_grunt$_antirush_upperbay_turret_kc
+monstermaker|2012,3068,-292,16$_antirush_upperbay_islave_mmaker1
+monstermaker|2088,2836,-292,16$_antirush_upperbay_islave_mmaker2
+monstermaker|2576,3100,-292,16$_antirush_upperbay_islave_mmaker3
+killcounter|2272,2948,-304,16,monster_human_grunt$_antirush_upperbay_hecu1_kc
+killcounter|2408,2952,-304,16,monster_human_grunt$_antirush_upperbay_hecu2_kc
+skull|1231,2508,-224,0,0,0,255,0,0,0,255,0$_antirush_upperbay_skull$_antirush_upperbay_multi@_antirush_upperbay_turret_kc,_antirush_upperbay_islave_mmaker1,_antirush_upperbay_islave_mmaker2,_antirush_upperbay_islave_mmaker3,_antirush_upperbay_hecu2_kc
+
+//
+// Beams
+//
+
+beam|1231,2595,-303,1231,2421,-303,255,0,0,0,255,0$_antirush_upperbay_beam
+beam|1231,2421,-303,1231,2421,-145,255,0,0,0,255,0$_antirush_upperbay_beam
+beam|1231,2421,-145,1231,2595,-145,255,0,0,0,255,0$_antirush_upperbay_beam
+beam|1231,2595,-145,1231,2595,-303,255,0,0,0,255,0$_antirush_upperbay_beam
+
+//The wall must be thick enough to block sinking thru, but it also must be thin so it doesn't block tripmines from activating.
+wall|1176,2150,-493,1232,2813,-72$_antirush_upperbay_wall
+
+//===========================
+// Upper bay doors block END
+//===========================
+
+
+
+//==================================================================
+//              Middle bay doors block (until 66%)
+//==================================================================
+
+movout|*203$_antirush_middlebay_trigger
+
+beam|561,2595,-627,561,2421,-627,255,0,0,0,255,0$_antirush_middlebay_beam
+beam|561,2421,-627,561,2421,-501,255,0,0,0,255,0$_antirush_middlebay_beam
+beam|561,2421,-501,561,2595,-501,255,0,0,0,255,0$_antirush_middlebay_beam
+beam|561,2595,-501,561,2595,-627,255,0,0,0,255,0$_antirush_middlebay_beam
+
+number|561,2500,-564,0,0,0,255,0,0,0,255,0,1,66%$_antirush_middlebay_number
+speaker|561,2500,-564$buttons/bell1.wav$_antirush_middlebay_spk
+
+counter|553,2172,-706,1167,2807,-318,0.66$_antirush_middlebay_spk,_antirush_middlebay_number,_antirush_middlebay_beam,_antirush_middlebay_trigger,_antirush_train_part_checkpoint@_antirush_upperbay_skull
+
+//==============================
+//  Middle bay doors block END
+//==============================
+
+
+
+//==============================
+//          TRAIN PART
+//==============================
+
+beam|-176,2595,-627,-176,2587,-627,255,0,0,0,255,0$_antirush_train_part_blocker1_beam
+beam|-176,2587,-627,-176,2571,-659,255,0,0,0,255,0$_antirush_train_part_blocker1_beam
+beam|-176,2571,-659,-176,2525,-659,255,0,0,0,255,0$_antirush_train_part_blocker1_beam
+beam|-176,2525,-659,-176,2525,-643,255,0,0,0,255,0$_antirush_train_part_blocker1_beam
+beam|-176,2525,-643,-176,2491,-643,255,0,0,0,255,0$_antirush_train_part_blocker1_beam
+beam|-176,2491,-643,-176,2491,-659,255,0,0,0,255,0$_antirush_train_part_blocker1_beam
+beam|-176,2491,-659,-176,2445,-659,255,0,0,0,255,0$_antirush_train_part_blocker1_beam
+beam|-176,2445,-659,-176,2429,-627,255,0,0,0,255,0$_antirush_train_part_blocker1_beam
+beam|-176,2429,-627,-176,2421,-627,255,0,0,0,255,0$_antirush_train_part_blocker1_beam
+beam|-176,2421,-627,-176,2421,-469,255,0,0,0,255,0$_antirush_train_part_blocker1_beam
+beam|-176,2421,-469,-176,2595,-469,255,0,0,0,255,0$_antirush_train_part_blocker1_beam
+beam|-176,2595,-469,-176,2595,-627,255,0,0,0,255,0$_antirush_train_part_blocker1_beam
+wall|-600,2200,-700,-176,2996,-400$_antirush_train_part_blocker1_wall
+
+speaker|-159,2500,-455$buttons/bell1.wav$_antirush_train_part_blocker1_spk
+
+//delete the OG checkpoint so we can create our own which will toggle c2a2dbottom2 path_track
+delete|385,2799,-580,32,point_checkpoint
+
+multi|_antirush_train_part_blocker1_multi$_antirush_train_part_blocker1_beam,_antirush_train_part_blocker1_wall,_antirush_train_part_blocker1_spk,c2a2dbottom2
+
+checkpoint|385,2799,-580,sprites/sprite_c_1.spr,ambience/particle_suck2.wav,debris/beamstart7.wav,-32,-32,-32,32,32,32$_antirush_train_part_checkpoint$_antirush_null$_antirush_train_part_blocker1_multi@0
+
+//=======================================
+//    PART NEARBY THE HVR ROCKETS GUY
+//=======================================
+master|_antirush_train_part_blocker2_ms
+
+beam|-3311,1008,-627,-3287,1008,-627,255,0,0,0,255,0$_antirush_train_part_blocker2_beam
+beam|-3287,1008,-627,-3271,1008,-659,255,0,0,0,255,0$_antirush_train_part_blocker2_beam
+beam|-3271,1008,-659,-3225,1008,-659,255,0,0,0,255,0$_antirush_train_part_blocker2_beam
+beam|-3225,1008,-659,-3225,1008,-643,255,0,0,0,255,0$_antirush_train_part_blocker2_beam
+beam|-3225,1008,-643,-3191,1008,-643,255,0,0,0,255,0$_antirush_train_part_blocker2_beam
+beam|-3191,1008,-643,-3191,1008,-659,255,0,0,0,255,0$_antirush_train_part_blocker2_beam
+beam|-3191,1008,-659,-3145,1008,-659,255,0,0,0,255,0$_antirush_train_part_blocker2_beam
+beam|-3145,1008,-659,-3129,1008,-627,255,0,0,0,255,0$_antirush_train_part_blocker2_beam
+beam|-3129,1008,-627,-3105,1008,-627,255,0,0,0,255,0$_antirush_train_part_blocker2_beam
+beam|-3105,1008,-627,-3105,1008,-501,255,0,0,0,255,0$_antirush_train_part_blocker2_beam
+beam|-3105,1008,-501,-3153,1008,-453,255,0,0,0,255,0$_antirush_train_part_blocker2_beam
+beam|-3153,1008,-453,-3263,1008,-453,255,0,0,0,255,0$_antirush_train_part_blocker2_beam
+beam|-3263,1008,-453,-3311,1008,-501,255,0,0,0,255,0$_antirush_train_part_blocker2_beam
+beam|-3311,1008,-501,-3311,1008,-627,255,0,0,0,255,0$_antirush_train_part_blocker2_beam
+wall|-3406,771,-673,-2985,1008,-433$_antirush_train_part_blocker2_wall
+
+number|-3202,1009,-508,0,90,0,255,0,0,0,255,0,1,66%$_antirush_train_part_blocker2_number
+speaker|-3202,1009,-508$buttons/bell1.wav$_antirush_train_part_blocker2_spk
+
+
+counter|-3311,988,-685,-2896,1788,-437,0.66$_antirush_train_part_blocker2_spk,_antirush_train_part_blocker2_number,_antirush_train_part_blocker2_beam,_antirush_train_part_blocker2_wall,c2a2dbottom6b@_antirush_train_part_blocker2_ms,_antirush_train_part_bullsquirt_skull,_antirush_train_part_bullsquirt_key,_antirush_train_part_key_ms
+
+arrow|-2166,2284,-627,0,-90,0,0,255,0$_antirush_train_part_key_arrow@1
+
+key|-2151,1696,-582,0,0,0,0,255,0$_antirush_train_part_bullsquirt_key$_antirush_train_part_key_1st_node
+padlock|-3210,1009,-548,0,90,0,0,255,0$_antirush_train_part_padlock
+
+killcounter|-2160,1972,-620,32,monster_bullchicken$_antirush_train_part_bullsquirt_kc
+skull|-2151,1696,-562,0,90,0,255,0,0,0,255,0$_antirush_train_part_bullsquirt_skull$_antirush_train_part_bullsquirt_key@_antirush_train_part_bullsquirt_kc
+
+master|_antirush_train_part_key_ms
+multi|_antirush_train_part_key_multi1$_antirush_train_part_bullsquirt_key,_antirush_train_part_padlock,_antirush_train_part_key_arrow,_antirush_train_part_key_ms
+
+//===============================
+//    TRAM NODES FOR GREEN KEY
+//===============================
+
+tramnode|-2151,1696,-582,64$_antirush_train_part_key_1st_node$_antirush_train_part_key_2nd_node
+tramnode|-2151,2393,-582,256$_antirush_train_part_key_2nd_node$_antirush_train_part_key_3rd_node
+tramnode|-3016,2508,-582,256$_antirush_train_part_key_3rd_node$_antirush_train_part_key_4th_node
+tramnode|-3144,2444,-582,256$_antirush_train_part_key_4th_node$_antirush_train_part_key_5th_node
+tramnode|-3208,2316,-582,256$_antirush_train_part_key_5th_node$_antirush_train_part_key_6th_node
+tramnode|-3210,1123,-548,256$_antirush_train_part_key_6th_node$_antirush_train_part_key_7th_node
+tramnode|-3210,1009,-548,256$_antirush_train_part_key_7th_node$_antirush_train_part_key_end_node@_antirush_train_part_key_multi1
+tramnode|-3210,1009,-548,0$_antirush_train_part_key_end_node$_antirush_train_part_key_null_node
+
+//=============================
+//        BARRIER PART
+//=============================
+
+dispatchkvbymdl|*177,target,_antirush_barrier_part_lever_ms1$_antirush_barrier_part_lever_kv_dispatcher@1
+fakemdl|*177$_antirush_barrier_part_lever
+master|_antirush_barrier_part_lever_ms1
+
+multi|_antirush_barrier_part_multi1$_antirush_barrier_part_lever
+
+delete|-1394,-2509,-404,32,point_checkpoint
+checkpoint|-1394,-2509,-404,sprites/sprite_c_1.spr,ambience/particle_suck2.wav,debris/beamstart7.wav,-32,-32,-32,32,32,32$_antirush_barrier_part_checkpoint$_antirush_null$_antirush_barrier_part_multi1@0
+
+killcounter|-1144,-2596,-444,32,monster_human_grunt$_antirush_barrier_part_hecu1_kc
+killcounter|-1396,-2420,-444,32,monster_human_grunt$_antirush_barrier_part_hecu2_kc
+skull|-1396,-2337,-379,0,-90,0,255,0,0,0,255,0$_antirush_barrier_part_skull$_antirush_barrier_part_checkpoint@_antirush_barrier_part_hecu1_kc,_antirush_barrier_part_hecu2_kc
+
+beam|-1975,-1916,-627,-1975,-1916,-469,255,0,0,0,255,0$_antirush_barrier_part_beam
+beam|-1975,-1916,-469,-1801,-1916,-469,255,0,0,0,255,0$_antirush_barrier_part_beam
+beam|-1801,-1916,-469,-1801,-1916,-627,255,0,0,0,255,0$_antirush_barrier_part_beam
+beam|-1801,-1916,-627,-1809,-1916,-627,255,0,0,0,255,0$_antirush_barrier_part_beam
+beam|-1809,-1916,-627,-1825,-1916,-659,255,0,0,0,255,0$_antirush_barrier_part_beam
+beam|-1825,-1916,-659,-1871,-1916,-659,255,0,0,0,255,0$_antirush_barrier_part_beam
+beam|-1871,-1916,-659,-1871,-1916,-643,255,0,0,0,255,0$_antirush_barrier_part_beam
+beam|-1871,-1916,-643,-1905,-1916,-643,255,0,0,0,255,0$_antirush_barrier_part_beam
+beam|-1905,-1916,-643,-1905,-1916,-659,255,0,0,0,255,0$_antirush_barrier_part_beam
+beam|-1905,-1916,-659,-1951,-1916,-659,255,0,0,0,255,0$_antirush_barrier_part_beam
+beam|-1951,-1916,-659,-1967,-1916,-627,255,0,0,0,255,0$_antirush_barrier_part_beam
+beam|-1967,-1916,-627,-1975,-1916,-627,255,0,0,0,255,0$_antirush_barrier_part_beam
+wall|-2221,-1916,-667,-1759,-1376,-303$_antirush_barrier_part_wall
+
+
+number|-1896,-1917,-508,0,270,0,255,0,0,0,255,0,1,66%$_antirush_barrier_part_number
+speaker|-1896,-1917,-508$buttons/bell1.wav$_antirush_barrier_part_spk
+
+counter|-2345,-3247,-649,-1124,-1630,-56,0.66$liftgatesmm,_antirush_barrier_part_wall,_antirush_barrier_part_beam,_antirush_barrier_part_spk,_antirush_barrier_part_number@_antirush_barrier_part_skull,_antirush_barrier_part_lever_ms1,_antirush_barrier_part_lever_ms2,_antirush_barrier_part_hecu_skull,_antirush_barrier_part_key
+
+key|-382,-475,-564,0,0,0,0,0,255$_antirush_barrier_part_key$_antirush_barrier_part_key_1st_node
+padlock|-1888,-1917,-548,0,-90,0,0,0,255$_antirush_barrier_part_key_padlock
+
+killcounter|-452,-436,-628,32,monster_human_grunt$_antirush_barrier_part_hecu3_kc
+skull|-382,-475,-534,0,90,0,255,0,0,0,255,0$_antirush_barrier_part_hecu_skull$_antirush_barrier_part_key@_antirush_barrier_part_hecu3_kc
+
+arrow|-1528,-1890,-563,0,90,90,0,0,255$_antirush_barrier_part_key_arrow@1
+arrow|-1703,-1890,-563,0,90,90,0,0,255$_antirush_barrier_part_key_arrow@1
+arrow|-1337,-375,-563,0,0,90,0,0,255$_antirush_barrier_part_key_arrow@1
+
+master|_antirush_barrier_part_lever_ms2
+
+multi|_antirush_barrier_part_key_multi2$_antirush_barrier_part_lever_ms2,_antirush_barrier_part_key,_antirush_barrier_part_key_padlock,_antirush_barrier_part_key_arrow
+
+//==============================
+//    TRAM NODES FOR BLUE KEY
+//==============================
+
+tramnode|-382,-475,-564,64$_antirush_barrier_part_key_1st_node$_antirush_barrier_part_key_2nd_node
+tramnode|-511,-270,-564,256$_antirush_barrier_part_key_2nd_node$_antirush_barrier_part_key_3rd_node
+tramnode|-1427,-270,-564,256$_antirush_barrier_part_key_3rd_node$_antirush_barrier_part_key_4th_node
+tramnode|-1616,-464,-564,256$_antirush_barrier_part_key_4th_node$_antirush_barrier_part_key_5th_node
+tramnode|-1616,-2040,-564,256$_antirush_barrier_part_key_5th_node$_antirush_barrier_part_key_6th_node
+tramnode|-1888,-2040,-548,256$_antirush_barrier_part_key_6th_node$_antirush_barrier_part_key_7th_node
+tramnode|-1888,-1917,-548,128$_antirush_barrier_part_key_7th_node$_antirush_barrier_part_key_end_node@_antirush_barrier_part_key_multi2
+tramnode|-1888,-1917,-548,0$_antirush_barrier_part_key_end_node$_antirush_barrier_part_key_null_node
+
+//==============================
+//       BARRIER PART END
+//==============================
+
+//==============================
+//     TRAIN ELEVATOR PART
+//==============================
+
+beam|-4632,-3331,-627,-4632,-3331,-501,255,0,0,0,255,0$_antirush_train_elev_part_beam
+beam|-4632,-3331,-501,-4632,-3283,-453,255,0,0,0,255,0$_antirush_train_elev_part_beam
+beam|-4632,-3283,-453,-4632,-3173,-453,255,0,0,0,255,0$_antirush_train_elev_part_beam
+beam|-4632,-3173,-453,-4632,-3125,-501,255,0,0,0,255,0$_antirush_train_elev_part_beam
+beam|-4632,-3125,-501,-4632,-3125,-627,255,0,0,0,255,0$_antirush_train_elev_part_beam
+beam|-4632,-3125,-627,-4632,-3149,-627,255,0,0,0,255,0$_antirush_train_elev_part_beam
+beam|-4632,-3149,-627,-4632,-3165,-659,255,0,0,0,255,0$_antirush_train_elev_part_beam
+beam|-4632,-3165,-659,-4632,-3211,-659,255,0,0,0,255,0$_antirush_train_elev_part_beam
+beam|-4632,-3211,-659,-4632,-3211,-643,255,0,0,0,255,0$_antirush_train_elev_part_beam
+beam|-4632,-3211,-643,-4632,-3245,-643,255,0,0,0,255,0$_antirush_train_elev_part_beam
+beam|-4632,-3245,-643,-4632,-3245,-659,255,0,0,0,255,0$_antirush_train_elev_part_beam
+beam|-4632,-3245,-659,-4632,-3291,-659,255,0,0,0,255,0$_antirush_train_elev_part_beam
+beam|-4632,-3291,-659,-4632,-3307,-627,255,0,0,0,255,0$_antirush_train_elev_part_beam
+beam|-4632,-3307,-627,-4632,-3331,-627,255,0,0,0,255,0$_antirush_train_elev_part_beam
+wall|-4896,-3490,-668,-4632,-2998,-366$_antirush_train_elev_part_wall
+
+number|-4631,-3236,-508,0,0,0,255,0,0,0,255,0,1,66%$_antirush_train_elev_part_number
+speaker|-4631,-3236,-508$buttons/bell1.wav$_antirush_train_elev_part_spk
+
+key|-4339,-1244,-447,0,0,0,255,255,0$_antirush_train_elev_part_key$_antirush_train_elev_part_key_1st_node
+padlock|-4631,-3228,-548,0,0,0,255,255,0$_antirush_train_elev_part_padlock
+
+counter|-4820,-3331,-717,-3690,-2894,-383,0.66$c2a2eII10b,_antirush_train_elev_part_wall,_antirush_train_elev_part_number,_antirush_train_elev_part_spk,_antirush_train_elev_part_beam@_antirush_train_elev_part_key,_antirush_train_elev_part_key_ms,_antirush_train_elev_part_path_track_ms
+
+master|_antirush_train_elev_part_key_ms
+
+//this master will be fired by the c2a2eII8 path_track
+master|_antirush_train_elev_part_path_track_ms
+multi|_antirush_train_elev_part_key_multi$_antirush_train_elev_part_padlock,_antirush_train_elev_part_key,_antirush_train_elev_part_key_ms
+
+delete|-3820,-2132,-594,32,func_door_rotating
+create|func_door_rotating$_antirush_dynamic_func_door_rotating_creator$origin,-3820 -2132 -594,model,*163,explosion,1,weapon,1,m_iObeyTriggerMode,2,stopsnd,6,movesnd,1,locked_sound,12,dmg,2000,wait,4,speed,25,rendercolor,255 255 255,angles,0 0 0,distance,50,targetname,c2a2eII8_gate,spawnflags,674@1
+
+multi|_antirush_train_elev_part_lever_mm$c2a2eII8,c2a2eII8_gate,_antirush_train_elev_part_key
+
+dispatchkvbymdl|*175,target,_antirush_train_elev_part_lever_mm$_antirush_train_elev_part_lever_kv_dispatcher@1
+
+//===============================
+//   TRAM NODES FOR YELLOW KEY
+//===============================
+
+tramnode|-4339,-1244,-447,64$_antirush_train_elev_part_key_1st_node$_antirush_train_elev_part_key_2nd_node
+tramnode|-4428,-1336,-447,256$_antirush_train_elev_part_key_2nd_node$_antirush_train_elev_part_key_3rd_node
+tramnode|-4428,-1442,-447,256$_antirush_train_elev_part_key_3rd_node$_antirush_train_elev_part_key_4th_node
+tramnode|-4323,-1442,-447,256$_antirush_train_elev_part_key_4th_node$_antirush_train_elev_part_key_5th_node
+tramnode|-4323,-1612,-447,256$_antirush_train_elev_part_key_5th_node$_antirush_train_elev_part_key_6th_node
+tramnode|-3882,-1936,-504,256$_antirush_train_elev_part_key_6th_node$_antirush_train_elev_part_key_7th_node
+tramnode|-3721,-1936,-504,256$_antirush_train_elev_part_key_7th_node$_antirush_train_elev_part_key_8th_node
+tramnode|-3728,-2330,-548,256$_antirush_train_elev_part_key_8th_node$_antirush_train_elev_part_key_9th_node
+tramnode|-3728,-3036,-548,256$_antirush_train_elev_part_key_9th_node$_antirush_train_elev_part_key_10th_node
+tramnode|-3792,-3164,-548,256$_antirush_train_elev_part_key_10th_node$_antirush_train_elev_part_key_11th_node
+tramnode|-3920,-3228,-548,256$_antirush_train_elev_part_key_11th_node$_antirush_train_elev_part_key_12th_node
+tramnode|-4631,-3228,-548,128$_antirush_train_elev_part_key_12th_node$_antirush_train_elev_part_key_end_node@_antirush_train_elev_part_key_multi
+tramnode|-4631,-3228,-548,0$_antirush_train_elev_part_key_end_node$_antirush_train_elev_part_key_null_node
+
+beam|-4804,-3141,497,-4804,-3141,623,255,255,0,0,255,0$_antirush_train_elev_part2_beam
+beam|-4804,-3141,623,-4804,-3315,623,255,255,0,0,255,0$_antirush_train_elev_part2_beam
+beam|-4804,-3315,623,-4804,-3315,497,255,255,0,0,255,0$_antirush_train_elev_part2_beam
+beam|-4804,-3315,497,-4804,-3307,497,255,255,0,0,255,0$_antirush_train_elev_part2_beam
+beam|-4804,-3307,497,-4804,-3291,465,255,255,0,0,255,0$_antirush_train_elev_part2_beam
+beam|-4804,-3291,465,-4804,-3245,465,255,255,0,0,255,0$_antirush_train_elev_part2_beam
+beam|-4804,-3245,465,-4804,-3245,481,255,255,0,0,255,0$_antirush_train_elev_part2_beam
+beam|-4804,-3245,481,-4804,-3211,481,255,255,0,0,255,0$_antirush_train_elev_part2_beam
+beam|-4804,-3211,481,-4804,-3211,465,255,255,0,0,255,0$_antirush_train_elev_part2_beam
+beam|-4804,-3211,465,-4804,-3165,465,255,255,0,0,255,0$_antirush_train_elev_part2_beam
+beam|-4804,-3165,465,-4804,-3149,497,255,255,0,0,255,0$_antirush_train_elev_part2_beam
+beam|-4804,-3149,497,-4804,-3141,497,255,255,0,0,255,0$_antirush_train_elev_part2_beam
+wall|-4804,-3525,432,-4488,-2933,762$_antirush_train_elev_part2_wall
+
+timer|-4805,-3220,544,0,180,0,255,255,0,20,0,3$_antirush_elev_part2_timer$_antirush_train_elev_part2_beam,_antirush_train_elev_part2_wall,timetrain1c
+
+delete|-4916,-3352,544,32,point_checkpoint
+
+multi|_antirush_train_elev_part_multi1$_antirush_elev_part2_timer
+
+checkpoint|-4916,-3352,544,sprites/sprite_c_1.spr,ambience/particle_suck2.wav,debris/beamstart7.wav,-32,-32,-32,32,32,32$_antirush_train_elev_part_checkpoint$_antirush_null$_antirush_train_elev_part_multi1@1
+
+//===============================
+//    TRAIN ELEVATOR PART END
+//===============================
+
+
+
+//==============================
+//          THE PIT
+//==============================
+
+//If I apply "EF_NODRAW" to these func_wall_toggle's, the player will be clipping thru on the client-side on them, so no.
+create|func_wall_toggle$_antirush_dynamic_func_wall_toggle_creator$origin,2687 2615 0,model,*85,rendercolor,255 255 255,renderamt,0,rendermode,4,targetname,_antirush_the_pit_wall@1
+create|func_wall_toggle$_antirush_dynamic_func_wall_toggle_creator$origin,2687 2736 0,model,*85,rendercolor,255 255 255,renderamt,0,rendermode,4,targetname,_antirush_the_pit_wall@1
+create|func_wall_toggle$_antirush_dynamic_func_wall_toggle_creator$origin,2687 2861 0,model,*85,rendercolor,255 255 255,renderamt,0,rendermode,4,targetname,_antirush_the_pit_wall@1
+create|func_wall_toggle$_antirush_dynamic_func_wall_toggle_creator$origin,2550 2448 0,model,*85,rendercolor,255 255 255,renderamt,0,rendermode,4,targetname,_antirush_the_pit_wall@1
+
+beam|-371,-2175,847,-274,-2271,847,255,255,0,0,255,0$_antirush_the_pit_beam
+beam|-274,-2271,847,-245,-2271,847,255,255,0,0,255,0$_antirush_the_pit_beam
+beam|-245,-2271,847,-245,-2263,847,255,255,0,0,255,0$_antirush_the_pit_beam
+beam|-245,-2263,847,-179,-2263,847,255,255,0,0,255,0$_antirush_the_pit_beam
+beam|-179,-2263,847,-179,-2271,847,255,255,0,0,255,0$_antirush_the_pit_beam
+beam|-179,-2271,847,-149,-2271,847,255,255,0,0,255,0$_antirush_the_pit_beam
+beam|-149,-2271,847,-52,-2175,847,255,255,0,0,255,0$_antirush_the_pit_beam
+beam|-52,-2175,847,-37,-2175,847,255,255,0,0,255,0$_antirush_the_pit_beam
+beam|-37,-2175,847,-37,-2049,847,255,255,0,0,255,0$_antirush_the_pit_beam
+beam|-37,-2049,847,-52,-2049,847,255,255,0,0,255,0$_antirush_the_pit_beam
+beam|-52,-2049,847,-149,-1953,847,255,255,0,0,255,0$_antirush_the_pit_beam
+beam|-149,-1953,847,-180,-1953,847,255,255,0,0,255,0$_antirush_the_pit_beam
+beam|-180,-1953,847,-180,-1961,847,255,255,0,0,255,0$_antirush_the_pit_beam
+beam|-180,-1961,847,-246,-1961,847,255,255,0,0,255,0$_antirush_the_pit_beam
+beam|-246,-1961,847,-246,-1953,847,255,255,0,0,255,0$_antirush_the_pit_beam
+beam|-246,-1953,847,-274,-1953,847,255,255,0,0,255,0$_antirush_the_pit_beam
+beam|-274,-1953,847,-371,-2049,847,255,255,0,0,255,0$_antirush_the_pit_beam
+beam|-371,-2049,847,-371,-2175,847,255,255,0,0,255,0$_antirush_the_pit_beam
+
+beam|-511,-2423,847,-511,-2439,847,255,255,0,0,255,0$_antirush_the_pit_beam
+beam|-511,-2439,847,-453,-2439,847,255,255,0,0,255,0$_antirush_the_pit_beam
+beam|-453,-2439,847,-453,-2373,847,255,255,0,0,255,0$_antirush_the_pit_beam
+beam|-453,-2373,847,-511,-2373,847,255,255,0,0,255,0$_antirush_the_pit_beam
+beam|-511,-2373,847,-511,-2389,847,255,255,0,0,255,0$_antirush_the_pit_beam
+beam|-511,-2389,847,-507,-2389,847,255,255,0,0,255,0$_antirush_the_pit_beam
+beam|-507,-2389,847,-507,-2423,847,255,255,0,0,255,0$_antirush_the_pit_beam
+beam|-507,-2423,847,-511,-2423,847,255,255,0,0,255,0$_antirush_the_pit_beam
+
+timer|-224,-2100,848,90,180,0,255,255,0,20,0,5$_antirush_the_pit_timer$_antirush_the_pit_beam,_antirush_the_pit_wall,timetrainb3b
+
+checkpoint|-405,-2265,954,sprites/sprite_c_1.spr,ambience/particle_suck2.wav,debris/beamstart7.wav,-32,-32,-32,32,32,32$_antirush_the_pit_checkpoint$_antirush_null$_antirush_the_pit_timer@1
+
+dispatchkvbymdl|*255,spawnflags,1$_antirush_the_part_ladder_kv_dispatcher@1
+
+delete|-45,-2387,344,32,point_checkpoint
+
+beam|176,-2025,297,176,-2025,455,255,0,0,0,255,0$_antirush_the_pit_turrets_beam
+beam|176,-2025,455,176,-2199,455,255,0,0,0,255,0$_antirush_the_pit_turrets_beam
+beam|176,-2199,455,176,-2199,297,255,0,0,0,255,0$_antirush_the_pit_turrets_beam
+beam|176,-2199,297,176,-2191,297,255,0,0,0,255,0$_antirush_the_pit_turrets_beam
+beam|176,-2191,297,176,-2175,265,255,0,0,0,255,0$_antirush_the_pit_turrets_beam
+beam|176,-2175,265,176,-2129,265,255,0,0,0,255,0$_antirush_the_pit_turrets_beam
+beam|176,-2129,265,176,-2129,281,255,0,0,0,255,0$_antirush_the_pit_turrets_beam
+beam|176,-2129,281,176,-2095,281,255,0,0,0,255,0$_antirush_the_pit_turrets_beam
+beam|176,-2095,281,176,-2095,265,255,0,0,0,255,0$_antirush_the_pit_turrets_beam
+beam|176,-2095,265,176,-2049,265,255,0,0,0,255,0$_antirush_the_pit_turrets_beam
+beam|176,-2049,265,176,-2033,297,255,0,0,0,255,0$_antirush_the_pit_turrets_beam
+beam|176,-2033,297,176,-2025,297,255,0,0,0,255,0$_antirush_the_pit_turrets_beam
+speaker|175,-2112,366$buttons/bell1.wav$_antirush_the_pit_turrets_spk
+wall|176,-2427,239,371,-1845,603$_antirush_the_pit_turrets_wall
+
+killcounter|56,-2272,296,32,monster_sentry$_antirush_the_pit_turrets_kc1
+killcounter|68,-1948,296,32,monster_sentry$_antirush_the_pit_turrets_kc2
+killcounter|-536,-1952,296,32,monster_sentry$_antirush_the_pit_turrets_kc3
+killcounter|-548,-2276,296,32,monster_sentry$_antirush_the_pit_turrets_kc4
+
+skull|176,-2112,360,0,180,0,255,0,0,0,255,0$_antirush_the_pit_turrets_skull$_antirush_the_pit_turrets_beam,_antirush_the_pit_turrets_wall,_antirush_the_pit_turrets_spk@_antirush_the_pit_turrets_kc1,_antirush_the_pit_turrets_kc2,_antirush_the_pit_turrets_kc3,_antirush_the_pit_turrets_kc4
+
+//==============================
+//        TRAIN PART END
+//==============================
+
+
+
+//
+// Finale
+//
+
+delete|1492,397,328,32,point_checkpoint
+
+fakemdl|*60$_antirush_finale_btn
+fakemdl|*77$_antirush_finale_btn
+
+master|_antirush_finale_dr_ms1
+master|_antirush_finale_dr_ms2
+
+killcounter|1472,-208,300,32,monster_human_grunt$_antirush_finale_hecu1_kc
+killcounter|1640,-88,300,32,monster_human_grunt$_antirush_finale_hecu2_kc
+skull|1357,666,345,0,0,0,255,0,0,0,255,0$_antirush_finale_skull$_antirush_finale_dr_ms1,_antirush_finale_checkpoint@_antirush_finale_hecu1_kc,_antirush_finale_hecu2_kc
+
+checkpoint|1492,397,328,sprites/sprite_c_1.spr,ambience/particle_suck2.wav,debris/beamstart7.wav,-32,-32,-32,32,32,32$_antirush_finale_checkpoint$_antirush_null$_antirush_finale_dr_ms2
+
+number|1357,658,300,0,0,0,255,0,0,0,255,0,1,66%$_antirush_finale_number
+speaker|1357,658,300$buttons/bell1.wav$_antirush_finale_spk
+
+counter|742,-182,-62,2142,819,801,0.66$_antirush_finale_number,_antirush_finale_spk,_antirush_finale_btn@_antirush_finale_dr_ms1,_antirush_finale_dr_ms2,_antirush_finale_skull
+
+movout|*43$_antirush_finale_doors_trigger
+
+beam|2319,1466,276,2319,1595,276,255,0,0,0,255,0$_antirush_finale_doors_beam
+beam|2319,1595,276,2319,1595,385,255,0,0,0,255,0$_antirush_finale_doors_beam
+beam|2319,1595,385,2319,1466,385,255,0,0,0,255,0$_antirush_finale_doors_beam
+beam|2319,1466,385,2319,1466,276,255,0,0,0,255,0$_antirush_finale_doors_beam
+
+killcounter|2168,1512,300,32,monster_human_grunt$_antirush_finale_hecu3_kc
+killcounter|2044,1668,300,32,monster_human_grunt$_antirush_finale_hecu4_kc
+killcounter|1976,1764,300,32,monster_human_grunt$_antirush_finale_hecu5_kc
+skull|2319,1530.5,330.5,0,180,0,255,0,0,0,255,0$_antirush_finale_doors_skull$_antirush_finale_doors_beam,_antirush_finale_doors_trigger@_antirush_finale_hecu1_kc,_antirush_finale_hecu2_kc,_antirush_finale_hecu3_kc,_antirush_finale_hecu4_kc,_antirush_finale_hecu5_kc
+
+//Don't block anything here, just change the target (done later in this file) to our multi, which will launch the original mm and activate our master (needed for level change)
+//fakemdl|*4|_antirush_finale_rocket_launch_btn
+
+//Let the multi activate the master after 39 seconds (the entire rocket launch thingy timelapse etc etc)
+master|_antirush_finale_rocket_launch_btn_ms
+multi|_antirush_finale_rocket_launch_btn_mm$launch_countdownmm,_antirush_finale_rocket_launch_btn_ms#39,_antirush_finale_rocket_launch_wall,_antirush_finale_rocket_launch_wall#39,_antirush_level_change_wall#39
+dispatchkvbymdl|*4,target,_antirush_finale_rocket_launch_btn_mm$_antirush_finale_rocket_launch_btn_kv_dispatcher@1
+
+//the player respawn zone in the rocket launch centre will teleport everybody into the room, so no need to worry that somebody will get stuck
+//also this wall gets disabled by the timer placed at the map start so no worries
+wall|2182,1017,258,2466,1708,389$_antirush_finale_rocket_launch_wall
+
+
+
+//==========================
+//      LEVEL CHANGE
+//==========================
+
+//We need to make sure that nobody sinks through the level change gates and stays there
+//Even though this is impossible due to the wall, the master (needed for the counter to activate) and etc, still better safe than sorry.
+beam|2109,357,214,2109,341,214,-1,-1,-1,0,255,0$_antirush_level_change_beam
+beam|2109,341,214,2167,341,214,-1,-1,-1,0,255,0$_antirush_level_change_beam
+beam|2167,341,214,2167,407,214,-1,-1,-1,0,255,0$_antirush_level_change_beam
+beam|2167,407,214,2109,407,214,-1,-1,-1,0,255,0$_antirush_level_change_beam
+beam|2109,407,214,2109,391,214,-1,-1,-1,0,255,0$_antirush_level_change_beam
+beam|2109,391,214,2114,391,214,-1,-1,-1,0,255,0$_antirush_level_change_beam
+beam|2114,391,214,2114,357,214,-1,-1,-1,0,255,0$_antirush_level_change_beam
+beam|2109,357,214,2114,357,214,-1,-1,-1,0,255,0$_antirush_level_change_beam
+wall|1952,-142,245,2435,550,760$_antirush_level_change_wall
+
+number|2142,366,214,90,0,0,255,0,0,0,255,0,1,66%$_antirush_level_change_number
+speaker|2142,366,214$buttons/bell1.wav$_antirush_level_change_spk
+
+movout|*57$_antirush_level_change_trigger
+
+counter|1952,-142,245,2435,550,760,0.66$_antirush_level_change_trigger#1.5,_antirush_level_change_beam,_antirush_level_change_spk,_antirush_level_change_number@_antirush_finale_rocket_launch_btn_ms
+
+
+
+//===============================
+//  Funny CubeMath's extension
+//    the train falls down
+//      and explodes :D
+//===============================
+
+//PRECACHE THE SOUND (so we don't crash the server)
+speaker|0,0,0$debris/bustmetal2.wav$_antirush_cubemath_ext_spk_unused
+
+//metal clank sound
+create|ambient_generic$_antirush_dynamic_ambient_generic_creator$origin,-400 -2112 900,linearmax,5,linearmin,2,angles,0 0 0,message,debris/bustmetal2.wav,health,10,pitch,100,pitchstart,100,spawnflags,20,targetname,kapow_sound@1
+
+//kill the player zone check multimanager as well as do the metal clank sound
+create|multi_manager$_antirush_dynamic_multi_manager_creator$targetname,kapow_start_mm,z3train3_plyrzone_checkmm,0#2,kapow_sound,0@1
+
+//
+//path_tracks for the train
+//
+create|path_track$_antirush_dynamic_path_track_creator$origin,-416 -2112 864,angles,0 0 0@1
+create|path_track$_antirush_dynamic_path_track_creator$origin,-400 -2112 864,angles,0 0 0,target,kapow_path_2,targetname,kapow_path_1,message,kapow_start_mm@1
+create|path_track$_antirush_dynamic_path_track_creator$origin,-300 -2112 835,angles,0 0 0,target,kapow_path_3,targetname,kapow_path_2,speed,260@1
+create|path_track$_antirush_dynamic_path_track_creator$origin,-225 -2112 775,angles,0 0 0,target,kapow_path_4,targetname,kapow_path_3,speed,280@1
+create|path_track$_antirush_dynamic_path_track_creator$origin,-168 -2112 700,angles,0 0 0,target,kapow_path_5,targetname,kapow_path_4,speed,310@1
+create|path_track$_antirush_dynamic_path_track_creator$origin,-123 -2112 600,angles,0 0 0,target,kapow_path_6,targetname,kapow_path_5,speed,340@1
+create|path_track$_antirush_dynamic_path_track_creator$origin,-110 -2112 550,angles,0 0 0,target,kapow_path_7,targetname,kapow_path_6,speed,370@1
+create|path_track$_antirush_dynamic_path_track_creator$origin,-100 -2112 500,angles,0 0 0,target,kapow_path_8,targetname,kapow_path_7,speed,400,message,kapow_mm@1
+create|path_track$_antirush_dynamic_path_track_creator$origin,-100 -2112 250,angles,0 0 0,targetname,kapow_path_8@1
+//
+//explosions
+//
+//Add "spawnflags,1" if you don't want them deal damage
+create|env_explosion$_antirush_dynamic_env_explosion_creator$origin,-55 -2114 300,angles,0 0 0,targetname,train_explosion_1,iMagnitude,150@1
+create|env_explosion$_antirush_dynamic_env_explosion_creator$origin,-190 -2116 400,angles,0 0 0,targetname,train_explosion_2,iMagnitude,150@1
+create|env_explosion$_antirush_dynamic_env_explosion_creator$origin,-116 -2218 300,angles,0 0 0,targetname,train_explosion_3,iMagnitude,150@1
+create|env_explosion$_antirush_dynamic_env_explosion_creator$origin,-121 -1985 400,angles,0 0 0,targetname,train_explosion_4,iMagnitude,150@1
+
+//the multi
+create|multi_manager$_antirush_dynamic_multi_manager_creator$targetname,kapow_mm,train_explosion_1,0.2,train_explosion_2,0.4,train_explosion_3,0.6,train_explosion_4,0.7,c2a2d_turret01_3,0.5#1,z3train3,0.5#0,z3train3#1,0.75#2@1

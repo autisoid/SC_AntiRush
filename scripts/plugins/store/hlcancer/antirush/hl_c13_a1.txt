@@ -1,0 +1,102 @@
+// hl_c13_a1.txt -- first lambda core map
+
+/**
+    AntiRush source file.
+    Map: hl_c13_a1
+    Visit antirush_documentation.txt in case you have troubles while reading this file.
+ **/
+
+//===============================
+//         LEVEL START
+//===============================
+
+//make the elevator deal a lot of damage to its blockers
+dispatchkvbymdl|*1,dmg,999999$_antirush_elevator_damage_kv_dispatcher@1
+
+//
+//  CubeMath's part, blocks the players from slipping down and skipping.
+//
+laser|-336,1155,-240,80,1155,-240,255,0,0,255,0,0,255,100000$_antirush_laser_grid
+laser|-336,1155,-200,80,1155,-200,255,0,0,255,0,0,255,100000$_antirush_laser_grid
+laser|-336,1155,-160,80,1155,-160,255,0,0,255,0,0,255,100000$_antirush_laser_grid
+laser|-336,1155,-120,80,1155,-120,255,0,0,255,0,0,255,100000$_antirush_laser_grid
+laser|-336,1155,-80,80,1155,-80,255,0,0,255,0,0,255,100000$_antirush_laser_grid
+laser|-336,1155,-40,80,1155,-40,255,0,0,255,0,0,255,100000$_antirush_laser_grid
+laser|-336,1155,0,80,1155,0,255,0,0,255,0,0,255,100000$_antirush_laser_grid
+laser|-336,1155,40,80,1155,40,255,0,0,255,0,0,255,100000$_antirush_laser_grid
+laser|-336,1155,80,80,1155,80,255,0,0,255,0,0,255,100000$_antirush_laser_grid
+laser|-336,1155,120,80,1155,120,255,0,0,255,0,0,255,100000$_antirush_laser_grid
+laser|-336,1155,160,80,1155,160,255,0,0,255,0,0,255,100000$_antirush_laser_grid
+laser|-336,1155,200,80,1155,200,255,0,0,255,0,0,255,100000$_antirush_laser_grid
+laser|-336,1155,240,80,1155,240,255,0,0,255,0,0,255,100000$_antirush_laser_grid
+laser|-336,1155,280,80,1155,280,255,0,0,255,0,0,255,100000$_antirush_laser_grid
+laser|-336,1155,320,80,1155,320,255,0,0,255,0,0,255,100000$_antirush_laser_grid
+
+//the blocker walls (they have EF_NODRAW so the clients don't draw them at all)
+create|func_wall$_antirush_dynamic_func_wall_creator$targetname,_antirush_laser_grid_wall,effects,128,rendermode,1,origin,-689 492 -100,model,*35@1
+create|func_wall$_antirush_dynamic_func_wall_creator$targetname,_antirush_laser_grid_wall,effects,128,rendermode,1,origin,-484 492 -100,model,*35@1
+create|func_wall$_antirush_dynamic_func_wall_creator$targetname,_antirush_laser_grid_wall,effects,128,rendermode,1,origin,-689 492 150,model,*35@1
+create|func_wall$_antirush_dynamic_func_wall_creator$targetname,_antirush_laser_grid_wall,effects,128,rendermode,1,origin,-484 492 150,model,*35@1
+create|func_wall$_antirush_dynamic_func_wall_creator$targetname,_antirush_laser_grid_wall,effects,128,rendermode,1,origin,-689 492 400,model,*35@1
+create|func_wall$_antirush_dynamic_func_wall_creator$targetname,_antirush_laser_grid_wall,effects,128,rendermode,1,origin,-484 492 400,model,*35@1
+
+//delete the lasers AND the blocker walls after 25.5 seconds after the elevator button press
+create|multi_manager$_antirush_dynamic_multi_manager_creator$targetname,bigelevator_mm,_antirush_laser_grid,25.5#2,_antirush_laser_grid_wall,25.5#2,_antirush_laser_grid_beam,25.5#2@1
+
+//===============================
+//        ASSASINS PART
+//===============================
+fakemdl|*15$_antirush_assasins_part_door
+beam|674,1230,-127,735,1230,-127,255,0,0,0,255,0$_antirush_assasins_part_beam
+beam|735,1230,-127,735,1230,-19,255,0,0,0,255,0$_antirush_assasins_part_beam
+beam|735,1230,-19,674,1230,-19,255,0,0,0,255,0$_antirush_assasins_part_beam
+beam|674,1230,-19,674,1230,-127,255,0,0,0,255,0$_antirush_assasins_part_beam
+wall|621,1055,-127,783,1224,54$_antirush_assasins_part_anti_sink_wall
+number|713,1229,-54,0,90,0,255,0,0,0,255,0,1,66%$_antirush_assasins_part_number
+speaker|713,1229,-54$buttons/bell1.wav$_antirush_assasins_part_spk
+counter|640,1244,-128,768,1856,32,0.66$_antirush_assasins_part_spk,_antirush_assasins_part_number,_antirush_assasins_part_door,_antirush_assasins_part_beam,_antirush_assasins_part_anti_sink_wall
+
+//
+//  assasins elevator part
+//
+
+//block both buttons so even if somebody sinks down and manages to press the lower button the elevator stays in place
+fakemdl|*104$_antirush_assasins_elev_part_btn
+fakemdl|*34$_antirush_assasins_elev_part_btn
+
+wall|-203,-1478,-294,52,-1066,-8$_antirush_assasins_elev_part_anti_sink_wall
+
+//this mm will get triggered by the button
+create|multi_manager$_antirush_dynamic_multi_manager_creator$targetname,c3a2_piston,_antirush_assasins_elev_part_anti_sink_wall,0#2@1
+
+beam|-113,-1337,37,-113,-1351,37,255,0,0,0,255,0$_antirush_assasins_elev_part_beam
+beam|-113,-1351,37,-113,-1351,51,255,0,0,0,255,0$_antirush_assasins_elev_part_beam
+beam|-113,-1351,51,-113,-1337,51,255,0,0,0,255,0$_antirush_assasins_elev_part_beam
+beam|-113,-1337,51,-113,-1337,37,255,0,0,0,255,0$_antirush_assasins_elev_part_beam
+number|-111,-1353,53,0,0,0,255,0,0,0,255,0,1,66%$_antirush_assasins_elev_part_number
+speaker|-111,-1353,53$buttons/bell1.wav$_antirush_assasins_elev_part_spk
+killcounter|280,-720,-224,32,monster_human_assassin$_antirush_assasins_elev_part_fem1_kc
+killcounter|-256,-192,-224,32,monster_human_assassin$_antirush_assasins_elev_part_fem2_kc
+killcounter|-562,-154,18,32,monster_human_assassin$_antirush_assasins_elev_part_fem3_kc
+killcounter|832,-48,16,32,monster_human_assassin$_antirush_assasins_elev_part_fem4_kc
+skull|-111,-1345,7,0,0,0,255,0,0,0,255,0$_antirush_assasins_elev_part_skull$_antirush_null@_antirush_assasins_elev_part_fem1_kc,_antirush_assasins_elev_part_fem2_kc,_antirush_assasins_elev_part_fem3_kc,_antirush_assasins_elev_part_fem4_kc
+counter|-96,-1456,0,239,-1328,192,0.66$_antirush_assasins_elev_part_beam,_antirush_assasins_elev_part_number,_antirush_assasins_elev_part_spk,_antirush_assasins_elev_part_btn@_antirush_assasins_elev_part_skull
+
+//================================
+//       ASSASINS PART END
+//================================
+
+//================================
+//     NIGGER RETINAL SCANNER
+//================================
+
+//delete the trigger_once which launches "start_retinal" scripted_sequence because we'll launch it once 66 passes
+delmdl|*80
+
+//re-create the door with the "Monsters Can't" flag
+delmdl|*70
+create|func_door$_antirush_dynamic_func_door_creator$model,*70,explosion,1,weapon,1,m_iObeyTriggerMode,2,stopsnd,6,movesnd,5,angles,-90 0 0,killtarget,c3a2_restart,speed,100,rendercolor,255 255 255,targetname,retinal_scanner_door,wait,-1,lip,4,spawnflags,544@1
+
+number|-2361,-113,-177,0,270,0,255,0,0,0,255,0,1,66%$_antirush_retinal_scanner_sci_number
+speaker|-2361,-113,-177$buttons/bell1.wav$_antirush_retinal_scanner_sci_spk
+counter|-2396,-672,-256,-2153,-128,-128,0.66$_antirush_retinal_scanner_sci_spk,_antirush_retinal_scanner_sci_number,start_retinal

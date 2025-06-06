@@ -1,0 +1,174 @@
+// hl_c11_a5.txt -- we have to use hecu's aircraft to explode a door so we can pass to the next level wtf?
+
+/**
+    AntiRush source file.
+    Map: hl_c11_a5
+    Visit antirush_documentation.txt in case you have troubles while reading this file.
+**/
+
+dispatchkv|-3095,-3775,-1372,8,weapon_hldm_squeakgrenade,m_flCustomRespawnTime,5$_antirush_snarks_kv_dispatcher
+dispatchkv|-3104,-3736,-1372,8,weapon_hldm_squeakgrenade,m_flCustomRespawnTime,5$_antirush_snarks_kv_dispatcher
+dispatchkv|-3134,-3768,-1372,8,weapon_hldm_squeakgrenade,m_flCustomRespawnTime,5$_antirush_snarks_kv_dispatcher
+
+//Anti-sink walls
+wall|-3894,-4356,-1842,-1467,-3947,-1563$_antirush_anti_sink_wall
+wall|-3894,-4661,-1821,-2596,-4356,-1558$_antirush_anti_sink_wall
+wall|-1991,-3962,-1846,-1498,-3028,-1546$_antirush_anti_sink_wall
+wall|-3074,-5422,-1856,-2578,-5088,-1572$_antirush_anti_sink_wall
+
+//==============================
+//	   START BLOCKING TIMER
+//==============================
+beam|-1000,-2273,-1695,-1000,-2623,-1695,255,255,0,0,255,0$_antirush_timer_beam
+beam|-1000,-2623,-1695,-1000,-2623,-1473,255,255,0,0,255,0$_antirush_timer_beam
+beam|-1000,-2623,-1473,-1000,-2273,-1473,255,255,0,0,255,0$_antirush_timer_beam
+beam|-1000,-2273,-1473,-1000,-2273,-1695,255,255,0,0,255,0$_antirush_timer_beam
+wall|-1526,-2793,-1710,-1000,-2188,-1443$_antirush_timer_wall
+
+timer|-1000,-2466,-1592,0,0,0,255,255,0,30,1,6$_antirush_start_timer$_antirush_timer_beam,_antirush_timer_wall,_antirush_snarks_kv_dispatcher
+
+//===============================
+//   MORTAR DOOR ROOM (agrunts)
+//     a.k.a. pre-hangar war
+//===============================
+//These used to be squadmakers in old map versions, why did these turn into monstermakers???
+monstermaker|-1944,-6448,-1442,32$_antirush_mortar_door_room_sqd1
+monstermaker|-1864,-6344,-1442,32$_antirush_mortar_door_room_sqd2
+monstermaker|-1912,-6168,-1442,32$_antirush_mortar_door_room_sqd3
+monstermaker|-1871,-5616,-1442,32$_antirush_mortar_door_room_sqd4
+skull|-1902,-6559,-1421,0,90,0,255,0,0,0,255,0$_antirush_mortar_door_room_skull$_antirush_mortar_door_room_spk,_antirush_mortar_door_room_beam,_antirush_mortar_door_room_wall@_antirush_mortar_door_room_sqd1,_antirush_mortar_door_room_sqd2,_antirush_mortar_door_room_sqd3,_antirush_mortar_door_room_sqd4
+
+speaker|-1902,-6559,-1421$buttons/bell1.wav$_antirush_mortar_door_room_spk
+wall|-2105,-6819,-1593,-1707,-6560,-1262$_antirush_mortar_door_room_wall
+beam|-1971,-6560,-1527,-1829,-6560,-1527,255,0,0,0,255,0$_antirush_mortar_door_room_beam
+beam|-1829,-6560,-1527,-1829,-6560,-1337,255,0,0,0,255,0$_antirush_mortar_door_room_beam
+beam|-1829,-6560,-1337,-1971,-6560,-1337,255,0,0,0,255,0$_antirush_mortar_door_room_beam
+beam|-1971,-6560,-1337,-1971,-6560,-1527,255,0,0,0,255,0$_antirush_mortar_door_room_beam
+
+wall|-2215,-6779,-1807,-1824,-5420,-1593$_antirush_mortar_door_room_wall
+wall|-1806,-6779,-1807,-444,-5520,-1224$_antirush_mortar_door_room_wall
+
+
+//================================
+//    BRADLEY BREAKING A WALL
+//      a.k.a. hangar war
+//       (fbi open up?)
+//================================
+//Prevent retards from blocking the bradley door - we have soldiers there which are needed to be killed in order to have skull activated.
+dispatchkv|-1085,-6666,-1795,512,func_door_rotating,dmg,999999$_antirush_bradley_door_kv_dispatcher@1
+monstermaker|-571,-6059,-1485,32$_antirush_hangar_war_mmkr1
+monstermaker|-1761,-5663,-1740,32$_antirush_hangar_war_mmkr2
+monstermaker|-1073,-6015,-1740,32$_antirush_hangar_war_mmkr3
+squad|-704,-6176,-1808,32$_antirush_hangar_war_sqd1
+squad|-1072,-6272,-1808,32$_antirush_hangar_war_sqd2
+skull|-2171,-5526,-1723,0,90,0,255,0,0,0,255,0$_antirush_hangar_war_skull$_antirush_hangar_war_checkpoint@_antirush_hangar_war_mmkr1,_antirush_hangar_war_mmkr2,_antirush_hangar_war_mmkr3,_antirush_hangar_war_sqd1,_antirush_hangar_war_sqd2
+
+multi|_antirush_hangar_war_checkpoint_multi$_antirush_hangar_war_key,_antirush_hangar_war_key_arrow
+checkpoint|-2171,-5526,-1723,sprites/sprite_c_1.spr,ambience/particle_suck2.wav,debris/beamstart7.wav,-32,-32,-32,32,32,32$_antirush_hangar_war_checkpoint$_antirush_null$_antirush_hangar_war_checkpoint_multi
+
+//==========================
+//        RED KEY
+// located under the mortar
+//    door room's skull
+//==========================
+key|-2170,-5434,-1733,0,0,0,255,0,0$_antirush_hangar_war_key$_antirush_hangar_war_key_1st_node
+
+multi|_antirush_hangar_war_multi$_antirush_hangar_war_key#0.5,_antirush_hangar_war_key_padlock#0.5
+
+tramnode|-2170,-5434,-1733,0$_antirush_hangar_war_key_1st_node$_antirush_hangar_war_key_2nd_node
+tramnode|-2170,-5527,-1733,64$_antirush_hangar_war_key_2nd_node$_antirush_hangar_war_key_3rd_node
+tramnode|-2000,-5944,-1733,128$_antirush_hangar_war_key_3rd_node$_antirush_hangar_war_key_4th_node
+tramnode|-1908,-6320,-1733,256$_antirush_hangar_war_key_4th_node$_antirush_hangar_war_key_5th_node
+tramnode|-1908,-6734,-1733,256$_antirush_hangar_war_key_5th_node$_antirush_hangar_war_key_6th_node
+tramnode|-1680,-6734,-1733,256$_antirush_hangar_war_key_6th_node$_antirush_hangar_war_key_7th_node
+tramnode|-1680,-5550,-1733,256$_antirush_hangar_war_key_7th_node$_antirush_hangar_war_key_8th_node
+tramnode|-1680,-5550,-1479,256$_antirush_hangar_war_key_8th_node$_antirush_hangar_war_key_9th_node
+tramnode|-513,-5550,-1479,256$_antirush_hangar_war_key_9th_node$_antirush_hangar_war_key_10th_node
+tramnode|-513,-5971,-1479,256$_antirush_hangar_war_key_10th_node$_antirush_hangar_war_key_11th_node
+tramnode|-348,-5971,-1479,128$_antirush_hangar_war_key_11th_node$_antirush_hangar_war_key_12th_node
+tramnode|-348,-6186,-1479,64$_antirush_hangar_war_key_12th_node$_antirush_hangar_war_key_13th_node
+tramnode|-318,-6186,-1428,64$_antirush_hangar_war_key_13th_node$_antirush_hangar_war_key_14th_node
+tramnode|-276,-6186,-1428,64$_antirush_hangar_war_key_14th_node$_antirush_hangar_war_key_end_node@_antirush_hangar_war_multi
+tramnode|-276,-6186,-1428,0$_antirush_hangar_war_key_end_node$_antirush_hangar_war_key_null_node
+
+
+arrow|-1680,-5528,-1462,-90,90,0,255,0,0$_antirush_hangar_war_key_arrow@1
+arrow|-1807,-5599,-1742,0,-90,90,255,0,0$_antirush_hangar_war_key_arrow@1
+arrow|-1775,-6779,-1742,0,180,90,255,0,0$_antirush_hangar_war_key_arrow@1
+arrow|-2215,-5745,-1740,0,90,90,255,0,0$_antirush_hangar_war_key_arrow@1
+
+//
+//  agrunt throwing a hgrunt corpse while breaking a wall by using it
+//
+beam|-276,-6311,-1527,-276,-6109,-1527,255,0,0,0,255,0$_antirush_agrunt_fun_beam
+beam|-276,-6109,-1527,-276,-6109,-1337,255,0,0,0,255,0$_antirush_agrunt_fun_beam
+beam|-276,-6109,-1337,-276,-6311,-1337,255,0,0,0,255,0$_antirush_agrunt_fun_beam
+beam|-276,-6311,-1337,-276,-6311,-1527,255,0,0,0,255,0$_antirush_agrunt_fun_beam
+wall|-276,-6311,-1527,307,-5516,-1336$_antirush_agrunt_fun_wall
+
+number|-276,-6218,-1432,0,180,0,255,0,0,0,255,0,1,66%$_antirush_hgrunt_fun_number
+speaker|-276,-6218,-1432$buttons/bell1.wav$_antirush_hgrunt_fun_speaker
+
+padlock|-276,-6186,-1428,0,180,0,255,0,0$_antirush_hangar_war_key_padlock
+
+wall|-415,-6015,-1823,63,-5504,-1548$_antirush_agrunt_fun_wall
+wall|-1919,-5503,-1823,79,-5016,-1284$_antirush_agrunt_fun_wall
+wall|-415,-6271,-1323,51,-5504,-1132$_antirush_agrunt_fun_wall
+wall|-1903,-5010,-1807,-1248,-4480,-1056$_antirush_agrunt_fun_wall
+
+counter|-596,-6311,-1527,-276,-5520,-1336,0.66$_antirush_agrunt_fun_beam,_antirush_agrunt_fun_wall,_antirush_hgrunt_fun_number,_antirush_hgrunt_fun_speaker@_antirush_hangar_war_key
+
+//-----=======================-----
+//     HGRUNT SURPRISE SATCHEL
+//-----=======================-----
+
+beam|-1439,-4609,-1433,-1321,-4609,-1433,255,0,0,0,255,0$_ar_satchel_beam
+beam|-1321,-4609,-1433,-1321,-4675,-1433,255,0,0,0,255,0$_ar_satchel_beam
+beam|-1321,-4675,-1433,-1439,-4675,-1433,255,0,0,0,255,0$_ar_satchel_beam
+beam|-1439,-4675,-1433,-1439,-4609,-1433,255,0,0,0,255,0$_ar_satchel_beam
+wall|-1459,-5007,-1807,-372,-4592,-1440$_ar_satchel_wall
+
+number|-1388,-4646,-1433,90,270,0,255,0,0,0,255,0,1,66%$_ar_satchel_number
+speaker|-1388,-4646,-1433$buttons/bell1.wav$_ar_satchel_speaker
+
+fakemdl|*184$_ar_satchel_fakemdl
+
+counter|-1919,-5503,-1823,-356,-4576,-928,0.66$_ar_satchel_beam,_ar_satchel_wall,_ar_satchel_number,_ar_satchel_speaker,_ar_satchel_fakemdl,_antirush_anti_sink_wall
+
+
+
+//-----================-----
+//     BARNEY ANTI SKIP
+//-----================-----
+
+wall|-483,-4617,-1518,-435,-4289,-1470$_ar_barney_antiskip_wall
+
+counter|-603,-4699,-1647,-500,-4592,-1546,0.01$_ar_barney_antiskip_wall
+
+wall|-815,-4175,-1663,-208,-3696,-1152$_ar_barney_antiskip2_wall
+
+counter|-435,-4271,-1518,483,-4237,-1470,0.01$_ar_barney_antiskip2_wall
+
+
+
+//-----===========-----
+//     CHANGELEVEL
+//-----===========-----
+
+beam|-1461,384,-1943,-1686,384,-1943,-1,-1,-1,0,255,0$_ar_changelevel_beam
+beam|-1686,384,-1943,-1687,384,-1747,-1,-1,-1,0,255,0$_ar_changelevel_beam
+beam|-1687,384,-1747,-1461,384,-1747,-1,-1,-1,0,255,0$_ar_changelevel_beam
+beam|-1461,384,-1747,-1461,384,-1887,-1,-1,-1,0,255,0$_ar_changelevel_beam
+beam|-1461,384,-1887,-1465,384,-1887,-1,-1,-1,0,255,0$_ar_changelevel_beam
+beam|-1465,384,-1887,-1465,384,-1905,-1,-1,-1,0,255,0$_ar_changelevel_beam
+beam|-1465,384,-1905,-1461,384,-1905,-1,-1,-1,0,255,0$_ar_changelevel_beam
+beam|-1461,384,-1905,-1461,384,-1943,-1,-1,-1,0,255,0$_ar_changelevel_beam
+
+wall|-1687,188,-1943,-1460,384,-1746$_ar_changelevel_wall
+
+number|-1565.5,384,-1845,0,90,0,255,0,0,0,255,0,1,66%$_ar_changelevel_number
+speaker|-1565.5,384,-1845$buttons/bell1.wav$_ar_changelevel_speaker
+
+movout|*69$_ar_changelevel_movout
+
+counter|-2379,384,-1883,-1392,893,-1743,0.66$_ar_changelevel_beam,_ar_changelevel_wall,_ar_changelevel_number,_ar_changelevel_speaker,_ar_changelevel_movout#1.5

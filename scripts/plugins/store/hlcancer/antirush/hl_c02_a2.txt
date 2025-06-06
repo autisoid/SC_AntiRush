@@ -1,0 +1,115 @@
+// hl_c02_a2.txt -- akira elevator, sewage map
+
+/**
+    AntiRush source file.
+    Map: hl_c02_a2
+    Visit antirush_documentation.txt in case you have troubles while reading this file.
+**/
+
+//==============================
+//	   START BLOCKING TIMER
+//==============================
+
+beam|-1632,-2336,1313,-1632,-2336,1336,255,255,0,0,255,0$_ar_start_beam
+beam|-1632,-2336,1336,-1664,-2336,1464,255,255,0,0,255,0$_ar_start_beam
+beam|-1664,-2336,1464,-1664,-2336,1591,255,255,0,0,255,0$_ar_start_beam
+beam|-1664,-2336,1591,-1886,-2336,1591,255,255,0,0,255,0$_ar_start_beam
+beam|-1886,-2336,1591,-1886,-2336,1448,255,255,0,0,255,0$_ar_start_beam
+beam|-1886,-2336,1448,-1870,-2336,1432,255,255,0,0,255,0$_ar_start_beam
+beam|-1870,-2336,1432,-1870,-2336,1313,255,255,0,0,255,0$_ar_start_beam
+beam|-1870,-2336,1313,-1632,-2336,1313,255,255,0,0,255,0$_ar_start_beam
+wall|-1886,-2624,1312,-1586,-2336,1591$_ar_start_wall
+
+timer|-1767,-2336,1452,0,90,0,255,255,0,30,1,4$_ar_start_timer$_ar_start_beam,_ar_start_wall
+
+
+
+//==============================
+//	   SEWAGE 66% AND SKULL
+//==============================
+
+beam|-83,-2769,1276,-83,-2815,1276,255,0,0,0,255,0$_ar_sewer_beam
+beam|-83,-2815,1276,-129,-2815,1276,255,0,0,0,255,0$_ar_sewer_beam
+beam|-129,-2815,1276,-129,-2769,1276,255,0,0,0,255,0$_ar_sewer_beam
+beam|-129,-2769,1276,-83,-2769,1276,255,0,0,0,255,0$_ar_sewer_beam
+wall|-130,-2816,1261,-83,-2769,1276$_ar_sewer_wall
+wall|-6,-2879,1280,145,-2704,1439$_ar_sewer_wall
+wall|-199,-3359,1080,15,-2415,1267$_ar_sewer_wall
+
+number|-112,-2784,1276,90,180,0,255,0,0,0,255,0,1,66%$_ar_sewer_number
+speaker|-112,-2792,1276$buttons/bell1.wav$_ar_sewer_speaker
+
+counter|-550,-3207,1148,112,-2080,1599,0.66$_ar_sewer_beam,_ar_sewer_wall,_ar_sewer_number,_ar_sewer_speaker@_ar_sewer_skull
+
+killcounter|-191,-3164,1280,32,monster_headcrab$_ar_sewer_headcrab_1
+killcounter|-769,-3192,1300,32,monster_headcrab$_ar_sewer_headcrab_2
+killcounter|-731,-3157,1462,32,monster_headcrab$_ar_sewer_headcrab_3
+killcounter|-703,-3224,1462,32,monster_headcrab$_ar_sewer_headcrab_4
+killcounter|-705,-3109,1448,32,monster_zombie$_ar_sewer_zombie_1
+killcounter|-667,-2972,1296,32,monster_houndeye$_ar_sewer_houndeye_1
+killcounter|-951,-2530,1300,32,monster_houndeye$_ar_sewer_houndeye_2
+killcounter|-122,-2496,1280,32,monster_alien_slave$_ar_sewer_alienslave
+wall|-129,-2815,1261,-83,-2769,1276$_ar_sewer_wall_skull
+wall|-6,-2879,1280,145,-2704,1439$_ar_sewer_wall_skull
+wall|-199,-3359,1080,15,-2415,1267$_ar_sewer_wall_skull
+skull|-166,-2794,1281,90,180,0,255,0,0,0,255,0$_ar_sewer_skull$_ar_sewer_wall_skull@_ar_sewer_headcrab_1,_ar_sewer_headcrab_2,_ar_sewer_headcrab_3,_ar_sewer_headcrab_4,_ar_sewer_zombie_1,_ar_sewer_houndeye_1,_ar_sewer_houndeye_2,_ar_sewer_alienslave
+
+
+
+//==============================
+//	    AKIRA LIFT LEVER
+//==============================
+
+beam|1600,-2860,1345,1600,-2860,1439,255,0,0,0,255,0$_ar_lever_beam
+beam|1600,-2860,1439,1664,-2860,1439,255,0,0,0,255,0$_ar_lever_beam
+beam|1664,-2860,1439,1664,-2860,1345,255,0,0,0,255,0$_ar_lever_beam
+beam|1664,-2860,1345,1599,-2860,1345,255,0,0,0,255,0$_ar_lever_beam
+wall|1599,-2860,1344,1664,-2814,1439$_ar_lever_wall
+
+fakemdl|*142$_ar_lever_fakemdl
+
+number|1624,-2860,1415.5,0,270,0,255,0,0,0,255,0,1,66%$_ar_lever_number
+speaker|1632,-2860,1415.5$buttons/bell1.wav$_ar_lever_speaker
+
+counter|1376,-3742,1280,1887,-2855,1663,0.66$_ar_lever_beam,_ar_lever_wall,_ar_lever_fakemdl,_ar_lever_number,_ar_lever_speaker
+
+
+
+//==============================
+//	     BIG SEWAGE ROOM
+//==============================
+
+beam|113,953,-1503,113,953,-1409,255,0,0,0,255,0$_ar_sewer_dr_beam
+beam|113,953,-1409,159,953,-1409,255,0,0,0,255,0$_ar_sewer_dr_beam
+beam|159,953,-1409,159,953,-1503,255,0,0,0,255,0$_ar_sewer_dr_beam
+beam|159,953,-1503,113,953,-1503,255,0,0,0,255,0$_ar_sewer_dr_beam
+wall|-31,953,-1503,182,1048,-1280$_ar_sewer_dr_wall
+
+number|128,953,-1432.5,0,270,0,255,0,0,0,255,0,1,66%$_ar_sewer_dr_number
+speaker|136,953,-1432.5$buttons/bell1.wav$_sewer_dr_speaker
+
+counter|-671,121,-1989,927,952,-752,0.66$_ar_sewer_dr_beam,_ar_sewer_dr_wall,_ar_sewer_dr_number,_sewer_dr_speaker
+
+
+
+//==============================
+//	  ANTI BROKEN BRIDGE SKIP
+//==============================
+
+wall|-240,922,-1199,-48,1095,-1032$_ar_antiskip_wall
+counter|-31,1092,-1199,47,1429,-1056,0.01$_ar_antiskip_wall
+
+
+
+//==============================
+//	   	   CHANGELEVEL
+//==============================
+
+fakemdl|*264$_ar_end_elev_fakemdl
+
+number|-517,1488,-1136,0,270,0,255,0,0,0,255,0,1,66%$_ar_end_elev_number
+speaker|-525,1488,-1136$buttons/bell1.wav$_ar_end_elev_speaker
+
+movout|*266$_ar_end_elev_movout
+
+counter|-551,1233,-1199,-296,1488,-1056,0.66$_ar_end_elev_fakemdl,_ar_end_elev_number,_ar_end_elev_speaker,_ar_end_elev_movout#1.5

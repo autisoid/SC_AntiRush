@@ -1,0 +1,195 @@
+// HL_C11_A4.TXT -- storage with infinite ammo map
+
+/**
+    AntiRush source file.
+    Map: hl_c11_a4
+    Visit antirush_documentation.txt in case you have troubles while reading this file.
+ **/
+ 
+//===============================
+//          START TIMER
+//===============================
+beam|-1936,-511,-2239,-1936,-289,-2239,255,255,0,0,255,0$_antirush_timer_beam
+beam|-1936,-289,-2239,-1936,-289,-2088,255,255,0,0,255,0$_antirush_timer_beam
+beam|-1936,-289,-2088,-1936,-321,-2056,255,255,0,0,255,0$_antirush_timer_beam
+beam|-1936,-321,-2056,-1936,-321,-2049,255,255,0,0,255,0$_antirush_timer_beam
+beam|-1936,-321,-2049,-1936,-479,-2049,255,255,0,0,255,0$_antirush_timer_beam
+beam|-1936,-479,-2049,-1936,-479,-2056,255,255,0,0,255,0$_antirush_timer_beam
+beam|-1936,-479,-2056,-1936,-511,-2088,255,255,0,0,255,0$_antirush_timer_beam
+beam|-1936,-511,-2088,-1936,-511,-2239,255,255,0,0,255,0$_antirush_timer_beam
+wall|-1936,-602,-2279,-1794,-205,-2024$_antirush_timer_wall
+timer|-1936,-392,-2163.5,0,180,0,255,255,0,30,1,3$_antirush_start_timer$_antirush_timer_beam,_antirush_timer_wall,_antirush_weapon_respawn_time_dispatcher
+
+//Make the ammo respawn indefinitely and instantly - these get triggered automatically on the map start.
+dispatchkv|-528,904,-1656,8,ammo_crossbow,m_flCustomRespawnTime,0.01$_antirush_ammo_respawn_time_dispatcher@1
+dispatchkv|-512,904,-1656,8,ammo_crossbow,m_flCustomRespawnTime,0.01$_antirush_ammo_respawn_time_dispatcher@1
+dispatchkv|-496,904,-1656,8,ammo_crossbow,m_flCustomRespawnTime,0.01$_antirush_ammo_respawn_time_dispatcher@1
+dispatchkv|-412,904,-1656,8,ammo_buckshot,m_flCustomRespawnTime,0.01$_antirush_ammo_respawn_time_dispatcher@1
+dispatchkv|-396,904,-1656,8,ammo_buckshot,m_flCustomRespawnTime,0.01$_antirush_ammo_respawn_time_dispatcher@1
+dispatchkv|-380,904,-1656,8,ammo_buckshot,m_flCustomRespawnTime,0.01$_antirush_ammo_respawn_time_dispatcher@1
+dispatchkv|-348,904,-1656,8,ammo_gaussclip,m_flCustomRespawnTime,0.01$_antirush_ammo_respawn_time_dispatcher@1
+dispatchkv|-272,904,-1656,8,ammo_gaussclip,m_flCustomRespawnTime,0.01$_antirush_ammo_respawn_time_dispatcher@1
+dispatchkv|-240,904,-1656,8,ammo_9mmclip,m_flCustomRespawnTime,0.01$_antirush_ammo_respawn_time_dispatcher@1
+dispatchkv|-224,904,-1656,8,ammo_9mmclip,m_flCustomRespawnTime,0.01$_antirush_ammo_respawn_time_dispatcher@1
+dispatchkv|-208,904,-1656,8,ammo_9mmclip,m_flCustomRespawnTime,0.01$_antirush_ammo_respawn_time_dispatcher@1
+dispatchkv|-160,904,-1656,8,ammo_9mmclip,m_flCustomRespawnTime,0.01$_antirush_ammo_respawn_time_dispatcher@1
+dispatchkv|-144,904,-1656,8,ammo_9mmclip,m_flCustomRespawnTime,0.01$_antirush_ammo_respawn_time_dispatcher@1
+dispatchkv|-112,904,-1656,8,ammo_9mmAR,m_flCustomRespawnTime,0.01$_antirush_ammo_respawn_time_dispatcher@1
+dispatchkv|-96,904,-1656,8,ammo_9mmAR,m_flCustomRespawnTime,0.01$_antirush_ammo_respawn_time_dispatcher@1
+dispatchkv|-80,904,-1656,8,ammo_9mmAR,m_flCustomRespawnTime,0.01$_antirush_ammo_respawn_time_dispatcher@1
+dispatchkv|-32,904,-1656,8,ammo_9mmAR,m_flCustomRespawnTime,0.01$_antirush_ammo_respawn_time_dispatcher@1
+dispatchkv|-16,904,-1656,8,ammo_9mmAR,m_flCustomRespawnTime,0.01$_antirush_ammo_respawn_time_dispatcher@1
+dispatchkv|32,904,-1656,8,ammo_357,m_flCustomRespawnTime,0.01$_antirush_ammo_respawn_time_dispatcher@1
+dispatchkv|48,904,-1656,8,ammo_357,m_flCustomRespawnTime,0.01$_antirush_ammo_respawn_time_dispatcher@1
+dispatchkv|96,904,-1656,8,ammo_rpgclip,m_flCustomRespawnTime,0.01$_antirush_ammo_respawn_time_dispatcher@1
+dispatchkv|112,904,-1656,8,ammo_rpgclip,m_flCustomRespawnTime,0.01$_antirush_ammo_respawn_time_dispatcher@1
+dispatchkv|128,904,-1656,8,ammo_rpgclip,m_flCustomRespawnTime,0.01$_antirush_ammo_respawn_time_dispatcher@1
+dispatchkv|144,904,-1656,8,ammo_rpgclip,m_flCustomRespawnTime,0.01$_antirush_ammo_respawn_time_dispatcher@1
+dispatchkv|160,904,-1656,8,ammo_rpgclip,m_flCustomRespawnTime,0.01$_antirush_ammo_respawn_time_dispatcher@1
+
+//Weapons go after because they get replaced in HLSPClassicMode.as!!!
+//Make the weapons respawn indefinitely instantly - these get triggered by the start timer.
+dispatchkv|144,744,-1640,32,weapon_hldm_rpg,m_flCustomRespawnTime,0.01$_antirush_weapon_respawn_time_dispatcher
+dispatchkv|48,744,-1635,32,weapon_hldm_tripmine,m_flCustomRespawnTime,0.01$_antirush_weapon_respawn_time_dispatcher
+dispatchkv|32,744,-1635,32,weapon_hldm_tripmine,m_flCustomRespawnTime,0.01$_antirush_weapon_respawn_time_dispatcher
+dispatchkv|16,744,-1636,32,weapon_hldm_tripmine,m_flCustomRespawnTime,0.01$_antirush_weapon_respawn_time_dispatcher
+dispatchkv|0,744,-1636,32,weapon_hldm_tripmine,m_flCustomRespawnTime,0.01$_antirush_weapon_respawn_time_dispatcher
+dispatchkv|-32,744,-1656,32,weapon_hldm_satchelcharge,m_flCustomRespawnTime,0.01$_antirush_weapon_respawn_time_dispatcher
+dispatchkv|-48,744,-1656,32,weapon_hldm_satchelcharge,m_flCustomRespawnTime,0.01$_antirush_weapon_respawn_time_dispatcher
+dispatchkv|-96,744,-1656,32,weapon_hldm_satchelcharge,m_flCustomRespawnTime,0.01$_antirush_weapon_respawn_time_dispatcher
+dispatchkv|-112,744,-1656,32,weapon_hldm_satchelcharge,m_flCustomRespawnTime,0.01$_antirush_weapon_respawn_time_dispatcher
+dispatchkv|-128,744,-1656,32,weapon_hldm_satchelcharge,m_flCustomRespawnTime,0.01$_antirush_weapon_respawn_time_dispatcher
+dispatchkv|-168,744,-1656,32,weapon_hldm_shotgun,m_flCustomRespawnTime,0.01$_antirush_weapon_respawn_time_dispatcher
+dispatchkv|-240,744,-1656,32,weapon_hldm_glock,m_flCustomRespawnTime,0.01$_antirush_weapon_respawn_time_dispatcher
+dispatchkv|-256,744,-1656,32,weapon_hldm_glock,m_flCustomRespawnTime,0.01$_antirush_weapon_respawn_time_dispatcher
+dispatchkv|-256,744,-1656,32,weapon_hldm_glock,m_flCustomRespawnTime,0.01$_antirush_weapon_respawn_time_dispatcher
+dispatchkv|-288,744,-1656,32,weapon_hldm_9mmAR,m_flCustomRespawnTime,0.01$_antirush_weapon_respawn_time_dispatcher
+dispatchkv|-352,744,-1656,32,weapon_hldm_9mmAR,m_flCustomRespawnTime,0.01$_antirush_weapon_respawn_time_dispatcher
+dispatchkv|-384,744,-1656,32,weapon_hldm_9mmAR,m_flCustomRespawnTime,0.01$_antirush_weapon_respawn_time_dispatcher
+dispatchkv|-416,744,-1656,32,weapon_hldm_9mmAR,m_flCustomRespawnTime,0.01$_antirush_weapon_respawn_time_dispatcher
+dispatchkv|-464,744,-1656,32,weapon_hldm_9mmAR,m_flCustomRespawnTime,0.01$_antirush_weapon_respawn_time_dispatcher
+dispatchkv|-488,744,-1656,32,weapon_hldm_handgrenade,m_flCustomRespawnTime,0.01$_antirush_weapon_respawn_time_dispatcher
+dispatchkv|-504,744,-1656,32,weapon_hldm_handgrenade,m_flCustomRespawnTime,0.01$_antirush_weapon_respawn_time_dispatcher
+dispatchkv|-520,744,-1656,32,weapon_hldm_handgrenade,m_flCustomRespawnTime,0.01$_antirush_weapon_respawn_time_dispatcher
+dispatchkv|-536,744,-1656,32,weapon_hldm_handgrenade,m_flCustomRespawnTime,0.01$_antirush_weapon_respawn_time_dispatcher
+dispatchkv|-552,744,-1656,32,weapon_hldm_handgrenade,m_flCustomRespawnTime,0.01$_antirush_weapon_respawn_time_dispatcher
+
+//===============================
+//         LEVEL START
+//===============================
+
+beam|895,448,-1855,895,448,-1473,255,0,0,0,255,0$_antirush_start_beam
+beam|895,448,-1473,593,448,-1473,255,0,0,0,255,0$_antirush_start_beam
+beam|593,448,-1473,593,448,-1695,255,0,0,0,255,0$_antirush_start_beam
+beam|593,448,-1695,625,448,-1695,255,0,0,0,255,0$_antirush_start_beam
+beam|625,448,-1695,625,448,-1855,255,0,0,0,255,0$_antirush_start_beam
+beam|625,448,-1855,895,448,-1855,255,0,0,0,255,0$_antirush_start_beam
+number|769,449,-1774,0,90,0,255,0,0,0,255,0,1,66%$_antirush_start_number
+speaker|769,449,-1774$buttons/bell1.wav$_antirush_start_spk
+wall|593,424,-1875,915,448,1092$_antirush_start_wall
+master|_antirush_tank_killed_ms
+master|_antirush_bradley_ms
+multi|brad_break_mm$_antirush_tank_killed_ms
+killcounter|1376,1504,-1964,32,monster_human_grunt$_antirush_bradley_hecu1_kc
+killcounter|1376,1688,-1964,32,monster_human_grunt$_antirush_bradley_hecu2_kc
+skull|761,449,-1804,0,90,0,255,0,0,0,255,0$_antirush_bradley_skull$_antirush_bradley_ms@_antirush_bradley_hecu1_kc,_antirush_bradley_hecu2_kc
+counter|588,464,-1856,880,976,-1472,0.66$_antirush_secret_doors_opener_mm,_antirush_start_wall,_antirush_start_beam,_antirush_start_number,_antirush_start_spk,_antirush_sniperally_rotdoors_ms@_antirush_bradley_ms,_antirush_tank_killed_ms,_antirush_bradley_skull
+
+//=============================
+//          STORAGE
+//=============================
+//monsterclips so the barney doesn't run down away
+create|func_monsterclip$_antirush_dynamic_func_monsterclip_creator$effects,128,rendermode,2,renderamt,0,rendercolor,255 255 255,origin,1920 448 64,model,*115@1
+create|func_monsterclip$_antirush_dynamic_func_monsterclip_creator$effects,128,rendermode,2,renderamt,0,rendercolor,255 255 255,origin,1984 448 64,model,*115@1
+create|func_monsterclip$_antirush_dynamic_func_monsterclip_creator$effects,128,rendermode,2,renderamt,0,rendercolor,255 255 255,origin,1984 396 64,model,*115@1
+create|func_monsterclip$_antirush_dynamic_func_monsterclip_creator$effects,128,rendermode,2,renderamt,0,rendercolor,255 255 255,origin,1920 396 64,model,*115@1
+create|func_monsterclip$_antirush_dynamic_func_monsterclip_creator$effects,128,rendermode,2,renderamt,0,rendercolor,255 255 255,origin,2048 427 64,model,*115@1
+create|func_monsterclip$_antirush_dynamic_func_monsterclip_creator$effects,128,rendermode,2,renderamt,0,rendercolor,255 255 255,origin,2048 479 64,model,*115@1
+create|func_monsterclip$_antirush_dynamic_func_monsterclip_creator$effects,128,rendermode,2,renderamt,0,rendercolor,255 255 255,origin,2112 484 64,model,*115@1
+create|func_monsterclip$_antirush_dynamic_func_monsterclip_creator$effects,128,rendermode,2,renderamt,0,rendercolor,255 255 255,origin,2112 432 64,model,*115@1
+create|func_monsterclip$_antirush_dynamic_func_monsterclip_creator$effects,128,rendermode,2,renderamt,0,rendercolor,255 255 255,origin,2094 522 64,model,*115@1
+create|func_monsterclip$_antirush_dynamic_func_monsterclip_creator$effects,128,rendermode,2,renderamt,0,rendercolor,255 255 255,origin,2094 574 64,model,*115@1
+create|func_monsterclip$_antirush_dynamic_func_monsterclip_creator$effects,128,rendermode,2,renderamt,0,rendercolor,255 255 255,origin,2148 544 64,model,*115@1
+create|func_monsterclip$_antirush_dynamic_func_monsterclip_creator$effects,128,rendermode,2,renderamt,0,rendercolor,255 255 255,origin,2148 492 64,model,*115@1
+create|func_monsterclip$_antirush_dynamic_func_monsterclip_creator$effects,128,rendermode,2,renderamt,0,rendercolor,255 255 255,origin,2090 567 155,model,*115@1
+create|func_monsterclip$_antirush_dynamic_func_monsterclip_creator$effects,128,rendermode,2,renderamt,0,rendercolor,255 255 255,origin,2090 619 155,model,*115@1
+create|func_monsterclip$_antirush_dynamic_func_monsterclip_creator$effects,128,rendermode,2,renderamt,0,rendercolor,255 255 255,origin,2126 619 155,model,*115@1
+create|func_monsterclip$_antirush_dynamic_func_monsterclip_creator$effects,128,rendermode,2,renderamt,0,rendercolor,255 255 255,origin,2126 567 155,model,*115@1
+
+//open up the doors because we have monsterclips placed on the ladder part and so the barney can't go down there to open up the doors (this multi will get triggered by the first counter)
+multi|_antirush_secret_doors_opener_mm$secret_door_lower,secret_door_upper
+
+delmdl|*118
+
+//re-create the barney with the monsterclip flag added
+delete|-448,656,-1696,32,monster_barney
+create|monster_barney$_antirush_dynamic_monster_barney_creator$origin,-448 656 -1696,maxhullsize,0 0 0,minhullsize,0 0 0,rendercolor,0 0 0,angles,0 308 0,spawnflags,5@1
+
+multi|_antirush_storage_checkpoint_multi$_antirush_storage_key
+
+delete|240,832,-1648,32,point_checkpoint
+checkpoint|240,832,-1648,sprites/sprite_c_1.spr,ambience/particle_suck2.wav,debris/beamstart7.wav,-32,-32,-32,32,32,32$_antirush_storage_checkpoint$_antirush_null$_antirush_storage_checkpoint_multi@1
+key|240,832,-1648,0,90,0,0,0,255$_antirush_storage_key$_antirush_storage_key_1st_node
+
+master|_antirush_storage_key_ms
+multi|_antirush_storage_key_multi$_antirush_storage_key,_antirush_storage_key_ms,_antirush_storage_key_padlock
+
+//===============================
+//    TRAM NODES FOR BLUE KEY
+//===============================
+tramnode|240,832,-1648,64$_antirush_storage_key_1st_node$_antirush_storage_key_2nd_node
+tramnode|-734,832,-1648,256$_antirush_storage_key_2nd_node$_antirush_storage_key_3rd_node
+tramnode|-734,558,-1648,256$_antirush_storage_key_3rd_node$_antirush_storage_key_4th_node
+tramnode|493,558,-1648,256$_antirush_storage_key_4th_node$_antirush_storage_key_5th_node
+tramnode|493,793,-1648,256$_antirush_storage_key_5th_node$_antirush_storage_key_6th_node
+tramnode|710,793,-1648,256$_antirush_storage_key_6th_node$_antirush_storage_key_7th_node
+tramnode|637,412,-1648,256$_antirush_storage_key_7th_node$_antirush_storage_key_8th_node
+tramnode|597,368,-1676,256$_antirush_storage_key_8th_node$_antirush_storage_key_9th_node
+tramnode|430,298,-1770,256$_antirush_storage_key_9th_node$_antirush_storage_key_10th_node
+tramnode|233,251,-1787,256$_antirush_storage_key_10th_node$_antirush_storage_key_11th_node
+tramnode|234,38,-1801,256$_antirush_storage_key_11th_node$_antirush_storage_key_12th_node
+tramnode|425,38,-1706,256$_antirush_storage_key_12th_node$_antirush_storage_key_13th_node
+tramnode|529,126,-1655,256$_antirush_storage_key_13th_node$_antirush_storage_key_14th_node
+tramnode|808,126,-1655,256$_antirush_storage_key_14th_node$_antirush_storage_key_15th_node
+tramnode|808,-170,-1650,256$_antirush_storage_key_15th_node$_antirush_storage_key_end_node@_antirush_storage_key_multi
+tramnode|808,-170,-1650,0$_antirush_storage_key_end_node$_antirush_storage_key_null_node
+
+//=============================
+//        STORAGE END
+//=============================
+
+wall|-773,-311,-1313,890,183,-1174$_antirush_osprey_part_anti_skip_wall
+
+beam|831,-304,-1695,753,-304,-1695,255,0,0,0,255,0$_antirush_osprey_beam
+beam|753,-304,-1695,753,-304,-1601,255,0,0,0,255,0$_antirush_osprey_beam
+beam|753,-304,-1601,831,-304,-1601,255,0,0,0,255,0$_antirush_osprey_beam
+beam|831,-304,-1601,831,-304,-1695,255,0,0,0,255,0$_antirush_osprey_beam
+wall|731,-321,-1703,841,-304,-1587$_antirush_osprey_wall
+number|801,-303,-1632,0,90,0,255,0,0,0,255,0,1,66%$_antirush_osprey_number
+speaker|801,-303,-1632$buttons/bell1.wav$_antirush_osprey_spk
+padlock|793,-303,-1650,0,90,0,0,0,255$_antirush_storage_key_padlock
+counter|736,-288,-1696,864,160,-1488,0.66$_antirush_osprey_wall,_antirush_osprey_number,_antirush_osprey_beam,_antirush_osprey_spk@_antirush_storage_key_ms,_antirush_storage_key
+
+dispatchkvbymdl|*64,targetname,_antirush_sniperally_rotdoors_opener$_antirush_trigger_once_dispatcher1@1
+dispatchkvbymdl|*64,target,_antirush_sniperally_rotdoors_tricky_mm$_antirush_trigger_once_dispatcher2@1
+//this mm will turn off _antirush_sniperally_rotdoors_ms so the counter doesn't trigger (and so it doesn't close the doors)
+master|_antirush_sniperally_rotdoors_ms
+multi|_antirush_sniperally_rotdoors_tricky_mm$_antirush_sniperally_rotdoors_ms
+create|multi_manager$_antirush_dynamic_multi_manager_creator$targetname,_antirush_trigger_opener_killer_mm,_antirush_sniperally_rotdoors_opener,0#2@1
+counter|-1283,-121,-1694,-786,543,-1429,0.01$sniperally_rotdoors,_antirush_trigger_opener_killer_mm@_antirush_sniperally_rotdoors_ms
+
+//
+//      LEVEL CHANGE!
+//
+
+movout|*5$_antirush_level_change_trigger
+beam|-813,-2273,-1695,-813,-2623,-1695,-1,-1,-1,0,255,0$_antirush_level_change_beam
+beam|-813,-2623,-1695,-813,-2623,-1473,-1,-1,-1,0,255,0$_antirush_level_change_beam
+beam|-813,-2623,-1473,-813,-2273,-1473,-1,-1,-1,0,255,0$_antirush_level_change_beam
+beam|-813,-2273,-1473,-813,-2273,-1695,-1,-1,-1,0,255,0$_antirush_level_change_beam
+number|-813,-2456,-1584,0,0,0,255,0,0,0,255,0,1,66%$_antirush_level_change_number
+speaker|-813,-2456,-1584$buttons/bell1.wav$_antirush_level_change_spk
+killcounter|3456,-960,-2000,1024,monster_osprey$_antirush_level_change_osprey_kc
+master|_antirush_level_change_skull_ms
+skull|-813,-2448,-1624,0,0,0,255,0,0,0,255,0$_antirush_level_change_skull$_antirush_level_change_skull_ms@_antirush_level_change_osprey_kc
+counter|-800,-2608,-1696,-16,-1840,-1472,0.66$_antirush_level_change_beam,_antirush_level_change_number,_antirush_level_change_spk,_antirush_level_change_trigger#1.5@_antirush_level_change_skull_ms,_antirush_level_change_skull

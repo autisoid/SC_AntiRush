@@ -1,0 +1,78 @@
+// HL_C13_A3.TXT -- 2 4 7
+
+/**
+    AntiRush source file.
+    Map: hl_c13_a3
+    Visit antirush_documentation.txt in case you have troubles while reading this file.
+**/
+
+//Create invisible blocker walls so nobody flies up to the level change.
+create|func_wall_toggle$_antirush_dynamic_func_wall_toggle_creator$targetname,_antirush_inivisible_blocker,origin,168 -1192 740,model,*31,effects,128,rendermode,2,rendercolor,255 255 255@1
+create|func_wall_toggle$_antirush_dynamic_func_wall_toggle_creator$targetname,_antirush_inivisible_blocker,origin,84 -1240 740,model,*31,effects,128,rendermode,2,rendercolor,255 255 255@1
+create|func_wall_toggle$_antirush_dynamic_func_wall_toggle_creator$targetname,_antirush_inivisible_blocker,origin,84 -1240 784,model,*31,effects,128,rendermode,2,rendercolor,255 255 255@1
+create|func_wall_toggle$_antirush_dynamic_func_wall_toggle_creator$targetname,_antirush_inivisible_blocker,origin,168 -1192 784,model,*31,effects,128,rendermode,2,rendercolor,255 255 255@1
+create|func_wall_toggle$_antirush_dynamic_func_wall_toggle_creator$targetname,_antirush_inivisible_blocker,origin,168 -1192 812,model,*31,effects,128,rendermode,2,rendercolor,255 255 255@1
+create|func_wall_toggle$_antirush_dynamic_func_wall_toggle_creator$targetname,_antirush_inivisible_blocker,origin,84 -1240 812,model,*31,effects,128,rendermode,2,rendercolor,255 255 255@1
+create|func_wall_toggle$_antirush_dynamic_func_wall_toggle_creator$targetname,_antirush_inivisible_blocker,origin,84 -1240 840,model,*31,effects,128,rendermode,2,rendercolor,255 255 255@1
+create|func_wall_toggle$_antirush_dynamic_func_wall_toggle_creator$targetname,_antirush_inivisible_blocker,origin,168 -1192 840,model,*31,effects,128,rendermode,2,rendercolor,255 255 255@1
+create|func_wall_toggle$_antirush_dynamic_func_wall_toggle_creator$targetname,_antirush_inivisible_blocker,origin,168 -1192 864,model,*31,effects,128,rendermode,2,rendercolor,255 255 255@1
+create|func_wall_toggle$_antirush_dynamic_func_wall_toggle_creator$targetname,_antirush_inivisible_blocker,origin,84 -1240 864,model,*31,effects,128,rendermode,2,rendercolor,255 255 255@1
+create|func_wall_toggle$_antirush_dynamic_func_wall_toggle_creator$targetname,_antirush_inivisible_blocker,origin,84 -1240 880,model,*31,effects,128,rendermode,2,rendercolor,255 255 255@1
+create|func_wall_toggle$_antirush_dynamic_func_wall_toggle_creator$targetname,_antirush_inivisible_blocker,origin,168 -1192 880,model,*31,effects,128,rendermode,2,rendercolor,255 255 255@1
+
+create|func_wall_toggle$_antirush_dynamic_func_wall_toggle_creator$targetname,_antirush_inivisible_blocker,origin,-45 334 82,model,*24,effects,128,rendermode,2,rendercolor,255 255 255@1
+create|func_wall_toggle$_antirush_dynamic_func_wall_toggle_creator$targetname,_antirush_inivisible_blocker,origin,50 334 82,model,*24,effects,128,rendermode,2,rendercolor,255 255 255@1
+create|func_wall_toggle$_antirush_dynamic_func_wall_toggle_creator$targetname,_antirush_inivisible_blocker,origin,-45 334 178,model,*24,effects,128,rendermode,2,rendercolor,255 255 255@1
+create|func_wall_toggle$_antirush_dynamic_func_wall_toggle_creator$targetname,_antirush_inivisible_blocker,origin,50 334 178,model,*24,effects,128,rendermode,2,rendercolor,255 255 255@1
+
+//===========================
+//       START TIMER
+//===========================
+beam|-299,660,-383,-363,660,-383,255,255,0,0,255,0$_antirush_start_timer_beam
+beam|-363,660,-383,-363,660,-265,255,255,0,0,255,0$_antirush_start_timer_beam
+beam|-363,660,-265,-299,660,-265,255,255,0,0,255,0$_antirush_start_timer_beam
+beam|-299,660,-265,-299,660,-383,255,255,0,0,255,0$_antirush_start_timer_beam
+wall|-446,660,-557,-197,957,-139$_antirush_start_timer_wall
+
+//Ammo door, has to be blocked too so nobody steals the ammo before everybody loads into the map. (and also nobody sinks through the floor to the portals)
+beam|-529,623,-383,-529,529,-383,255,255,0,0,255,0$_antirush_start_timer_beam
+beam|-529,529,-383,-529,529,-289,255,255,0,0,255,0$_antirush_start_timer_beam
+beam|-529,529,-289,-529,623,-289,255,255,0,0,255,0$_antirush_start_timer_beam
+beam|-529,623,-289,-529,623,-383,255,255,0,0,255,0$_antirush_start_timer_beam
+wall|-770,391,-400,-528,714,-236$_antirush_start_timer_wall
+
+timer|-343,660,-324,0,-90,0,255,255,0,30,1,3$_antirush_start_timer$_antirush_start_timer_beam,_antirush_start_timer_wall
+
+//===========================
+//          PORTALS
+//===========================
+beam|-289,-927,385,-383,-927,385,255,0,0,0,255,0$_antirush_portals_entrance_beam
+beam|-383,-927,385,-383,-927,479,255,0,0,0,255,0$_antirush_portals_entrance_beam
+beam|-383,-927,479,-289,-927,479,255,0,0,0,255,0$_antirush_portals_entrance_beam
+beam|-289,-927,479,-289,-927,385,255,0,0,0,255,0$_antirush_portals_entrance_beam
+wall|-485,-927,365,-214,-778,559$_antirush_portals_entrance_wall
+number|-344,-927,447.5,0,-90,0,255,0,0,0,255,0,1,66%$_antirush_portals_entrance_number
+speaker|-344,-927,447.5$buttons/bell1.wav$_antirush_portals_entrance_spk
+killcounter|-174,-1327,410,32,monster_alien_grunt$_antirush_portals_entrance_kc1
+killcounter|171,-1315,410,32,monster_alien_grunt$_antirush_portals_entrance_kc2
+monstermaker|384,-1312,404,32$_antirush_portals_entrance_mmkr1
+monstermaker|518,-1061,404,32$_antirush_portals_entrance_mmkr2
+monstermaker|400,-180,404,32$_antirush_portals_entrance_mmkr3
+monstermaker|472,-72,400,32$_antirush_portals_entrance_mmkr4
+monstermaker|464,696,404,32$_antirush_portals_entrance_mmkr5
+master|_antirush_portals_entrance_skull_collected_ms
+skull|-336,-927,417.5,0,-90,0,255,0,0,0,255,0$_antirush_portals_entrance_skull$_antirush_portals_entrance_skull_collected_ms@_antirush_portals_entrance_kc1,_antirush_portals_entrance_kc2,_antirush_portals_entrance_mmkr1,_antirush_portals_entrance_mmkr2,_antirush_portals_entrance_mmkr3,_antirush_portals_entrance_mmkr4,_antirush_portals_entrance_mmkr5
+counter|-537,-1430,364,-174,-796,545,0.66$_antirush_portals_entrance_beam,_antirush_portals_entrance_wall,_antirush_portals_entrance_number,_antirush_portals_entrance_spk@_antirush_portals_entrance_skull,_antirush_portals_entrance_skull_collected_ms
+
+//==========================
+//      LEVEL CHANGE!
+//==========================
+beam|-383,-1121,1025,-289,-1121,1025,-1,-1,-1,0,255,0$_antirush_level_change_beam
+beam|-289,-1121,1025,-289,-1121,1119,-1,-1,-1,0,255,0$_antirush_level_change_beam
+beam|-289,-1121,1119,-383,-1121,1119,-1,-1,-1,0,255,0$_antirush_level_change_beam
+beam|-383,-1121,1119,-383,-1121,1025,-1,-1,-1,0,255,0$_antirush_level_change_beam
+wall|-450,-1255,993,-216,-1121,1169$_antirush_level_change_wall
+number|-328,-1121,1072,0,90,0,255,0,0,0,255,0,1,66%$_antirush_level_change_number
+speaker|-328,-1121,1072$buttons/bell1.wav$_antirush_level_change_spk
+movout|*25$_antirush_level_change_trigger
+counter|-471,-1255,964,-216,-800,1169,0.66$_antirush_level_change_spk,_antirush_level_change_number,_antirush_level_change_beam,_antirush_level_change_trigger#1.5

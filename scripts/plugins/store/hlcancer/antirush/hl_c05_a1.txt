@@ -1,0 +1,73 @@
+// hl_c05_a1.txt -- blast pit intro
+
+/**
+    AntiRush source file.
+    Map: hl_c05_a1
+    Visit antirush_documentation.txt in case you have troubles while reading this file.
+**/
+
+//==============================
+//	   START BLOCKING TIMER
+//==============================
+
+beam|-2757,3147,913,-2757,3147,1039,255,255,0,0,255,0$_ar_start_beam
+beam|-2757,3147,1039,-2895,3147,1039,255,255,0,0,255,0$_ar_start_beam
+beam|-2895,3147,1039,-2895,3147,913,255,255,0,0,255,0$_ar_start_beam
+beam|-2895,3147,913,-2757,3147,913,255,255,0,0,255,0$_ar_start_beam
+wall|-2895,2914,912,-2756,3148,1039$_ar_start_wall
+
+timer|-2810,3147,985,0,90,0,255,255,0,30,1,4$_ar_start_timer$_ar_start_beam,_ar_start_wall
+
+
+
+//==============================
+//	 TOXIC WASTE SQUIDS ROOM
+//==============================
+
+mov|-960,-1652,-1676,32,point_checkpoint,-1008,-1656,-1652
+
+beam|-959,-1577,-1723,-959,-1577,-1617,255,0,0,0,255,0$_ar_squids_beam
+beam|-959,-1577,-1617,-959,-1719,-1617,255,0,0,0,255,0$_ar_squids_beam
+beam|-959,-1719,-1617,-959,-1719,-1723,255,0,0,0,255,0$_ar_squids_beam
+beam|-959,-1719,-1723,-959,-1577,-1723,255,0,0,0,255,0$_ar_squids_beam
+wall|-960,-1719,-1723,-286,-1576,-1568$_ar_squids_wall
+
+number|-959,-1640,-1652.333374,0,180,0,255,0,0,0,255,0,1,66%$_ar_squids_number
+speaker|-959,-1640,-1652.333374$buttons/bell1.wav$_ar_squids_speaker
+
+counter|-1407,-2424,-1871,-256,-1504,-1500,0.66$_ar_squids_beam,_ar_squids_wall,_ar_squids_number,_ar_squids_speaker@_ar_squids_skull
+
+killcounter|-840,-1936,-1849,16,monster_bullchicken$_ar_squids_squid1
+killcounter|-1292,-1612,-1849,16,monster_bullchicken$_ar_squids_squid2
+skull|-959,-1648,-1684.333374,0,180,0,255,0,0,0,255,0$_ar_squids_skull$_ar_null@_ar_squids_squid1,_ar_squids_squid2
+
+
+
+
+fakemdl|*10$_ar_greenroom_elevator_fakemdl
+wall|-1121,-1027,-271,-878,-784,319$_ar_greenroom_elevator_wall
+wall|-1089,-778,24,-935,194,193$_ar_greenroom_elevator_wall
+number|-1050,-1041,-1712,0,90,0,255,0,0,0,255,0,1,66%$_ar_greenroom_elevator_number
+speaker|-1050,-1041,-1712$buttons/bell1.wav$_ar_greenroom_elevator_speaker
+counter|-2071,-1474,-1935,327,283,324,0.66$_ar_greenroom_elevator_fakemdl,_ar_greenroom_elevator_wall,_ar_greenroom_elevator_number,_ar_greenroom_elevator_speaker@_ar_greenroom_elevator_skull
+
+killcounter|160,-80,-1856,16,monster_bullchicken$_ar_greenroom_elevator_squid1
+killcounter|-1808,-248,-1856,16,monster_bullchicken$_ar_greenroom_elevator_squid2
+skull|-1090,-1041,-1712,0,90,0,255,0,0,0,255,0$_ar_greenroom_elevator_skull$_ar_null@_ar_greenroom_elevator_squid1,_ar_greenroom_elevator_squid2
+
+
+
+//==============================
+//	   	   CHANGELEVEL
+//==============================
+
+beam|-1069,-652,25,-1069,-652,169,-1,-1,-1,0,255,0$_ar_level_change_beam
+beam|-1069,-652,169,-936,-652,169,-1,-1,-1,0,255,0$_ar_level_change_beam
+beam|-936,-652,169,-936,-652,25,-1,-1,-1,0,255,0$_ar_level_change_beam
+beam|-936,-652,25,-1069,-652,25,-1,-1,-1,0,255,0$_ar_level_change_beam
+
+speaker|-1020,-652,80$buttons/bell1.wav$_ar_level_change_speaker
+
+movout|*127$_ar_level_change_movout
+
+counter|-1089,-783,24,-935,-164,169,0.1$_ar_level_change_beam,_ar_level_change_speaker,_ar_level_change_movout#1.5

@@ -1,0 +1,143 @@
+// hl_c05_a2.txt -- tentacles map
+
+/**
+    AntiRush source file.
+    Map: hl_c05_a2
+    Visit antirush_documentation.txt in case you have troubles while reading this file.
+**/
+
+//==============================
+//	   START BLOCKING TIMER
+//==============================
+
+beam|-813,-280,-1511,-813,-280,-1367,255,255,0,0,255,0$_ar_start_beam
+beam|-813,-280,-1367,-680,-280,-1367,255,255,0,0,255,0$_ar_start_beam
+beam|-680,-280,-1367,-680,-280,-1511,255,255,0,0,255,0$_ar_start_beam
+beam|-680,-280,-1511,-813,-280,-1511,255,255,0,0,255,0$_ar_start_beam
+wall|-814,-280,-1512,-678,-160,-1366$_ar_start_wall
+
+timer|-763,-280,-1439,0,270,0,255,255,0,30,1,4$_ar_start_timer$_ar_start_beam,_ar_start_wall,_antirush_dynamic_weapon_hldm_handgrenade_creator
+
+
+
+//==============================
+// FROM BRIDGE TO TEST FIRE ROOM
+//==============================
+
+fakemdl|*325$_ar_airlock_fakemdl
+fakemdl|*326$_ar_airlock_fakemdl
+
+killcounter|-548,80,-1496,16,monster_bullchicken$_ar_airlock_squid1
+killcounter|-236,284,-1457,16,monster_houndeye$_ar_airlock_houndeye1
+killcounter|164,1261,-1465,16,monster_houndeye$_ar_airlock_houndeye2
+killcounter|704,1428,-1457,16,monster_houndeye$_ar_airlock_houndeye3
+killcounter|793,1445,-1457,16,monster_houndeye$_ar_airlock_houndeye4
+killcounter|772,1356,-1457,16,monster_houndeye$_ar_airlock_houndeye5
+killcounter|818,1147,-1457,16,monster_houndeye$_ar_airlock_houndeye6
+skull|-148,1520,-1490,0,180,0,255,0,0,0,255,0$_ar_airlock_skull$_ar_airlock_fakemdl@_ar_airlock_squid1,_ar_airlock_houndeye1,_ar_airlock_houndeye2,_ar_airlock_houndeye3,_ar_airlock_houndeye4,_ar_airlock_houndeye5,_ar_airlock_houndeye6
+
+
+
+//==============================
+//       TEST FIRE ROOM
+//==============================
+
+beam|-3275,7707,-463,-3275,7707,-369,255,0,0,0,255,0$_ar_test_fire_beam
+beam|-3275,7707,-369,-3213,7707,-369,255,0,0,0,255,0$_ar_test_fire_beam
+beam|-3213,7707,-369,-3213,7707,-463,255,0,0,0,255,0$_ar_test_fire_beam
+beam|-3213,7707,-463,-3275,7707,-463,255,0,0,0,255,0$_ar_test_fire_beam
+wall|-3275,7707,-463,-3212,7723,-368$_ar_test_fire_wall
+
+number|-3252,7707,-416,0,270,0,255,0,0,0,255,0,1,66%$_ar_test_fire_number
+speaker|-3252,7707,-416$buttons/bell1.wav$_ar_test_fire_speaker
+
+counter|-3319,7081,-475,-2992,7906,-311,0.66$_ar_test_fire_beam,_ar_test_fire_wall,_ar_test_fire_number,_ar_test_fire_speaker
+
+
+
+//==============================
+//  OXYGEN AND FUEL CHECKPOINT
+//==============================
+
+mov|-2768,1152,-1640,32,point_checkpoint,-2768,1248,-1640
+
+
+
+//==============================
+//  OXYGEN AND FUEL BIG LADDER
+//==============================
+
+fakemdl|*217$_ar_big_ladder_fakemdl
+
+movoutback|*218$_ar_big_ladder_movoutback
+
+wall|-3520,2782,-3419,-3417,2885,-1808$_ar_big_ladder_wall
+
+killcounter|-3412,2520,-1802,16,monster_zombie$_ar_big_ladder_zombie1
+killcounter|-3530,2520,-1802,16,monster_zombie$_ar_big_ladder_zombie2
+skull|-3469,2894,-1802,90,180,90,255,0,0,0,255,0$_ar_big_ladder_skull$_ar_big_ladder_wall,_ar_big_ladder_fakemdl,_ar_big_ladder_movoutback@_ar_big_ladder_zombie1,_ar_big_ladder_zombie2
+
+
+
+//==============================
+//   OXYGEN AND FUEL ANTI SKIP
+//==============================
+
+wall|-3700,1750,-1963,-3251,2497,-1716$_ar_oxy_fuel_wall
+wall|-3686,1442,-1963,-3551,1737,-1564$_ar_oxy_fuel_wall
+wall|-3470,1546,-1931,-3335,1729,-1532$_ar_oxy_fuel_wall
+
+counter|-3686,1358,-1771,-3551,1373,-1714,0.01$_ar_oxy_fuel_wall
+
+
+
+//==============================
+//    OXYGEN AND FUEL ROOM
+//==============================
+
+movoutback|*229$_ar_oxy_fuel_movoutback
+movoutback|*231$_ar_oxy_fuel_movoutback
+fakemdl|*224$_ar_oxy_fuel_fakemdl
+fakemdl|*237$_ar_oxy_fuel_fakemdl
+fakemdl|*238$_ar_oxy_fuel_fakemdl
+
+killcounter|-3515,1779,-1922,16,monster_zombie$_ar_oxy_fuel_zombie1
+killcounter|-3562,2147,-1922,16,monster_zombie$_ar_oxy_fuel_zombie2
+killcounter|-3301,2412,-1922,16,monster_zombie$_ar_oxy_fuel_zombie3
+killcounter|-3303,1813,-1858,16,monster_headcrab$_ar_oxy_fuel_headcrab1
+skull|-3306,2050,-1929,-45,0,0,255,0,0,0,255,0$_ar_oxy_fuel_skull$_ar_oxy_fuel_checkpoint@_ar_oxy_fuel_zombie1,_ar_oxy_fuel_zombie2,_ar_oxy_fuel_zombie3,_ar_oxy_fuel_headcrab1
+
+multi|_ar_oxy_fuel_multi$_ar_oxy_fuel_movoutback,_ar_oxy_fuel_fakemdl
+
+checkpoint|-3472,2216,-1912,sprites/sprite_c_1.spr,ambience/particle_suck2.wav,debris/beamstart7.wav,-64,-64,-64,64,64,64$_ar_oxy_fuel_checkpoint$_ar_null$_ar_oxy_fuel_multi
+
+
+
+// deleting original checkpoint
+delete|-950,3470,-1844,16,point_checkpoint 
+
+
+
+//==============================
+//HOUNDEYES NEARBY ELECTRIFIED WATER
+//==============================
+
+beam|994,3843,-1907,994,3843,-1792,255,0,0,0,255,0$_ar_power_beam
+beam|994,3843,-1792,994,3732,-1792,255,0,0,0,255,0$_ar_power_beam
+beam|994,3732,-1792,994,3717,-1807,255,0,0,0,255,0$_ar_power_beam
+beam|994,3717,-1807	,994,3717,-1907,255,0,0,0,255,0$_ar_power_beam
+beam|994,3717,-1907,994,3843,-1907,255,0,0,0,255,0$_ar_power_beam
+wall|994,3000,-1907,1170,3900,-1284$_ar_power_wall
+
+killcounter|-668,2880,-1859,16,monster_bullchicken$_ar_power_squid1
+killcounter|854,3520,-1890,16,monster_houndeye$_ar_power_houndeye1
+killcounter|864,3412,-1890,16,monster_houndeye$_ar_power_houndeye2
+killcounter|932,3454,-1890,16,monster_houndeye$_ar_power_houndeye3
+skull|994,3780,-1849.5,0,0,0,255,0,0,0,255,0$_ar_power_skull$_ar_power_checkpoint@_ar_power_squid1,_ar_power_houndeye1,_ar_power_houndeye2,_ar_power_houndeye3
+
+multi|_ar_power_multi$_ar_power_beam,_ar_power_wall
+checkpoint|888,3456,-1856,sprites/sprite_c_1.spr,ambience/particle_suck2.wav,debris/beamstart7.wav,-64,-64,-64,64,64,64$_ar_power_checkpoint$_ar_null$_ar_power_multi
+
+
+create|weapon_hldm_handgrenade$_antirush_dynamic_weapon_hldm_handgrenade_creator$origin,-2434 6927.5 -667,m_flCustomRespawnTime,30
+create|weapon_hldm_handgrenade$_antirush_dynamic_weapon_hldm_handgrenade_creator$origin,-2064 7552 -923,m_flCustomRespawnTime,30

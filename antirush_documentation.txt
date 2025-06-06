@@ -1,0 +1,102 @@
+Prefixes:
+sz - a string
+vec - a vector
+fl - a floating point number (must be specified using a 'dot'! example: 1.5)
+i - an integer
+b - a boolean value (accepts 1 or 0, not true or false!)
+
+Definitions:
+coors (coords) - a vec3_t (an array of three points, like float[3]) - usually x,y,z (so coors2 is x2,y2,z2)
+heading - a vec3_t - usually yaw,pitch,roll
+rgb - a color3Vec (an array of three colours, red green and blue) - usually r,g,b (so rgb2 is r2,g2,b2)
+name or targetname - a string - usually a name for the thing you want to create (so later it can be toggled/enabled/disabled/moved/etc)
+va(something) - a dynamically-sized array of something (like an ellipsis) - usually means that you can specify various things as much as you want;
+(the syntax is different when you're going to use it: instead of va(thing1, thing2) you would just need to specify thing1, thing2)
+flPercentage - a percentage of players needed for that thing to activate
+flMaxError - maximum coors error (e.g. you specified 1024 but the entity has 1025 once it got spawned, so flMaxError can be up to 4 here)
+
+Acceptable keywords (and their short description):
+
+Just an antirush wall:
+wall|coors,coors2$name
+
+A beam (from coors to coors2, rgb is used when the beam is inactive and switches to rgb2 when it gets triggered by its targetname)
+beam|coors,coors2,rgb,rgb2$targetname
+
+A player counter (AABB from coors to coors2, requires flPercentage players to activate and as well you can 
+        specify skulls/checkpoints/keys/masters needed to progress - triggers the ellipsis from va(targets) after the flPercentage of players were in the AABB and skulls/checkpoints/keys/masters are activated)
+        Time for activation of one target can be specified using # symbol. Example: _antirush_sewer_wall#3.5,_antirush_sewer_door#3.0
+counter|coors,coors2,flPercentage$va(targets)@va(skulls or checkpoints or keys or masters)
+
+Flying (mid-air) numbers (like 66%) - uses rgb when inactive, rgb2 when got activated by its targetname. Set up flScale to make it bigger. szNumber accepts 0-9 and % symbols.
+number|coors,heading,rgb,rgb2,flScale,szNumber$targetname
+
+A speaker. Produces szSound once got activated by its targetname. Note: cannot be placed by .ar_reload! Must be placed before map has precached its stuffs.
+speaker|coors$szSound$targetname
+
+A fake BSP model. szModel must be a valid BSP model number - like *33, *155, *303, you get it. Teleports out the original entity (found by model) away and teleports it back once self got triggered.
+fakemdl|szModel$targetname
+
+Moves out a brush-based entity and teleports it back once self got triggered.
+movout|szModel$targetname
+
+Moves something (based on classname) to coors2 once it spawns (at MapStart)
+mov|coors,flMaxError,szClassName,coors2
+
+Delete a brush-based entity (found by its BSP model)
+delmdl|szModel
+
+A dynamic timer. Activates its targets once the time has ran out, bActivatedOnMapStart specifies if the timer gets activated in MapStart.
+timer|coors,heading,rgb,iTime,bActivatedOnMapStart,flScale$targetname$va(targets)
+
+A train node. Used by keys. iSpeed specifies the speed, which the key will have when flying thru this node. szNextNode must point to something (always). 
+            szFireOnPass may be null (nothing), if it isn't - the specified thing gets activated once the key passes this node.
+tramnode|coors,iSpeed$targetname$szNextNode@szFireOnPass
+
+A flying key. Starts its path from szFirstNode (tramnode) once got triggered by targetname specified.
+key|coors,heading,rgb$targetname$szFirstNode
+
+An invisible 'skull'. Searches for entity with szClassName in specified coors, if found, waits for this entity to get killed. If it got killed, sets the according flag (used by e.g. counter/skull)
+killcounter|coors,flMaxError,szClassName$targetname
+
+A visible skull. Requires all specified killcounters to be activated in order to progress.
+skull|coors,heading,rgb,rgb2$targetname$va(targets)@va(killcounters or squads or monstermakers)
+
+Just a padlock. A point-based entity just used to show the last tramnode of keys.
+padlock|coors,heading,rgb$targetname
+
+A multimanager. Time for activation of one target can be specified using # symbol. Example: _antirush_sewer_wall#3.5,_antirush_sewer_door#3.0
+multi|targetname$va(targets)
+
+An internal hook for squadmaker's. Used by skull.
+squad|coors,flMaxError$targetname
+
+An internal hook for monstermaker's. Used by skull.
+monstermaker|coors,flMaxError$targetname
+
+A respawn-point.
+checkpoint|coors,funnel,startsound,endsound,vecMinHullSize,vecMaxHullSize$targetname$killtarget$activatetarget@bActiveAtMapStart
+
+Move some brush-based entity out of the map, move it back when triggered self.
+movoutback|szModel$targetname
+
+Delete a point entity by its coors & classname.
+delete|coors,flMaxError,classname
+
+Like multisource.
+master|targetname
+
+Dispatch keyvalue at a brush entity.
+dispatchkvbymdl|szModel,szKeyValueName,szKeyValueValue$targetname@bDoMagicAtMapStart
+
+Dispatch keyvalue at a point entity.
+dispatchkv|coors,maxerror,classname,szKeyValueName,szKeyValueValue$targetname@bDoMagicAtMapStart
+
+Creates an entity with the keyvalues specified.
+create|classname$targetname$va(keyvalues)@bDoMagicAtMapStart
+
+Create linked portals between coors and coors2.
+portals|coors,coors2$targetname@bActivatedOnMapStart
+
+Places an arrow.
+arrow|coors,heading,rgb$targetname@bActiveAtMapStart

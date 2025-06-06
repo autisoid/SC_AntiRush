@@ -1,0 +1,51 @@
+// hl_c02_a1.txt -- first resonance cascade map
+
+/**
+    AntiRush source file.
+    Map: hl_c02_a1
+    Visit antirush_documentation.txt in case you have troubles while reading this file.
+**/
+
+//
+//  Fix up medkit and crowbar respawn times
+//
+dispatchkv|1606,-419,-360,32,weapon_sc_medkit,m_flCustomRespawnTime,0.0$_antirush_weapon_keyvalue_dispatcher
+dispatchkv|1678,1943,-129,32,weapon_hldm_crowbar,m_flCustomRespawnTime,0.0$_antirush_weapon_keyvalue_dispatcher
+timer|65536,65536,65536,0,0,0,255,255,0,1,1,0$_antirush_weapon_keyvalue_dispatcher_timer$_antirush_weapon_keyvalue_dispatcher
+
+//==============================
+//	FIRST ZOMBIE ENCOUNTER ROOM
+//==============================
+
+beam|101,2141,729,101,2141,835,255,0,0,0,255,0$_ar_hall_dr_beam
+beam|101,2141,835,101,2275,835,255,0,0,0,255,0$_ar_hall_dr_beam
+beam|101,2275,835,101,2275,729,255,0,0,0,255,0$_ar_hall_dr_beam
+beam|101,2275,729,101,2141,729,255,0,0,0,255,0$_ar_hall_dr_beam
+wall|-67,2140,728,101,2275,887$_ar_hall_dr_wall
+
+number|101,2200,782,0,0,0,255,0,0,0,255,0,1,66%$_ar_hall_dr_number
+speaker|101,2200,782$buttons/bell1.wav$_ar_hall_dr_speaker
+
+counter|101,1808,728,676,2607,887,0.66$_ar_hall_dr_beam,_ar_hall_dr_wall,_ar_hall_dr_number,_ar_hall_dr_speaker
+
+mov|-159,2208,798,32,point_checkpoint,320,2208,784
+
+
+
+//==============================
+//	   	   CHANGELEVEL
+//==============================
+
+beam|2700,1909,813,2700,1909,908,-1,-1,-1,0,255,0$_ar_end_dr_beam
+beam|2700,1909,908,2700,1802,908,-1,-1,-1,0,255,0$_ar_end_dr_beam
+beam|2700,1802,908,2700,1802,813,-1,-1,-1,0,255,0$_ar_end_dr_beam
+beam|2700,1802,813,2700,1909,813,-1,-1,-1,0,255,0$_ar_end_dr_beam
+
+fakemdl|*397$_ar_end_dr_button
+
+number|2700,1863.5,860.5,0,180,0,255,0,0,0,255,0,1,66%$_ar_end_dr_number
+speaker|2700,1863.5,860,5$buttons/bell1.wav$_ar_end_dr_speaker
+
+movout|*409$_ar_end_dr_movout
+
+counter|2149,1680,800,2690,2031,1527,0.66$_ar_end_dr_beam,_ar_end_dr_button,_ar_end_dr_number,_ar_end_dr_speaker,_ar_end_dr_movout#1.5

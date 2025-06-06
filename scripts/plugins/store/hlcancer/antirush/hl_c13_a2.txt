@@ -1,0 +1,215 @@
+// hl_c13_a2.txt -- lambda core map about the water pumps
+
+/**
+    AntiRush source file.
+    Map: hl_c13_a2
+    Visit antirush_documentation.txt in case you have troubles while reading this file.
+ **/
+
+beam|-896,1647,-728,-896,1639,-736,255,0,0,0,255,0$_antirush_start_beam
+beam|-896,1639,-736,-896,1639,-767,255,0,0,0,255,0$_antirush_start_beam
+beam|-896,1639,-767,-896,1433,-767,255,0,0,0,255,0$_antirush_start_beam
+beam|-896,1433,-767,-896,1433,-736,255,0,0,0,255,0$_antirush_start_beam
+beam|-896,1433,-736,-896,1425,-728,255,0,0,0,255,0$_antirush_start_beam
+beam|-896,1425,-728,-896,1425,-672,255,0,0,0,255,0$_antirush_start_beam
+beam|-896,1425,-672,-896,1449,-649,255,0,0,0,255,0$_antirush_start_beam
+beam|-896,1449,-649,-896,1449,-641,255,0,0,0,255,0$_antirush_start_beam
+beam|-896,1449,-641,-896,1623,-641,255,0,0,0,255,0$_antirush_start_beam
+beam|-896,1623,-641,-896,1623,-649,255,0,0,0,255,0$_antirush_start_beam
+beam|-896,1623,-649,-896,1647,-672,255,0,0,0,255,0$_antirush_start_beam
+beam|-896,1647,-672,-896,1647,-728,255,0,0,0,255,0$_antirush_start_beam
+create|func_wall_toggle$_antirush_dynamic_func_wall_toggle_creator$targetname,_antirush_start_wall,effects,128,rendermode,1,origin,20 453 -6,model,*77@1
+create|func_wall_toggle$_antirush_dynamic_func_wall_toggle_creator$targetname,_antirush_start_wall,effects,128,rendermode,1,origin,20 332 -6,model,*77@1
+create|func_wall_toggle$_antirush_dynamic_func_wall_toggle_creator$targetname,_antirush_start_wall,effects,128,rendermode,1,origin,20 322 41,model,*77@1
+create|func_wall_toggle$_antirush_dynamic_func_wall_toggle_creator$targetname,_antirush_start_wall,effects,128,rendermode,1,origin,20 430 79,model,*77@1
+number|-896,1528,-700,0,0,0,255,0,0,0,255,0,1,66%$_antirush_start_number
+speaker|-896,1528,-700$buttons/bell1.wav$_antirush_start_spk
+counter|-929,890,-763,-473,2348,-440,0.66$_antirush_start_wall,_antirush_start_number,_antirush_start_beam,_antirush_start_spk@_antirush_pump01_entrance_door_opened_ms,_antirush_pump02_entrance_door_opened_ms,_antirush_pump01_btn_pressed_ms,_antirush_pump02_btn_pressed_ms,_antirush_pump01_key,_antirush_pump02_key
+
+//
+//  The keys' padlocks
+//
+padlock|-896,1496.5,-700,0,0,0,200,156,96$_antirush_start_orange_padlock
+padlock|-896,1575.5,-700,0,0,0,113,181,212$_antirush_start_cyan_padlock
+
+//=============================
+//          Anti Troll
+//   A monsterclip brush which
+//     prevents the Barney
+//      from falling down
+//=============================
+create|func_monsterclip$_antirush_dynamic_func_monsterclip_creator$targetname,_antirush_anti_troll_barney_mc,effects,128,rendermode,1,origin,0 0 416,model,*145@1
+//re-create the barney with the additional monsterclip spawnflag set
+delete|-1628,2112,-769,32,monster_barney
+create|monster_barney$_antirush_dynamic_monster_barney_creator$origin,-1628 2112 -769,minhullsize,0 0 0,maxhullsize,0 0 0,rendercolor,0 0 0,angles,0 0 0,spawnflags,5@1
+//re-create the scientist too because he can walk there too
+delete|-1728,1824,-1000,32,monster_scientist
+create|monster_scientist$_antirush_dynamic_monster_scientist_creator$origin,-1728 1824 -1000,sequence,13,minhullsize,0 0 0,maxhullsize,0 0 0,rendercolor,0 0 0,angles,0 144 0,targetname,c3a2a_scitalk,body,-1,spawnflags,22@1
+
+//==============================
+//     Wall for both pumps
+//==============================
+wall|-873,919,-1088,-720,2190,-847$_antirush_pump0102_start_wall1
+wall|-873,919,-1088,-720,2190,-847$_antirush_pump0102_start_wall2
+
+//==============================
+//        PUMP 01 (Cyan)
+//==============================
+beam|-721,1847,-1023,-721,1705,-1023,255,255,0,0,255,0$_antirush_pump01_start_timer_beam
+beam|-721,1705,-1023,-721,1705,-992,255,255,0,0,255,0$_antirush_pump01_start_timer_beam
+beam|-721,1705,-992,-721,1697,-984,255,255,0,0,255,0$_antirush_pump01_start_timer_beam
+beam|-721,1697,-984,-721,1697,-928,255,255,0,0,255,0$_antirush_pump01_start_timer_beam
+beam|-721,1697,-928,-721,1721,-904,255,255,0,0,255,0$_antirush_pump01_start_timer_beam
+beam|-721,1721,-904,-721,1721,-897,255,255,0,0,255,0$_antirush_pump01_start_timer_beam
+beam|-721,1721,-897,-721,1831,-897,255,255,0,0,255,0$_antirush_pump01_start_timer_beam
+beam|-721,1831,-897,-721,1831,-904,255,255,0,0,255,0$_antirush_pump01_start_timer_beam
+beam|-721,1831,-904,-721,1855,-928,255,255,0,0,255,0$_antirush_pump01_start_timer_beam
+beam|-721,1855,-928,-721,1855,-984,255,255,0,0,255,0$_antirush_pump01_start_timer_beam
+beam|-721,1855,-984,-721,1847,-992,255,255,0,0,255,0$_antirush_pump01_start_timer_beam
+beam|-721,1847,-992,-721,1847,-1023,255,255,0,0,255,0$_antirush_pump01_start_timer_beam
+timer|-721,1766,-970,0,0,0,255,255,0,30,1,3$_antirush_start_timer1$_antirush_pump01_start_timer_beam,_antirush_pump0102_start_wall1
+
+fakemdl|*49$_antirush_pump01_entrance_dr
+beam|160.5,2225,-1023,160.5,2319,-1023,255,0,0,0,255,0$_antirush_pump01_entrance_beam
+beam|160.5,2319,-1023,160.5,2319,-929,255,0,0,0,255,0$_antirush_pump01_entrance_beam
+beam|160.5,2319,-929,160.5,2225,-929,255,0,0,0,255,0$_antirush_pump01_entrance_beam
+beam|160.5,2225,-929,160.5,2225,-1023,255,0,0,0,255,0$_antirush_pump01_entrance_beam
+number|160.5,2280,-976,0,180,0,255,0,0,0,255,0,1,33%$_antirush_pump01_entrance_number
+wall|159,1951,-1037,269,2418,-912$_antirush_pump01_entrance_wall
+speaker|160.5,2280,-976$buttons/bell1.wav$_antirush_pump01_entrance_spk
+master|_antirush_pump01_entrance_door_opened_ms
+counter|-476,2116,-1095,269,2418,-912,0.33$_antirush_pump01_entrance_wall,_antirush_pump01_entrance_number,_antirush_pump01_entrance_beam,_antirush_pump01_entrance_dr,_antirush_pump01_entrance_spk,_antirush_pump01_entrance_door_opened_ms
+
+//=================================
+//  The Pump 02 key (Orange one)
+//=================================
+key|536,3951,-699,0,-90,0,113,181,212$_antirush_pump01_key$_antirush_pump01_key_1st_node
+
+multi|_antirush_pump01_key_multi$_antirush_pump01_key#1,_antirush_start_cyan_padlock#1
+
+//===============
+//  Train nodes
+//===============
+tramnode|536,3951,-699,128$_antirush_pump01_key_1st_node$_antirush_pump01_key_2nd_node
+tramnode|536,3951,-699,128$_antirush_pump01_key_2nd_node$_antirush_pump01_key_3rd_node
+tramnode|622,3921,-670,128$_antirush_pump01_key_3rd_node$_antirush_pump01_key_4th_node
+tramnode|620,3826,-591,128$_antirush_pump01_key_4th_node$_antirush_pump01_key_5th_node
+tramnode|486,3731,-561,128$_antirush_pump01_key_5th_node$_antirush_pump01_key_6th_node
+tramnode|321,3550,-580,128$_antirush_pump01_key_6th_node$_antirush_pump01_key_7th_node
+tramnode|321,3298,-573,128$_antirush_pump01_key_7th_node$_antirush_pump01_key_8th_node
+tramnode|688,3298,-719,128$_antirush_pump01_key_8th_node$_antirush_pump01_key_9th_node
+tramnode|688,2573,-719,128$_antirush_pump01_key_9th_node$_antirush_pump01_key_10th_node
+tramnode|658,2467,-735,128$_antirush_pump01_key_10th_node$_antirush_pump01_key_11th_node
+tramnode|552,2445,-768,128$_antirush_pump01_key_11th_node$_antirush_pump01_key_12th_node
+tramnode|426,2342,-903,128$_antirush_pump01_key_12th_node$_antirush_pump01_key_13th_node
+tramnode|244,2267,-976,128$_antirush_pump01_key_13th_node$_antirush_pump01_key_14th_node
+tramnode|-968,2267,-976,128$_antirush_pump01_key_14th_node$_antirush_pump01_key_15th_node
+tramnode|-968,1797,-976,128$_antirush_pump01_key_15th_node$_antirush_pump01_key_16th_node
+tramnode|-672,1797,-926,128$_antirush_pump01_key_16th_node$_antirush_pump01_key_17th_node
+tramnode|-582,1722,-870,128$_antirush_pump01_key_17th_node$_antirush_pump01_key_18th_node
+tramnode|-654,1659,-757,128$_antirush_pump01_key_18th_node$_antirush_pump01_key_19th_node
+tramnode|-710,1617,-696,64$_antirush_pump01_key_19th_node$_antirush_pump01_key_20th_node
+tramnode|-838,1575.5,-700,128$_antirush_pump01_key_20th_node$_antirush_pump01_key_end_node@_antirush_pump01_key_multi
+tramnode|-838,1575.5,-700,0$_antirush_pump01_key_end_node$_antirush_pump01_key_null_node
+
+//======================================
+//  The button which turns on Pump 01
+//======================================
+master|_antirush_pump01_btn_pressed_ms
+multi|_antirush_pump01_btn_mm$mm1,_antirush_pump01_btn_pressed_ms,_antirush_pump01_key
+dispatchkvbymdl|*97,target,_antirush_pump01_btn_mm$_antirush_pump01_btn_kv_dispatcher@1
+
+//==============================
+//       PUMP 02 (Orange)
+//==============================
+beam|-721,1367,-1023,-721,1225,-1023,255,255,0,0,255,0$_antirush_pump02_start_timer_beam
+beam|-721,1225,-1023,-721,1225,-992,255,255,0,0,255,0$_antirush_pump02_start_timer_beam
+beam|-721,1225,-992,-721,1217,-984,255,255,0,0,255,0$_antirush_pump02_start_timer_beam
+beam|-721,1217,-984,-721,1217,-928,255,255,0,0,255,0$_antirush_pump02_start_timer_beam
+beam|-721,1217,-928,-721,1241,-904,255,255,0,0,255,0$_antirush_pump02_start_timer_beam
+beam|-721,1241,-904,-721,1241,-897,255,255,0,0,255,0$_antirush_pump02_start_timer_beam
+beam|-721,1241,-897,-721,1351,-897,255,255,0,0,255,0$_antirush_pump02_start_timer_beam
+beam|-721,1351,-897,-721,1351,-904,255,255,0,0,255,0$_antirush_pump02_start_timer_beam
+beam|-721,1351,-904,-721,1375,-928,255,255,0,0,255,0$_antirush_pump02_start_timer_beam
+beam|-721,1375,-928,-721,1375,-984,255,255,0,0,255,0$_antirush_pump02_start_timer_beam
+beam|-721,1375,-984,-721,1367,-992,255,255,0,0,255,0$_antirush_pump02_start_timer_beam
+beam|-721,1367,-992,-721,1367,-1023,255,255,0,0,255,0$_antirush_pump02_start_timer_beam
+timer|-721,1286,-970,0,0,0,255,255,0,30,1,3$_antirush_start_timer2$_antirush_pump02_start_timer_beam,_antirush_pump0102_start_wall2
+
+fakemdl|*52$_antirush_pump02_entrance_dr
+beam|160.5,753,-1023,160.5,847,-1023,255,0,0,0,255,0$_antirush_pump02_entrance_beam
+beam|160.5,847,-1023,160.5,847,-929,255,0,0,0,255,0$_antirush_pump02_entrance_beam
+beam|160.5,847,-929,160.5,753,-929,255,0,0,0,255,0$_antirush_pump02_entrance_beam
+beam|160.5,753,-929,160.5,753,-1023,255,0,0,0,255,0$_antirush_pump02_entrance_beam
+number|160.5,808.5,-976,0,180,0,255,0,0,0,255,0,1,33%$_antirush_pump02_entrance_number
+wall|159,700,-1023,270,896,-913$_antirush_pump02_entrance_wall
+speaker|160.5,805.5,-976$buttons/bell1.wav$_antirush_pump02_entrance_spk
+master|_antirush_pump02_entrance_door_opened_ms
+counter|-249,642,-1009,270,896,-913,0.33$_antirush_pump02_entrance_wall,_antirush_pump02_entrance_number,_antirush_pump02_entrance_beam,_antirush_pump02_entrance_dr,_antirush_pump02_entrance_spk,_antirush_pump02_entrance_door_opened_ms
+
+//=================================
+//  The Pump 02 key (Orange one)
+//=================================
+key|537,-880,-699,0,-90,0,200,156,96$_antirush_pump02_key$_antirush_pump02_key_1st_node
+
+multi|_antirush_pump02_key_multi$_antirush_pump02_key#1,_antirush_start_orange_padlock#1
+
+//===============
+//  Train nodes
+//===============
+tramnode|537,-880,-699,128$_antirush_pump02_key_1st_node$_antirush_pump02_key_2nd_node
+tramnode|618,-880,-699,128$_antirush_pump02_key_2nd_node$_antirush_pump02_key_3rd_node
+tramnode|687,-778,-633,128$_antirush_pump02_key_3rd_node$_antirush_pump02_key_4th_node
+tramnode|591,-689,-583,128$_antirush_pump02_key_4th_node$_antirush_pump02_key_5th_node
+tramnode|478,-595,-559,128$_antirush_pump02_key_5th_node$_antirush_pump02_key_6th_node
+tramnode|381,-507,-575,128$_antirush_pump02_key_6th_node$_antirush_pump02_key_7th_node
+tramnode|317,-429,-582,128$_antirush_pump02_key_7th_node$_antirush_pump02_key_8th_node
+tramnode|328,-238,-582,128$_antirush_pump02_key_8th_node$_antirush_pump02_key_9th_node
+tramnode|642,-236,-722,128$_antirush_pump02_key_9th_node$_antirush_pump02_key_10th_node
+tramnode|642,-18,-722,128$_antirush_pump02_key_10th_node$_antirush_pump02_key_11th_node
+tramnode|688,120,-722,128$_antirush_pump02_key_11th_node$_antirush_pump02_key_12th_node
+tramnode|682,697,-722,128$_antirush_pump02_key_12th_node$_antirush_pump02_key_13th_node
+tramnode|544,697,-747,128$_antirush_pump02_key_13th_node$_antirush_pump02_key_14th_node
+tramnode|454,702,-895,128$_antirush_pump02_key_14th_node$_antirush_pump02_key_15th_node
+tramnode|327,800,-972,128$_antirush_pump02_key_15th_node$_antirush_pump02_key_16th_node
+tramnode|11,795,-972,128$_antirush_pump02_key_16th_node$_antirush_pump02_key_17th_node
+tramnode|-92,771,-972,128$_antirush_pump02_key_17th_node$_antirush_pump02_key_18th_node
+tramnode|-275,770,-972,128$_antirush_pump02_key_18th_node$_antirush_pump02_key_19th_node
+tramnode|-283,851,-972,128$_antirush_pump02_key_19th_node$_antirush_pump02_key_20th_node
+tramnode|-834,843,-972,128$_antirush_pump02_key_20th_node$_antirush_pump02_key_21st_node
+tramnode|-988,843,-972,128$_antirush_pump02_key_21st_node$_antirush_pump02_key_22nd_node
+tramnode|-988,1303,-972,128$_antirush_pump02_key_22nd_node$_antirush_pump02_key_23rd_node
+tramnode|-633,1303,-945,128$_antirush_pump02_key_23rd_node$_antirush_pump02_key_24th_node
+tramnode|-561,1371,-853,128$_antirush_pump02_key_24th_node$_antirush_pump02_key_25th_node
+tramnode|-620,1477,-743,128$_antirush_pump02_key_25th_node$_antirush_pump02_key_26th_node
+tramnode|-744,1496.5,-700,64$_antirush_pump02_key_26th_node$_antirush_pump02_key_27th_node
+tramnode|-896,1496.5,-700,128$_antirush_pump02_key_27th_node$_antirush_pump02_key_end_node@_antirush_pump02_key_multi
+tramnode|-896,1496.5,-700,0$_antirush_pump02_key_end_node$_antirush_pump02_key_null_node
+
+//======================================
+//  The button which turns on Pump 02
+//======================================
+master|_antirush_pump02_btn_pressed_ms
+multi|_antirush_pump02_btn_mm$mm2,_antirush_pump02_btn_pressed_ms,_antirush_pump02_key
+dispatchkvbymdl|*98,target,_antirush_pump02_btn_mm$_antirush_pump02_btn_kv_dispatcher@1
+
+//==========================
+//       LEVEL CHANGE
+//==========================
+movout|*14$_antirush_level_change_trigger
+beam|2262,2439,-127,2262,2297,-127,-1,-1,-1,0,255,0$_antirush_level_change_beam
+beam|2262,2297,-127,2262,2297,-103,-1,-1,-1,0,255,0$_antirush_level_change_beam
+beam|2262,2297,-103,2262,2289,-95,-1,-1,-1,0,255,0$_antirush_level_change_beam
+beam|2262,2289,-95,2262,2289,-32,-1,-1,-1,0,255,0$_antirush_level_change_beam
+beam|2262,2289,-32,2262,2313,-9,-1,-1,-1,0,255,0$_antirush_level_change_beam
+beam|2262,2313,-9,2262,2313,-1,-1,-1,-1,0,255,0$_antirush_level_change_beam
+beam|2262,2313,-1,2262,2423,-1,-1,-1,-1,0,255,0$_antirush_level_change_beam
+beam|2262,2423,-1,2262,2423,-9,-1,-1,-1,0,255,0$_antirush_level_change_beam
+beam|2262,2423,-9,2262,2447,-32,-1,-1,-1,0,255,0$_antirush_level_change_beam
+beam|2262,2447,-32,2262,2447,-95,-1,-1,-1,0,255,0$_antirush_level_change_beam
+beam|2262,2447,-95,2262,2439,-103,-1,-1,-1,0,255,0$_antirush_level_change_beam
+beam|2262,2439,-103,2262,2439,-127,-1,-1,-1,0,255,0$_antirush_level_change_beam
+wall|2075,2254,-183,2262,2520,43$_antirush_level_change_wall
+number|2262,2360,-64,0,0,0,255,0,0,0,255,0,1,66%$_antirush_level_change_number
+speaker|2262,2360,-64$buttons/bell1.wav$_antirush_level_change_spk
+counter|2082,1923,-127,2485,2599,66,0.66$_antirush_level_change_number,_antirush_level_change_spk,_antirush_level_change_beam,_antirush_level_change_trigger#1.5

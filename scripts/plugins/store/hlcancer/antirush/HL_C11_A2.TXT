@@ -1,0 +1,193 @@
+// hl_c11_a2.txt -- Now we have to take down a fucking chopper because it's a pain in the ass to climb ladders while being shot down by the chopper. Damn we commit so many crimes in this map.
+
+/**
+    AntiRush source file.
+    Map: hl_c11_a2
+    Visit antirush_documentation.txt in case you have troubles while reading this file.
+**/
+
+//========================
+//      MAP START
+//========================
+beam|-1165,-3735,-95,-1165,-3657,-95,255,255,0,0,255,0$_antirush_start_beam
+beam|-1165,-3657,-95,-1165,-3633,-71,255,255,0,0,255,0$_antirush_start_beam
+beam|-1165,-3633,-71,-1165,-3633,-40,255,255,0,0,255,0$_antirush_start_beam
+beam|-1165,-3633,-40,-1165,-3657,-17,255,255,0,0,255,0$_antirush_start_beam
+beam|-1165,-3657,-17,-1165,-3735,-17,255,255,0,0,255,0$_antirush_start_beam
+beam|-1165,-3735,-17,-1165,-3759,-40,255,255,0,0,255,0$_antirush_start_beam
+beam|-1165,-3759,-40,-1165,-3759,-71,255,255,0,0,255,0$_antirush_start_beam
+beam|-1165,-3759,-71,-1165,-3735,-95,255,255,0,0,255,0$_antirush_start_beam
+wall|-1165,-3770,-110,-685,-3482,20$_antirush_start_wall
+timer|-1166,-3682,-69,0,-180,0,255,255,0,30,1,3$_antirush_start_timer$_antirush_start_wall,_antirush_start_beam
+
+//============================
+//    *epic* APACHE FIGHT
+//============================
+master|_antirush_once_apache_fight_cp1_picked_up_ms
+multi|_antirush_apache_fight_cp1_multi$_antirush_once_apache_fight_cp1_picked_up_ms
+checkpoint|-2891,-4967,-1222,sprites/sprite_c_1.spr,ambience/particle_suck2.wav,debris/beamstart7.wav,-32,-32,-32,32,32,32$_antirush_apache_fight_checkpoint1$_antirush_null$_antirush_apache_fight_cp1_multi@1
+
+delete|-2660,-5392,-504,32,point_checkpoint
+master|_antirush_once_apache_fight_cp2_picked_up_ms
+multi|_antirush_apache_fight_cp2_multi$_antirush_once_apache_fight_cp2_picked_up_ms
+checkpoint|-2660,-5392,-504,sprites/sprite_c_1.spr,ambience/particle_suck2.wav,debris/beamstart7.wav,-32,-32,-32,32,32,32$_antirush_apache_fight_checkpoint2$_antirush_null$_antirush_apache_fight_cp2_multi
+
+//Move the apache away because bozos can shoot it down before players even touch the trigger which makes the apache active.
+mov|-4408,-3224,-1480,512,monster_apache,-3929,-2633,-1480
+
+create|func_wall_toggle$_antirush_dynamic_func_wall_toggle_creator$origin,-1 -1 0,model,*66,targetname,_antirush_apache_fight_ladder_blocker@1
+create|func_wall_toggle$_antirush_dynamic_func_wall_toggle_creator$origin,-1 -1 0,model,*96,targetname,_antirush_apache_fight_ladder_blocker@1
+
+speaker|-3246,-4926,-1222$buttons/bell1.wav$_antirush_apache_fight_spk
+
+killcounter|-3929,-2633,-1480,32,monster_apache$_antirush_apache_fight_kc
+skull|-3248,-4930,-1222,0,210,0,255,0,0,0,255,0$_antirush_apache_fight_skull$_antirush_apache_fight_checkpoint2,_antirush_apache_fight_spk,_antirush_apache_fight_ladder_blocker,_antirush_apache_fight_ladder_blocker2@_antirush_apache_fight_kc
+
+//=============================
+//     Fucking pipe part
+//   after hunting down the
+//          APACHE
+//=============================
+beam|-2669,-5216,-95,-2691,-5216,-95,255,0,0,0,255,0$_antirush_pipe_beam
+beam|-2691,-5216,-95,-2711,-5216,-75,255,0,0,0,255,0$_antirush_pipe_beam
+beam|-2711,-5216,-75,-2711,-5216,-53,255,0,0,0,255,0$_antirush_pipe_beam
+beam|-2711,-5216,-53,-2691,-5216,-33,255,0,0,0,255,0$_antirush_pipe_beam
+beam|-2691,-5216,-33,-2669,-5216,-33,255,0,0,0,255,0$_antirush_pipe_beam
+beam|-2669,-5216,-33,-2649,-5216,-53,255,0,0,0,255,0$_antirush_pipe_beam
+beam|-2649,-5216,-53,-2649,-5216,-75,255,0,0,0,255,0$_antirush_pipe_beam
+beam|-2649,-5216,-75,-2669,-5216,-95,255,0,0,0,255,0$_antirush_pipe_beam
+wall|-2711,-5216,-109,-2644,-5143,-29$_antirush_pipe_wall
+speaker|-2689,-5217,-64$buttons/bell1.wav$_antirush_pipe_spk
+number|-2689,-5217,-64,0,270,0,255,0,0,0,255,0,1,66%$_antirush_pipe_number
+counter|-3264,-5304,-104,-2592,-4758,152,0.66$_antirush_pipe_beam,_antirush_pipe_wall,_antirush_pipe_spk,_antirush_pipe_number@_antirush_apache_fight_skull,_antirush_once_apache_fight_cp1_picked_up_ms,_antirush_once_apache_fight_cp2_picked_up_ms
+
+//=============================
+//    Now we have to fight
+//   against a fucking TANK
+//=============================
+fakemdl|*15$_antirush_tank_fight_fake_btn
+
+killcounter|576,-736,0,32,monster_human_grunt$_antirush_tank_fight_kc1
+killcounter|-320,-432,0,32,monster_human_grunt$_antirush_tank_fight_kc2
+killcounter|-296,-216,8,32,monster_human_grunt$_antirush_tank_fight_kc3
+killcounter|-129,390,-32,32,monster_human_grunt$_antirush_tank_fight_kc4
+killcounter|368,512,-32,32,monster_human_grunt$_antirush_tank_fight_kc5
+killcounter|552,48,-32,32,monster_human_grunt$_antirush_tank_fight_kc6
+skull|-352,-288,60,0,0,0,255,0,0,0,255,0$_antirush_tank_fight_skull$_antirush_null@_antirush_tank_fight_kc1,_antirush_tank_fight_kc2,_antirush_tank_fight_kc3,_antirush_tank_fight_kc4,_antirush_tank_fight_kc5,_antirush_tank_fight_kc6
+counter|-358,-1479,-36,784,743,440,0.01$_antirush_tank_fight_fake_btn@_antirush_tank_fight_skull,_antirush_tank_fight_tank_key
+
+//============================
+//      GREEN (TANK) KEY
+//============================
+key|-25,-693,50,0,180,-75,0,255,0$_antirush_tank_fight_tank_key$_antirush_tank_fight_tank_key_1st_node
+padlock|-352,-310,70,0,0,0,0,255,0$_antirush_tank_fight_tank_key_padlock
+dispatchkvbymdl|*26,target,_antirush_once_tank_destroyed_multi$_antirush_tank_fight_magic_dispatcher1@1
+dispatchkvbymdl|*26,target,tank_break_mm$_antirush_tank_fight_magic_dispatcher2
+multi|_antirush_once_tank_destroyed_multi$_antirush_tank_fight_magic_dispatcher2,tank_break_mm,_antirush_tank_fight_tank_key
+
+//===============================
+//    TRAM NODES FOR GREEN KEY
+//===============================
+multi|_antirush_tank_fight_tank_key_multi$_antirush_tank_fight_tank_key#0.5,_antirush_tank_fight_tank_key_padlock#0.5
+tramnode|-25,-693,50,64$_antirush_tank_fight_tank_key_1st_node$_antirush_tank_fight_tank_key_2nd_node
+tramnode|-25,-418,50,64$_antirush_tank_fight_tank_key_2nd_node$_antirush_tank_fight_tank_key_3rd_node
+tramnode|-225,-357,70,64$_antirush_tank_fight_tank_key_3rd_node$_antirush_tank_fight_tank_key_4th_node
+tramnode|-288,-316,70,64$_antirush_tank_fight_tank_key_4th_node$_antirush_tank_fight_tank_key_5th_node
+tramnode|-352,-310,70,64$_antirush_tank_fight_tank_key_5th_node$_antirush_tank_fight_tank_key_end_node@_antirush_tank_fight_tank_key_multi
+tramnode|-352,-310,70,0$_antirush_tank_fight_tank_key_end_node$_antirush_tank_fight_tank_key_null_node
+
+//===============================
+//        BRADLEY PART
+//===============================
+dispatchkvbymdl|*50,target,_antirush_once_brad_destroyed_multi$_antirush_brad_fight_magic_dispatcher1@1
+dispatchkvbymdl|*50,target,brad_break_mm$_antirush_brad_fight_magic_dispatcher2
+multi|_antirush_once_brad_destroyed_multi$_antirush_brad_fight_magic_dispatcher2,brad_break_mm,_antirush_brad_key
+
+//===============================
+//      RED (BRADLEY) KEY
+//===============================
+padlock|-1919,2376,-54,0,0,0,255,0,0$_antirush_brad_key_padlock
+key|-1093,1992,-55,0,0,-55,255,0,0$_antirush_brad_key$_antirush_brad_key_1st_node
+
+//===============================
+//    TRAM NODES FOR RED KEY
+//===============================
+multi|_antirush_brad_key_multi$_antirush_brad_key#0.5,_antirush_brad_key_padlock#0.5
+tramnode|-1093,1992,-55,64$_antirush_brad_key_1st_node$_antirush_brad_key_2nd_node
+tramnode|-1195,1954,28,128$_antirush_brad_key_2nd_node$_antirush_brad_key_3rd_node
+tramnode|-1303,2310,59,128$_antirush_brad_key_3rd_node$_antirush_brad_key_4th_node
+tramnode|-1558,2353,13,128$_antirush_brad_key_4th_node$_antirush_brad_key_5th_node
+tramnode|-1558,2353,13,128$_antirush_brad_key_5th_node$_antirush_brad_key_6th_node
+tramnode|-1819,2376,-54,64$_antirush_brad_key_6th_node$_antirush_brad_key_7th_node
+tramnode|-1919,2376,-54,64$_antirush_brad_key_7th_node$_antirush_brad_key_end_node@_antirush_brad_key_multi
+tramnode|-1919,2376,-54,0$_antirush_brad_key_end_node$_antirush_brad_key_null_node
+
+//===============================
+//          HECU HIDEOUT
+//===============================
+master|_antirush_hecu_cp_once_picked_up_ms
+delete|-198,1942,-312,32,point_checkpoint
+multi|_antirush_hecu_cp_multi$_antirush_hecu_cp_key,_antirush_hecu_cp_once_picked_up_ms
+checkpoint|-198,1942,-312,sprites/sprite_c_1.spr,ambience/particle_suck2.wav,debris/beamstart7.wav,-32,-32,-32,32,32,32$_antirush_hecu_checkpoint$_antirush_null$_antirush_hecu_cp_multi
+
+killcounter|-96,2208,-320,32,monster_human_grunt$_antirush_hecu_cp_kc1
+killcounter|0,1616,-320,32,monster_human_grunt$_antirush_hecu_cp_kc2
+skull|-255,1977,-344,0,0,0,255,0,0,0,255,0$_antirush_hecu_cp_skull$_antirush_hecu_checkpoint@_antirush_hecu_cp_kc1,_antirush_hecu_cp_kc2
+
+//===============================
+//      BLUE (HECU) KEY
+//===============================
+padlock|-1919,2486,-54,0,0,0,0,0,255$_antirush_hecu_cp_key_padlock
+key|-255,1950,-340,0,90,0,0,0,255$_antirush_hecu_cp_key$_antirush_hecu_cp_key_1st_node
+
+//===============================
+//    TRAM NODES FOR BLUE KEY
+//===============================
+multi|_antirush_hecu_cp_key_multi$_antirush_hecu_cp_key#0.5,_antirush_hecu_cp_key_padlock#0.5
+tramnode|-255,1950,-340,128$_antirush_hecu_cp_key_1st_node$_antirush_hecu_cp_key_2nd_node
+tramnode|0,1928,-317,128$_antirush_hecu_cp_key_2nd_node$_antirush_hecu_cp_key_3rd_node
+tramnode|0,1928,-191,128$_antirush_hecu_cp_key_3rd_node$_antirush_hecu_cp_key_4th_node
+tramnode|-840,1836,36,128$_antirush_hecu_cp_key_4th_node$_antirush_hecu_cp_key_5th_node
+tramnode|-1469,2441,36,128$_antirush_hecu_cp_key_5th_node$_antirush_hecu_cp_key_6th_node
+tramnode|-1819,2486,-54,128$_antirush_hecu_cp_key_6th_node$_antirush_hecu_cp_key_7th_node
+tramnode|-1919,2486,-54,128$_antirush_hecu_cp_key_7th_node$_antirush_hecu_cp_key_end_node@_antirush_hecu_cp_key_multi
+tramnode|-1919,2486,-54,0$_antirush_hecu_cp_key_end_node$_antirush_hecu_cp_key_null_node
+
+//===============================
+//          Final act
+//===============================
+movoutback|*49$_antirush_finale_door1_trigger
+fakemdl|*164$_antirush_fake_finale_door1
+wall|-2326,2161,-235,-1936,2721,220$_antirush_finale_anti_sink_wall1
+counter|-2024,2100,-301,-967,2732,276,0.01$_antirush_finale_door1_trigger,_antirush_fake_finale_door1,_antirush_finale_anti_sink_wall1@_antirush_hecu_cp_skull,_antirush_hecu_cp_key,_antirush_hecu_cp_once_picked_up_ms,_antirush_brad_key
+
+beam|-2303,2528,-207,-2303,2336,-207,255,0,0,0,255,0$_antirush_finale_beam
+beam|-2303,2336,-207,-2303,2336,-17,255,0,0,0,255,0$_antirush_finale_beam
+beam|-2303,2336,-17,-2303,2528,-17,255,0,0,0,255,0$_antirush_finale_beam
+beam|-2303,2528,-17,-2303,2528,-207,255,0,0,0,255,0$_antirush_finale_beam
+number|-2303,2423,-80,0,0,0,255,0,0,0,255,0,1,66%$_antirush_finale_number
+speaker|-2303,2423,-80$buttons/bell1.wav$_antirush_finale_spk
+movoutback|*152$_antirush_finale_door2_trigger
+fakemdl|*153$_antirush_fake_finale_door2
+wall|-2544,2140,-315,-2303,2799,39$_antirush_finale_anti_sink_wall2
+counter|-2325,2169,-208,-1952,2656,128,0.66$_antirush_finale_spk,_antirush_finale_beam,_antirush_finale_number,_antirush_finale_door2_trigger,_antirush_fake_finale_door2,_antirush_finale_anti_sink_wall2@_antirush_hecu_cp_skull,_antirush_hecu_cp_key,_antirush_hecu_cp_once_picked_up_ms,_antirush_brad_key
+
+//
+//      LEVEL CHANGE!!!!!!!!
+//
+beam|-3880,1815,47,-3927,1847,47,-1,-1,-1,0,255,0$_antirush_level_change_beam
+beam|-3927,1847,47,-3911,1800,47,-1,-1,-1,0,255,0$_antirush_level_change_beam
+beam|-3911,1800,47,-3927,1737,47,-1,-1,-1,0,255,0$_antirush_level_change_beam
+beam|-3927,1737,47,-3864,1769,47,-1,-1,-1,0,255,0$_antirush_level_change_beam
+beam|-3864,1769,47,-3801,1737,47,-1,-1,-1,0,255,0$_antirush_level_change_beam
+beam|-3801,1737,47,-3833,1784,47,-1,-1,-1,0,255,0$_antirush_level_change_beam
+beam|-3833,1784,47,-3801,1799.5,47,-1,-1,-1,0,255,0$_antirush_level_change_beam
+beam|-3801,1799,47,-3849,1799,47,-1,-1,-1,0,255,0$_antirush_level_change_beam
+beam|-3849,1799,47,-3833,1847,47,-1,-1,-1,0,255,0$_antirush_level_change_beam
+beam|-3833,1847,47,-3848,1847,47,-1,-1,-1,0,255,0$_antirush_level_change_beam
+beam|-3848,1847,47,-3880,1815,47,-1,-1,-1,0,255,0$_antirush_level_change_beam
+wall|-3965,1695,-40,-3755,1882,48$_antirush_level_change_wall
+number|-3861,1795,48,90,90,0,255,0,0,0,255,0,1,66%$_antirush_level_change_number
+speaker|-3861,1795,48$buttons/bell1.wav$_antirush_level_change_spk
+movout|*103$_antirush_level_change_trigger
+counter|-4369,1680,-32,-2952,3184,512,0.66$_antirush_level_change_number,_antirush_level_change_spk,_antirush_level_change_beam,_antirush_level_change_trigger#1.5

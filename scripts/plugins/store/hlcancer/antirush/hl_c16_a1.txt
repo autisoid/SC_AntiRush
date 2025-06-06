@@ -1,0 +1,60 @@
+// hl_c16_a1.txt -- First Interloper map wow
+
+/**
+    AntiRush source file.
+    Map: hl_c16_a1
+    Visit antirush_documentation.txt in case you have troubles while reading this file.
+**/
+
+movoutback|*91$_antirush_level_change_trigger
+movoutback|*92$_antirush_level_change_island
+//LEVEL CHANGE sprite
+dispatchkv|-868,-1196,480,32,env_sprite,renderamt,0$_antirush_level_change_sprite_disabler@1
+dispatchkv|-868,-1196,480,32,env_sprite,renderamt,255$_antirush_level_change_sprite_enabler
+//Small coronas
+dispatchkv|-975,-1268,537,16,env_sprite,renderamt,0$_antirush_level_change_sprite_disabler@1
+dispatchkv|-975,-1268,537,16,env_sprite,renderamt,200$_antirush_level_change_sprite_enabler
+dispatchkv|-975,-1268,433,16,env_sprite,renderamt,0$_antirush_level_change_sprite_disabler@1
+dispatchkv|-975,-1268,433,16,env_sprite,renderamt,200$_antirush_level_change_sprite_enabler
+//Beams
+dispatchkv|-849,-1364,553,4,env_beam,renderamt,0$_antirush_level_change_beam_disabler@1
+dispatchkv|-849,-1364,553,4,env_beam,renderamt,80$_antirush_level_change_beam_enabler
+dispatchkv|-815,-1364,553,4,env_beam,renderamt,0$_antirush_level_change_beam_disabler@1
+dispatchkv|-815,-1364,553,4,env_beam,renderamt,150$_antirush_level_change_beam_enabler
+
+multi|_antirush_level_change_island_enabler_mm$_antirush_level_change_island,_antirush_level_change_sprite_enabler,_antirush_level_change_beam_enabler
+
+//
+//Inside the island
+//
+//remove the stalk (door)
+delmdl|*13
+//remove the trigger
+delmdl|*16
+
+//real stalk
+create|func_door$_antirush_dynamic_func_door_creator$model,*13,explosion,1,weapon,1,m_iObeyTriggerMode,2,angles,90 0 0,netname,bshk,rendercolor,255 255 255,targetname,stalk_3,lip,72,wait,-1,noise2,common/null.wav,noise1,common/null.wav,speed,280,spawnflags,4128
+
+//fake stalk
+create|func_wall$_antirush_dynamic_func_wall_creator$model,*13,targetname,_antirush_fake_stalk
+
+//real trigger
+create|trigger_multiple$_antirush_dynamic_trigger_multiple_creator$model,*16,angles,0 0 0,delay,2,target,stalk_3,wait,10
+
+//the creator of the fake stalk
+timer|65535,65535,65535,0,0,0,255,255,0,1,1,0$_antirush_stalk_creator_timer$_antirush_dynamic_func_wall_creator
+
+//this mm kills the fake stalk and creates the trigger and the original stalk
+create|multi_manager$_antirush_dynamic_multi_manager_creator$targetname,_antirush_stalk_mm,_antirush_fake_stalk,0#2@1
+
+master|_antirush_level_change_ms
+number|-154,49,-191,0,90,0,255,0,0,0,255,0,1,33%$_antirush_stalk_number
+speaker|-154,49,-191$buttons/bell1.wav$_antirush_stalk_spk
+counter|-385,64,-304,0,400,-112,0.33$_antirush_stalk_number,_antirush_stalk_spk,_antirush_stalk_mm,_antirush_dynamic_func_door_creator,_antirush_dynamic_trigger_multiple_creator,_antirush_level_change_island_enabler_mm,_antirush_level_change_ms
+
+//
+//  LEVEL CHANGE!
+//
+number|-971,-1274,497,0,0,0,255,0,0,0,255,0,1,66%$_antirush_level_change_number
+speaker|-971,-1274,497$buttons/bell1.wav$_antirush_level_change_spk
+counter|-1298,-1550,405,-695,-971,872,0.66$_antirush_level_change_number,_antirush_level_change_spk,_antirush_level_change_trigger@_antirush_level_change_ms
