@@ -15,6 +15,9 @@ This plugin is a great replacement of AntiRush provided by CubeMath (at https://
 ## How can I use it?
 Fork this repo, then fully clone it. Drop all the stuff you just downloaded into `game_root_path_here/svencoop/scripts/plugins`, register `AntiRush.as` in `game_root_path_here/svencoop/default_plugins.txt` and you're done. This repository provides AntiRush for the whole Half-Life campaign (hl_c01_a1 till hl_c16_a4 maps) so you can fully experience the overhaul this plugin brings into the game.
 
+> [!CAUTION]  
+> Be aware that we require you to replace `scripts/maps/point_checkpoint.as` to our version in order to make the maps completable and extend the features provided by the Respawn-Point.
+
 ## Commands
 <details>
   <summary>Click to expand</summary>
